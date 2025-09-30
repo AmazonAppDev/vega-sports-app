@@ -1,0 +1,1 @@
+export { useDetailsLayoutElements } from './useDetailsLayoutElements';

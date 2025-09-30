@@ -1,0 +1,174 @@
+#
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+#
+schema-version = 1
+
+[package]
+title = "Vega Sports Sample App"
+version = "0.21.0"
+id = "com.amazondeveloper.keplersportapp"
+icon = "@image/SportsApp.png"
+
+[components]
+[[components.interactive]]
+id = "com.amazondeveloper.keplersportapp.main"
+runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+categories = ["com.amazon.category.main", "com.amazon.category.kepler.media"]
+launch-type = "singleton"
+
+[[components.interactive]]
+id = "com.amazondeveloper.keplersportapp.sync_source"
+launch-type = "singleton"
+runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+
+[[components.service]]
+id = "com.amazondeveloper.keplersportapp.interface.provider"
+categories = ["com.amazon.category.kepler.media"]
+launch-type = "singleton"
+runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"
+
+[[components.task]]
+id = "com.amazondeveloper.keplersportapp.onInstallOrUpdateTask"
+runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"
+
+[[components.task]]
+id = "com.amazondeveloper.keplersportapp.epgSyncTask"
+runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"
+
+[processes]
+[[processes.group]]
+component-ids = ["com.amazondeveloper.keplersportapp.main"]
+
+[[processes.group]]
+component-ids = ["com.amazondeveloper.keplersportapp.interface.provider"]
+
+[[processes.group]]
+component-ids = ["com.amazondeveloper.keplersportapp.onInstallOrUpdateTask"]
+
+[[processes.group]]
+component-ids = ["com.amazondeveloper.keplersportapp.epgSyncTask"]
+
+[wants]
+[[wants.service]]
+id = "com.amazon.alexa.datastore.service"
+
+[[wants.service]]
+id = "com.amazon.inputmethod.service"
+
+[[wants.service]]
+id = "com.amazon.inputd.service"
+
+[[wants.service]]
+id = "com.amazon.network.service"
+
+[[wants.service]]
+id = "com.amazon.mediametrics.service"
+
+[[wants.service]]
+id = "com.amazon.media.server"
+
+[[wants.service]]
+id = "com.amazon.gipc.uuid.*"
+
+[[wants.service]]
+id = "com.amazon.media.playersession.service"
+
+[[wants.service]]
+id = "com.amazon.audio.stream"
+
+[[wants.service]]
+id = "com.amazon.audio.control"
+
+[[wants.service]]
+id = "com.amazon.audio.system"
+
+[[wants.service]]
+id = "com.amazon.mediabuffer.service"
+
+[[wants.service]]
+id = "com.amazon.mediatransform.service"
+
+[[wants.service]]
+id = "com.amazon.drm.key"
+
+[[wants.service]]
+id = "com.amazon.drm.crypto"
+
+[[wants.privilege]]
+id = "com.amazon.devconf.privilege.accessibility"
+
+[needs]
+[[needs.privilege]]
+id="com.amazon.network.privilege.net-info"
+
+[[needs.privilege]]
+id = "com.amazon.kepler.tv.privilege.data_provider"
+
+[[needs.privilege]]
+id = "com.amazon.audio.privilege.microphone.access"
+
+[tasks]
+[[tasks.work]]
+component-id = "com.amazondeveloper.keplersportapp.onInstallOrUpdateTask"
+mode = "install"
+
+[offers]
+[[offers.service]]
+id = "com.amazondeveloper.keplersportapp.interface.provider"
+[[offers.service]]
+id = "com.amazon.gipc.uuid.*"
+
+[[offers.interaction]]
+id = "com.amazondeveloper.keplersportapp.main"
+
+[[offers.module]]
+id = "/com.amazondeveloper.keplersportapp.main@IMod1"
+includes-messages = [
+    "pkg://com.amazondeveloper.keplersportapp.main",
+]
+
+[[offers.message-target]]
+uses-component = "com.amazondeveloper.keplersportapp.sync_source"
+uris = ["livetv://sync_source"]
+
+[[message]]
+uri = "pkg://com.amazondeveloper.keplersportapp.main"
+sender-privileges = ["*"] # anyone can send this message
+receiver-privileges = ["self"] # only our package can receive this message
+
+[[extras]]
+key = "interface.provider"
+component-id = "com.amazondeveloper.keplersportapp.main"
+
+## KMC
+[[extras.value.application.interface]]
+interface_name = "com.amazon.kepler.media.IMediaPlaybackServer"
+command_options = [
+    "Play",
+    "Pause",
+    "StartOver",
+    "Previous",
+    "Next",
+    "SkipForward",
+    "SkipBackward",
+]
+attribute_options = ["AudioAdvanceMuted"]
+features = ["AdvancedSeek", "VariableSpeed", "AudioTracks", "TextTracks"]
+
+[extras.value.application]
+[[extras.value.application.interface]]
+interface_name = "com.amazon.kepler.media.IChannelServer"
+features = ["ChannelList"]
+
+[extras.value.application.interface.override_command_component]
+ChangeChannel = "com.amazondeveloper.keplersportapp.main"
+ChangeChannelByNumber = "com.amazondeveloper.keplersportapp.main"
+SkipChannel = "com.amazondeveloper.keplersportapp.main"
+
+[extras.value.application.interface.static-values]
+ChannelList = []
+
+[application]
+relaunch_policy = "none"
+preserve_state = true

@@ -1,0 +1,402 @@
+{
+  "detailslayout": [
+    {
+      "id": "documentaries",
+      "layout_type": "documentaries",
+      "layout_title": "Sports Documentaries",
+      "layoutElements": [
+        {
+          "layoutElements": [
+            {
+              "layoutElements": [
+                {
+                  "id": "containera-imagetile1",
+                  "description": "Explore the journey of legendary athletes.",
+                  "image": {
+                    "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/30.jpg"
+                  },
+                  "displayProps": {
+                    "size": "custom",
+                    "customWidth": 500,
+                    "customHeight": 200
+                  },
+                  "targetUrl": {
+                    "url": "details/documentaries"
+                  },
+                  "title": "Athlete Stories",
+                  "elementType": "DCImageTile"
+                },
+                {
+                  "id": "containera-imagetile2",
+                  "description": "Read about the top stars.",
+                  "image": {
+                    "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/31.jpg"
+                  },
+                  "displayProps": {
+                    "size": "custom",
+                    "customWidth": 500,
+                    "customHeight": 200
+                  },
+                  "targetUrl": {
+                    "url": "details/documentaries"
+                  },
+                  "title": "Top stars",
+                  "elementType": "DCImageTile"
+                }
+              ],
+              "displayProps": {
+                "horizontalSpacing": 0,
+                "flexDirection": "row"
+              },
+              "title": null,
+              "elementType": "DCContentContainer"
+            },
+            {
+              "layoutElements": [
+                {
+                  "description": "A closer look at iconic sports moments.",
+                  "displayProps": {
+                    "size": "small"
+                  },
+                  "id": "containera-subcontainer-imagetile1",
+                  "image": {
+                    "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/32.jpg"
+                  },
+                  "targetUrl": {
+                    "url": "details/documentaries"
+                  },
+                  "title": "Iconic Moments",
+                  "elementType": "DCImageTile"
+                },
+                {
+                  "description": "Behind the scenes of championship games.",
+                  "displayProps": {
+                    "size": "small"
+                  },
+                  "id": "containera-subcontainer-imagetile2",
+                  "image": {
+                    "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/33.jpg"
+                  },
+                  "targetUrl": {
+                    "url": "details/documentaries"
+                  },
+                  "title": "Championship Stories",
+                  "elementType": "DCImageTile"
+                },
+                {
+                  "description": "The untold stories of rising stars.",
+                  "displayProps": {
+                    "size": "small"
+                  },
+                  "id": "containera-subcontainer-imagetile3",
+                  "image": {
+                    "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/35.jpg"
+                  },
+                  "targetUrl": {
+                    "url": "details/documentaries"
+                  },
+                  "title": "Rising Stars",
+                  "elementType": "DCImageTile"
+                },
+                {
+                  "description": "Team insights and player stats.",
+                  "displayProps": {
+                    "size": "small"
+                  },
+                  "id": "sectionb-tilewithimage2",
+                  "image": {
+                    "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/36.jpg"
+                  },
+                  "targetUrl": {
+                    "url": "details/teams"
+                  },
+                  "title": "Team Profiles",
+                  "elementType": "DCImageTile"
+                }
+              ],
+              "displayProps": {
+                "horizontalSpacing": 18,
+                "flexDirection": "row",
+                "verticalSpacing": 20
+              },
+              "title": null,
+              "elementType": "DCContentContainer"
+            },
+            {
+              "elementType": "DCText",
+              "text": "Athlete stories provide an insight into the lives of sports stars beyond the game. They highlight the challenges, sacrifices, and triumphs that shape their journeys to success. From overcoming injuries to breaking records, these stories inspire fans and aspiring athletes alike. They often reveal the personal struggles and resilience that drive their passion for the sport. Athlete stories also celebrate their achievements, both on and off the field, showcasing their impact on the community. Through these narratives, we connect with the human side of sports, finding motivation and admiration in their experiences.",
+              "displayProps": {
+                "variant": "body",
+                "alignContent": "center",
+                "alignItems": "center",
+                "justifyContent": "center"
+              },
+              "id": "container-body1"
+            }
+          ],
+          "displayProps": {
+            "horizontalSpacing": 18
+          },
+          "title": "Documentary Highlights",
+          "elementType": "DCContentContainer"
+        }
+      ]
+    },
+    {
+      "id": "livestreams",
+      "layout_type": "livestreams",
+      "layout_title": "Live Matches",
+      "layoutElements": [
+        {
+          "layoutElements": [
+            {
+              "description": "Team 1 is ready to dominate the field.",
+              "displayProps": {
+                "size": "medium"
+              },
+              "id": "containerlivestreams-imagetile1",
+              "image": {
+                "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/38.jpg",
+                "targetUrl": "team1.thumbnail"
+              },
+              "targetUrl": {
+                "url": "details/teams"
+              },
+              "title": "Team 1",
+              "titleTarget": "team1.name",
+              "elementType": "DCImageTile"
+            },
+            {
+              "displayProps": {
+                "variant": "headline",
+                "alignContent": "center",
+                "alignItems": "center",
+                "justifyContent": "center"
+              },
+              "id": "containerlivestreams-text1",
+              "text": "VS",
+              "elementType": "DCText"
+            },
+            {
+              "description": "Team 2 is bringing their A-game.",
+              "id": "containerlivestreams-imagetile2",
+              "displayProps": {
+                "size": "medium"
+              },
+              "image": {
+                "url": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/250x250/39.jpg",
+                "targetUrl": "team2.thumbnail"
+              },
+              "targetUrl": {
+                "url": "details/teams"
+              },
+              "title": "Team 2",
+              "titleTarget": "team2.name",
+              "elementType": "DCImageTile"
+            }
+          ],
+          "displayProps": {
+            "horizontalSpacing": 18,
+            "flexDirection": "row"
+          },
+          "title": null,
+          "elementType": "DCContentContainer"
+        },
+        {
+          "layoutElements": [
+            {
+              "displayProps": {
+                "variant": "headline"
+              },
+              "id": "containerlivestreams-text1",
+              "text": "Upcoming Match Highlights",
+              "textTarget": "headline",
+              "elementType": "DCText"
+            },
+            {
+              "displayProps": {
+                "variant": "body"
+              },
+              "id": "containerlivestreams-text2",
+              "text": "Get ready for an exciting clash between two top teams. Stay tuned for live updates and in-depth analysis.",
+              "textTarget": "description",
+              "elementType": "DCText"
+            }
+          ],
+          "displayProps": {
+            "horizontalSpacing": 50,
+            "verticalSpacing": 30
+          },
+          "title": null,
+          "elementType": "DCContentContainer"
+        }
+      ]
+    },
+    {
+      "id": "suggestedforyou",
+      "layout_type": "suggestedforyou",
+      "layout_title": "Recommended for You",
+      "layoutElements": [
+        {
+          "layoutElements": [
+            {
+              "displayProps": {
+                "variant": "headline"
+              },
+              "id": "containerlivestreams-text1",
+              "text": "Curated Sports Content Just for You",
+              "elementType": "DCText"
+            }
+          ],
+          "title": null,
+          "elementType": "DCContentContainer"
+        }
+      ]
+    },
+    {
+      "id": "teams",
+      "layout_type": "teams",
+      "layout_title": "Team Profiles",
+      "layoutElements": [
+        {
+          "id": "containerteams2",
+          "layoutElements": [
+            {
+              "id": "containerteams2-1",
+              "layoutElements": [
+                {
+                  "description": "",
+                  "displayProps": {
+                    "size": "custom",
+                    "customWidth": 300,
+                    "customHeight": 450
+                  },
+                  "id": "containerteams-imagetile1",
+                  "image": {
+                    "targetUrl": "thumbnail"
+                  },
+                  "titleTarget": "teamName",
+                  "targetUrl": {
+                    "url": "details/teams"
+                  },
+                  "elementType": "DCImageTile"
+                }
+              ],
+              "displayProps": {
+                "horizontalSpacing": 18,
+                "flex": 0
+              },
+              "title": null,
+              "elementType": "DCContentContainer"
+            },
+            {
+              "id": "containerteams2-2",
+              "layoutElements": [
+                {
+                  "displayProps": {
+                    "variant": "body"
+                  },
+                  "id": "containerteams2-text1",
+                  "text": "Sport type:",
+                  "title": "DCText 1",
+                  "elementType": "DCText"
+                },
+                {
+                  "displayProps": {
+                    "variant": "title",
+                    "horizontalSpacing": 24
+                  },
+                  "id": "containerteams2-text2",
+                  "text": "N/A",
+                  "textTarget": "sportType",
+                  "title": "DCText 2",
+                  "elementType": "DCText"
+                },
+                {
+                  "displayProps": {
+                    "variant": "body",
+                    "topSpacing": 24
+                  },
+                  "id": "containerteams2-text3",
+                  "text": "Coach:",
+                  "title": "DCText 3",
+                  "elementType": "DCText"
+                },
+                {
+                  "displayProps": {
+                    "variant": "title",
+                    "horizontalSpacing": 24
+                  },
+                  "id": "containerteams2-text4",
+                  "text": "N/A",
+                  "textTarget": "coachName",
+                  "title": "DCText 4",
+                  "elementType": "DCText"
+                },
+                {
+                  "displayProps": {
+                    "variant": "body",
+                    "topSpacing": 24
+                  },
+                  "id": "containerteams2-text5",
+                  "text": "Home stadium:",
+                  "title": "DCText 5",
+                  "elementType": "DCText"
+                },
+                {
+                  "displayProps": {
+                    "variant": "title",
+                    "horizontalSpacing": 24
+                  },
+                  "id": "containerteams2-text6",
+                  "text": "N/A",
+                  "textTarget": "homeStadium",
+                  "title": "DCText 6",
+                  "elementType": "DCText"
+                },
+                {
+                  "displayProps": {
+                    "variant": "body",
+                    "topSpacing": 24
+                  },
+                  "id": "containerteams2-text7",
+                  "text": "Team color:",
+                  "title": "DCText 7",
+                  "elementType": "DCText"
+                },
+                {
+                  "displayProps": {
+                    "variant": "title",
+                    "horizontalSpacing": 24
+                  },
+                  "id": "containerteams2-text8",
+                  "text": "N/A",
+                  "textTarget": "teamColor",
+                  "title": "DCText 8",
+                  "elementType": "DCText"
+                }
+              ],
+              "displayProps": {
+                "alignSelf": "flex-start",
+                "justifyContent": "flex-start",
+                "alignContent": "flex-start"
+              },
+              "title": null,
+              "elementType": "DCContentContainer"
+            }
+          ],
+          "displayProps": {
+            "horizontalSpacing": 18,
+            "verticalSpacing": 36,
+            "flexDirection": "row",
+            "alignSelf": "flex-start",
+            "justifyContent": "flex-start",
+            "alignContent": "flex-start"
+          },
+          "title": null,
+          "elementType": "DCContentContainer"
+        }
+      ]
+    }
+  ]
+}

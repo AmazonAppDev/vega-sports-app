@@ -1,0 +1,20 @@
+{
+  "detailslayout": [
+    {
+      "id": "documentaries",
+      "layout_type": "documentaries"
+    },
+    {
+      "id": "livestreams",
+      "layout_type": "livestreams"
+    },
+    {
+      "id": "sugggestedForYou", 
+      "layout_type": "sugggestedForYou"
+    },
+    {
+      "id": "teams",
+      "layout_type": "teams"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+export { FocusStyleTouchableOpacity } from './FocusStyleTouchableOpacity';

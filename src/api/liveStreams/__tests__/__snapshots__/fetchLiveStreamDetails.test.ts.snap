@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchLiveStreamDetails fetchLiveStreamDetailsApiCall should return parsed livestream details data on success 1`] = `
+{
+  "description": "Watch the action live! From breathtaking plays to game-changing moments, this stream has it all. Feel the intensity as the players give it their all, leaving everything on the field. Every pass and every goal could change the outcome of this thrilling match.
+
+Stay tuned for every second of the excitement. The game is on, and the stakes couldn’t be higher. Whether it’s a last-minute goal or a stunning save, this is football at its finest. Don’t just watch—experience the passion, the drama, and the glory of the game.
+
+Watch to join the live stream now and be part of the action! Amazing moments are waiting for you to grasp them!",
+  "headline": "Football (Dragons vs Cougars)",
+  "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/30.jpg",
+  "itemId": "50128bae-e954-4233-8e15-cd5867a31370",
+  "streamDuration": 734,
+  "streamEndDate": 2022-12-17T17:06:43.000Z,
+  "streamStartDate": 2022-12-17T04:52:43.000Z,
+  "team1": {
+    "name": "Dragons",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/thumbnails/thumbnail-01.jpg",
+  },
+  "team2": {
+    "name": "Cougars",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/thumbnails/thumbnail-02.jpg",
+  },
+  "title": "Basketball: Dragons | Cougars",
+  "videoSource": {
+    "format": "HLS",
+    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/",
+    "title": "Sample Stream",
+    "type": "hls",
+    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+  },
+}
+`;
+
+exports[`fetchLiveStreamDetails useLiveStreamDetails should return live streams data and no error on successful fetch 1`] = `
+{
+  "description": "Watch the action live! From breathtaking plays to game-changing moments, this stream has it all. Feel the intensity as the players give it their all, leaving everything on the field. Every pass and every goal could change the outcome of this thrilling match.
+
+Stay tuned for every second of the excitement. The game is on, and the stakes couldn’t be higher. Whether it’s a last-minute goal or a stunning save, this is football at its finest. Don’t just watch—experience the passion, the drama, and the glory of the game.
+
+Watch to join the live stream now and be part of the action! Amazing moments are waiting for you to grasp them!",
+  "headline": "Football (Dragons vs Cougars)",
+  "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/30.jpg",
+  "itemId": "50128bae-e954-4233-8e15-cd5867a31370",
+  "streamDuration": 734,
+  "streamEndDate": 2022-12-17T17:06:43.000Z,
+  "streamStartDate": 2022-12-17T04:52:43.000Z,
+  "team1": {
+    "name": "Dragons",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/thumbnails/thumbnail-01.jpg",
+  },
+  "team2": {
+    "name": "Cougars",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/thumbnails/thumbnail-02.jpg",
+  },
+  "title": "Basketball: Dragons | Cougars",
+  "videoSource": {
+    "format": "HLS",
+    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/",
+    "title": "Sample Stream",
+    "type": "hls",
+    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+  },
+}
+`;

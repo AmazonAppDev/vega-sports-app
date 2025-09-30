@@ -1,0 +1,21 @@
+pre-push:
+  parallel: true
+  commands:
+    lint:
+      run: npm run lint
+      fail_text: Try run `npm run lint:fix` and/or `npm run prettier` to cover issue or address them manually.
+    typecheck:
+      run: npm run typecheck
+
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: 'src/**/*.{ts,tsx}'
+      exclude: '.d.ts'
+      run: npm run lint-check {staged_files}
+      fail_text: Try run `npm run lint:fix` to cover issue or address them manually.
+    types:
+      glob: '*.{js,ts,jsx,tsx}'
+      exclude: '(^|/)(jest\.\w+)\.ts$'
+      run: npm run typecheck

@@ -1,0 +1,1 @@
+export { DCText } from './DCText';

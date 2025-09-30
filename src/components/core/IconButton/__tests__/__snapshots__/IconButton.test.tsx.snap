@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton applies disabled styles when the button is disabled 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#ECEFF1",
+      "borderColor": "transparent",
+      "borderRadius": 8,
+      "borderWidth": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+    }
+  }
+  testID="icon-button-opacity"
+>
+  <View
+    aria-hidden={true}
+    color="#121212"
+    name="pause"
+    size={37.5}
+    style={
+      [
+        {
+          "opacity": 0.5,
+        },
+      ]
+    }
+    testID="icon-button-icon"
+  />
+</View>
+`;
+
+exports[`IconButton renders children when provided 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "transparent",
+      "borderRadius": 8,
+      "borderWidth": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+    }
+  }
+  testID="icon-button-opacity"
+>
+  <View
+    aria-hidden={true}
+    color="#121212"
+    name="stop"
+    size={37.5}
+    style={
+      [
+        false,
+      ]
+    }
+    testID="icon-button-icon"
+  />
+  <Text
+    accessibilityRole="text"
+    role="presentation"
+    style={
+      {
+        "color": "#121212",
+        "fontFamily": "Amazon Ember",
+        "fontSize": 20,
+        "fontStyle": undefined,
+        "fontWeight": "400",
+        "letterSpacing": undefined,
+        "lineHeight": 36,
+      }
+    }
+  >
+    Child Text
+  </Text>
+</View>
+`;
+
+exports[`IconButton renders style prop with priority over internal styles 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": true,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "red",
+      "borderColor": "transparent",
+      "borderRadius": 8,
+      "borderWidth": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+      "paddingHorizontal": 80,
+    }
+  }
+  testID="icon-button-opacity"
+>
+  <View
+    aria-hidden={true}
+    color="#121212"
+    name="stop"
+    size={37.5}
+    style={
+      [
+        {
+          "opacity": 0.5,
+        },
+      ]
+    }
+    testID="icon-button-icon"
+  />
+</View>
+`;
+
+exports[`IconButton renders the button with the correct icon and styles 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": false,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "transparent",
+      "borderRadius": 8,
+      "borderWidth": 4,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "opacity": 1,
+    }
+  }
+  testID="icon-button-opacity"
+>
+  <View
+    aria-hidden={true}
+    color="#121212"
+    name="play"
+    size={37.5}
+    style={
+      [
+        false,
+      ]
+    }
+    testID="icon-button-icon"
+  />
+</View>
+`;

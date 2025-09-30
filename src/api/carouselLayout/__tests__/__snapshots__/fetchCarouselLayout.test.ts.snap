@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchDocumentaries fetchCarouselLayoutApiCall should return parsed documentaries data on success 1`] = `
+[
+  {
+    "carouselTitle": null,
+    "carouselType": "hero",
+    "endpoint": "suggestedforyou",
+    "itemId": "e77effd2-60fd-4a75-9921-ee1596c4d248",
+  },
+  {
+    "carouselTitle": "Live TV: fresh news from events",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "fac0db1d-60ee-4ff9-9c3f-fc1ca24fa6be",
+  },
+  {
+    "carouselTitle": "Sport Teams Hall of Fame",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "cf5bafe0-023b-4ff9-9c3f-fc1ca24fa6be",
+  },
+  {
+    "carouselTitle": "Documentaries on Sport Stars",
+    "carouselType": "square",
+    "endpoint": "documentaries",
+    "itemId": "068f3841-023b-4de8-85d1-f410d1407528",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc13a87-af56-42ef-a66e-b882a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f1389-845c-476d-820b-1aa388e7bf1a4",
+  },
+  {
+    "carouselTitle": "Champions League",
+    "carouselType": "card",
+    "endpoint": "documentaries",
+    "itemId": "5d21039f-3ba5-491b-b481-324ceb742ac71",
+  },
+  {
+    "carouselTitle": "Live TV: fresh news from events",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "fac0db1d-60ee-4ff9-9c3f-fc15ca24fa6be",
+  },
+  {
+    "carouselTitle": "Sport Teams Hall of Fame",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "cf5bafe0-023b-4ff9-9c3f-6fc1ca24fa6be",
+  },
+  {
+    "carouselTitle": "Documentaries on Sport Stars",
+    "carouselType": "square",
+    "endpoint": "documentaries",
+    "itemId": "06844f3841-023b-4de8-85d1-7f410d14aa07528",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc1113a87-af56-42ef-a66e8-b8jj8a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f11389-845c-476d-8290b-1aajj88e7bf1a4",
+  },
+  {
+    "carouselTitle": "Champions League",
+    "carouselType": "card",
+    "endpoint": "documentaries",
+    "itemId": "5d221039f-3ba5-491b-b4081-32cejjb742ac71",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc132a87-af56-42ef-a66e-bgh882a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c9177f14389-845c-476d-820b-s",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc166113a87-af56-42ef-a66e8-b8jj8a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f5511389-845c-476d-8290b-1aajj88e7bf1a4",
+  },
+  {
+    "carouselTitle": "Champions League",
+    "carouselType": "card",
+    "endpoint": "documentaries",
+    "itemId": "5d22441039f-3ba5-491b-b4081-32cejjb742ac71",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc13233a87-af56-42ef-a66e-bgh882a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f1422389-845c-476d-820b-s",
+  },
+]
+`;
+
+exports[`fetchDocumentaries useCarouselLayout should return carousel layout data and no error on successful fetch 1`] = `
+[
+  {
+    "carouselTitle": null,
+    "carouselType": "hero",
+    "endpoint": "suggestedforyou",
+    "itemId": "e77effd2-60fd-4a75-9921-ee1596c4d248",
+  },
+  {
+    "carouselTitle": "Live TV: fresh news from events",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "fac0db1d-60ee-4ff9-9c3f-fc1ca24fa6be",
+  },
+  {
+    "carouselTitle": "Sport Teams Hall of Fame",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "cf5bafe0-023b-4ff9-9c3f-fc1ca24fa6be",
+  },
+  {
+    "carouselTitle": "Documentaries on Sport Stars",
+    "carouselType": "square",
+    "endpoint": "documentaries",
+    "itemId": "068f3841-023b-4de8-85d1-f410d1407528",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc13a87-af56-42ef-a66e-b882a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f1389-845c-476d-820b-1aa388e7bf1a4",
+  },
+  {
+    "carouselTitle": "Champions League",
+    "carouselType": "card",
+    "endpoint": "documentaries",
+    "itemId": "5d21039f-3ba5-491b-b481-324ceb742ac71",
+  },
+  {
+    "carouselTitle": "Live TV: fresh news from events",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "fac0db1d-60ee-4ff9-9c3f-fc15ca24fa6be",
+  },
+  {
+    "carouselTitle": "Sport Teams Hall of Fame",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "cf5bafe0-023b-4ff9-9c3f-6fc1ca24fa6be",
+  },
+  {
+    "carouselTitle": "Documentaries on Sport Stars",
+    "carouselType": "square",
+    "endpoint": "documentaries",
+    "itemId": "06844f3841-023b-4de8-85d1-7f410d14aa07528",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc1113a87-af56-42ef-a66e8-b8jj8a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f11389-845c-476d-8290b-1aajj88e7bf1a4",
+  },
+  {
+    "carouselTitle": "Champions League",
+    "carouselType": "card",
+    "endpoint": "documentaries",
+    "itemId": "5d221039f-3ba5-491b-b4081-32cejjb742ac71",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc132a87-af56-42ef-a66e-bgh882a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c9177f14389-845c-476d-820b-s",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc166113a87-af56-42ef-a66e8-b8jj8a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f5511389-845c-476d-8290b-1aajj88e7bf1a4",
+  },
+  {
+    "carouselTitle": "Champions League",
+    "carouselType": "card",
+    "endpoint": "documentaries",
+    "itemId": "5d22441039f-3ba5-491b-b4081-32cejjb742ac71",
+  },
+  {
+    "carouselTitle": "Roland Garros",
+    "carouselType": "card",
+    "endpoint": "teams",
+    "itemId": "9fc13233a87-af56-42ef-a66e-bgh882a88540cc9",
+  },
+  {
+    "carouselTitle": "Interviews with Idols",
+    "carouselType": "square",
+    "endpoint": "livestreams",
+    "itemId": "c91f1422389-845c-476d-820b-s",
+  },
+]
+`;

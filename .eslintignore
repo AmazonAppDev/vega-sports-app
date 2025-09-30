@@ -1,0 +1,20 @@
+# Build output
+build/
+dist/
+
+# Node modules
+node_modules/
+
+# Coverage directory
+coverage/
+
+# Config files
+*.config.js
+
+# Shaka Player files
+src/w3cmedia/App*
+src/w3cmedia/shakaplayer/dist
+src/w3cmedia/polyfills
+
+# ESLint plugins
+plugins/

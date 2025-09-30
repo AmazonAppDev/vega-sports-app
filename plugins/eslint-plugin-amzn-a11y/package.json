@@ -1,0 +1,8 @@
+{
+  "name": "@amazon-devices/eslint-plugin-amzn-a11y",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "commonjs",
+  "description": ""
+}

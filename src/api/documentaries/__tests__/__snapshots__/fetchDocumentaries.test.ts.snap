@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchDocumentaries fetchDocumentariesApiCall should return parsed documentaries data on success 1`] = `
+[
+  {
+    "itemId": "813f703b-f365-4dae-bbed-60a2af813dae",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/16.jpg",
+    "title": "Road to the Championship",
+  },
+  {
+    "itemId": "b1798c7c-cd4b-41a3-85dd-6be0f75fa1e5",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/17.jpg",
+    "title": "Beyond the Finish Line",
+  },
+  {
+    "itemId": "a8561206-bdb3-40ef-a3f7-23c920af45fc",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/18.jpg",
+    "title": "The Rise of a Superstar",
+  },
+  {
+    "itemId": "9c237dc0-0d91-4aaf-ac96-046ed9b8e495",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/19.jpg",
+    "title": "The Science of Winning",
+  },
+  {
+    "itemId": "65c7daeb-9e47-40cc-b61b-b1ea011859b6",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/20.jpg",
+    "title": "Chasing Greatness",
+  },
+  {
+    "itemId": "3b7b4569-f755-4d80-885f-41d90eef23ae",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/21.jpg",
+    "title": "Legends of the Game",
+  },
+  {
+    "itemId": "165b6aaf-9f93-4022-9910-d3e239e628a4",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/22.jpg",
+    "title": "The Journey to Success",
+  },
+  {
+    "itemId": "8e3fe329-cd6a-4e81-a95c-8b40fb8a7f49",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/23.jpg",
+    "title": "The Evolution of Football",
+  },
+  {
+    "itemId": "097e7212-200b-4578-9bb9-8fd898203237",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/24.jpg",
+    "title": "Behind the Helmet",
+  },
+  {
+    "itemId": "d26ba3e5-7ba8-4e87-897d-df10c16b157e",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/25.jpg",
+    "title": "The Golden Era of Basketball",
+  },
+  {
+    "itemId": "0dd81ad5-8914-40c8-b641-b8ff51b67427",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/26.jpg",
+    "title": "Racing Through History",
+  },
+  {
+    "itemId": "6aff5300-6eb7-45fc-b810-3da8b2357020",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/27.jpg",
+    "title": "The Untold Stories of Sports",
+  },
+  {
+    "itemId": "afcad24f-8e58-4af2-953a-c7074d011beb",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/28.jpg",
+    "title": "The Making of a Champion",
+  },
+  {
+    "itemId": "03a73eb9-5543-4087-aecc-50b444e064a7",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/29.jpg",
+    "title": "Unstoppable: The Athlete’s Journey",
+  },
+  {
+    "itemId": "5a729bd0-805b-4ca8-b31d-438ae268498a",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/30.jpg",
+    "title": "From Grassroots to Glory",
+  },
+  {
+    "itemId": "59b79076-5504-499a-99c5-b8c085d4b53d",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/31.jpg",
+    "title": "The Rivalries That Shaped Sports",
+  },
+  {
+    "itemId": "80aa0b2d-05d0-4297-8194-bfbaed28e02b",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/32.jpg",
+    "title": "Breaking Barriers in Sports",
+  },
+  {
+    "itemId": "828f58fd-d6e9-4d16-917c-f722461fc268",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/33.jpg",
+    "title": "The Art of the Perfect Play",
+  },
+  {
+    "itemId": "220324dd-66eb-4eed-b59f-586fedb31377",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/34.jpg",
+    "title": "Dynasties of the Game",
+  },
+  {
+    "itemId": "fc7ee7ed-20a5-49ff-93f0-5fb77828f02d",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/35.jpg",
+    "title": "The Heart of a Champion",
+  },
+  {
+    "itemId": "8e43f8b0-fc07-4a1c-b32b-117252fd9e12",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/36.jpg",
+    "title": "Unsung Heroes of the Field",
+  },
+  {
+    "itemId": "f9c7114a-23ec-4a9e-8020-a7277e18a985",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/37.jpg",
+    "title": "The History of the Olympics",
+  },
+  {
+    "itemId": "7d6e24a6-4bc5-4154-8ada-c9b52b7cf123",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/38.jpg",
+    "title": "The Road to Recovery",
+  },
+  {
+    "itemId": "85670ba5-b26f-4796-9b15-f3d55928e29f",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/39.jpg",
+    "title": "Game Changers: Innovators in Sports",
+  },
+  {
+    "itemId": "4bec7063-75f9-48fe-b29d-f240cdd95ea3",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/40.jpg",
+    "title": "The Spirit of Competition",
+  },
+  {
+    "itemId": "098b2ae8-91a8-4230-9ca4-80c4fc49f706",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/41.jpg",
+    "title": "The Rise and Fall of a Legend",
+  },
+  {
+    "itemId": "e8dd0dba-e1f3-446c-83b7-069d005480c6",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/42.jpg",
+    "title": "Inside the World of Extreme Sports",
+  },
+  {
+    "itemId": "d6545116-b03c-4263-89cc-79c63cc8b601",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/43.jpg",
+    "title": "The Power of Teamwork",
+  },
+  {
+    "itemId": "ff04bf53-bb6f-441a-b9fc-da88bfd55ae3",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/44.jpg",
+    "title": "The Psychology of Winning",
+  },
+  {
+    "itemId": "4c562fde-5fb5-4010-ad83-d0c60c3dccb2",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/45.jpg",
+    "title": "The Greatest Comebacks in Sports",
+  },
+  {
+    "itemId": "empty-release-date",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/46.jpg",
+    "title": "The Business of Sports",
+  },
+]
+`;
+
+exports[`fetchDocumentaries useDocumentaries should return documentaries data and no error on successful fetch 1`] = `
+[
+  {
+    "itemId": "813f703b-f365-4dae-bbed-60a2af813dae",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/16.jpg",
+    "title": "Road to the Championship",
+  },
+  {
+    "itemId": "b1798c7c-cd4b-41a3-85dd-6be0f75fa1e5",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/17.jpg",
+    "title": "Beyond the Finish Line",
+  },
+  {
+    "itemId": "a8561206-bdb3-40ef-a3f7-23c920af45fc",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/18.jpg",
+    "title": "The Rise of a Superstar",
+  },
+  {
+    "itemId": "9c237dc0-0d91-4aaf-ac96-046ed9b8e495",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/19.jpg",
+    "title": "The Science of Winning",
+  },
+  {
+    "itemId": "65c7daeb-9e47-40cc-b61b-b1ea011859b6",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/20.jpg",
+    "title": "Chasing Greatness",
+  },
+  {
+    "itemId": "3b7b4569-f755-4d80-885f-41d90eef23ae",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/21.jpg",
+    "title": "Legends of the Game",
+  },
+  {
+    "itemId": "165b6aaf-9f93-4022-9910-d3e239e628a4",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/22.jpg",
+    "title": "The Journey to Success",
+  },
+  {
+    "itemId": "8e3fe329-cd6a-4e81-a95c-8b40fb8a7f49",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/23.jpg",
+    "title": "The Evolution of Football",
+  },
+  {
+    "itemId": "097e7212-200b-4578-9bb9-8fd898203237",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/24.jpg",
+    "title": "Behind the Helmet",
+  },
+  {
+    "itemId": "d26ba3e5-7ba8-4e87-897d-df10c16b157e",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/25.jpg",
+    "title": "The Golden Era of Basketball",
+  },
+  {
+    "itemId": "0dd81ad5-8914-40c8-b641-b8ff51b67427",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/26.jpg",
+    "title": "Racing Through History",
+  },
+  {
+    "itemId": "6aff5300-6eb7-45fc-b810-3da8b2357020",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/27.jpg",
+    "title": "The Untold Stories of Sports",
+  },
+  {
+    "itemId": "afcad24f-8e58-4af2-953a-c7074d011beb",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/28.jpg",
+    "title": "The Making of a Champion",
+  },
+  {
+    "itemId": "03a73eb9-5543-4087-aecc-50b444e064a7",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/29.jpg",
+    "title": "Unstoppable: The Athlete’s Journey",
+  },
+  {
+    "itemId": "5a729bd0-805b-4ca8-b31d-438ae268498a",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/30.jpg",
+    "title": "From Grassroots to Glory",
+  },
+  {
+    "itemId": "59b79076-5504-499a-99c5-b8c085d4b53d",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/31.jpg",
+    "title": "The Rivalries That Shaped Sports",
+  },
+  {
+    "itemId": "80aa0b2d-05d0-4297-8194-bfbaed28e02b",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/32.jpg",
+    "title": "Breaking Barriers in Sports",
+  },
+  {
+    "itemId": "828f58fd-d6e9-4d16-917c-f722461fc268",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/33.jpg",
+    "title": "The Art of the Perfect Play",
+  },
+  {
+    "itemId": "220324dd-66eb-4eed-b59f-586fedb31377",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/34.jpg",
+    "title": "Dynasties of the Game",
+  },
+  {
+    "itemId": "fc7ee7ed-20a5-49ff-93f0-5fb77828f02d",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/35.jpg",
+    "title": "The Heart of a Champion",
+  },
+  {
+    "itemId": "8e43f8b0-fc07-4a1c-b32b-117252fd9e12",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/36.jpg",
+    "title": "Unsung Heroes of the Field",
+  },
+  {
+    "itemId": "f9c7114a-23ec-4a9e-8020-a7277e18a985",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/37.jpg",
+    "title": "The History of the Olympics",
+  },
+  {
+    "itemId": "7d6e24a6-4bc5-4154-8ada-c9b52b7cf123",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/38.jpg",
+    "title": "The Road to Recovery",
+  },
+  {
+    "itemId": "85670ba5-b26f-4796-9b15-f3d55928e29f",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/39.jpg",
+    "title": "Game Changers: Innovators in Sports",
+  },
+  {
+    "itemId": "4bec7063-75f9-48fe-b29d-f240cdd95ea3",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/40.jpg",
+    "title": "The Spirit of Competition",
+  },
+  {
+    "itemId": "098b2ae8-91a8-4230-9ca4-80c4fc49f706",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/41.jpg",
+    "title": "The Rise and Fall of a Legend",
+  },
+  {
+    "itemId": "e8dd0dba-e1f3-446c-83b7-069d005480c6",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/42.jpg",
+    "title": "Inside the World of Extreme Sports",
+  },
+  {
+    "itemId": "d6545116-b03c-4263-89cc-79c63cc8b601",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/43.jpg",
+    "title": "The Power of Teamwork",
+  },
+  {
+    "itemId": "ff04bf53-bb6f-441a-b9fc-da88bfd55ae3",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/44.jpg",
+    "title": "The Psychology of Winning",
+  },
+  {
+    "itemId": "4c562fde-5fb5-4010-ad83-d0c60c3dccb2",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/45.jpg",
+    "title": "The Greatest Comebacks in Sports",
+  },
+  {
+    "itemId": "empty-release-date",
+    "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/46.jpg",
+    "title": "The Business of Sports",
+  },
+]
+`;

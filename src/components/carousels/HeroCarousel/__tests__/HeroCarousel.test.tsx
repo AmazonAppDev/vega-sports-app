@@ -1,0 +1,93 @@
+import React from 'react';
+import { Animated } from 'react-native';
+
+import { screen } from '@testing-library/react-native';
+
+import { Details } from '@AppScreens/Details';
+import { Endpoints } from '@AppServices/apiClient';
+import { ROUTES } from '@AppSrc/navigators/constants';
+import { carouselItemExample } from '@AppTestUtils/mocks/carousel-item';
+import type { TestScreenItem } from '@AppTestUtils/render';
+import {
+  renderScreensWithProviders,
+  renderWithProviders,
+} from '@AppTestUtils/render';
+import { rntlUser } from '@AppTestUtils/rntlUser';
+import { HeroCarouselContainer } from '../HeroCarousel';
+
+const mockData = [
+  carouselItemExample.item,
+  carouselItemExample.item,
+  carouselItemExample.item,
+];
+
+jest.useFakeTimers();
+
+const screens: TestScreenItem[] = [
+  {
+    component: (
+      <HeroCarouselContainer
+        carouselTitle="test title"
+        data={mockData}
+        endpoint={Endpoints.LiveStreams}
+        scrollY={new Animated.Value(0)}
+      />
+    ),
+    routeName: ROUTES.Home,
+  },
+  {
+    component: <Details />,
+    routeName: ROUTES.Details,
+  },
+];
+
+const renderCarousel = (data = mockData) =>
+  renderWithProviders(
+    <HeroCarouselContainer
+      carouselTitle="test title"
+      data={data}
+      endpoint={Endpoints.LiveStreams}
+      scrollY={new Animated.Value(0)}
+    />,
+    { routeName: ROUTES.Home },
+  );
+
+describe('HeroCarousel', () => {
+  it('renders carousel items correctly', () => {
+    renderCarousel();
+
+    expect(
+      screen.getAllByTestId('hero-image-3b7b4569-f755-4d80-885f-41d90eef23ae'),
+    ).toHaveLength(3);
+  });
+
+  it('renders nothing when data is empty', () => {
+    // @ts-ignore
+    renderCarousel([]);
+
+    expect(
+      screen.queryAllByTestId(
+        'hero-image-3b7b4569-f755-4d80-885f-41d90eef23ae',
+      ),
+    ).toHaveLength(0);
+  });
+
+  it('navigates to Details screen when carousel item is clicked', async () => {
+    renderScreensWithProviders({ screens });
+
+    const buttons = screen.getAllByAccessibilityHint('carousel-go-to-details', {
+      exact: false,
+    });
+    expect(buttons.length).toBeGreaterThan(0);
+
+    const firstButton = buttons[0];
+    if (!firstButton) {
+      throw new Error('No button found');
+    }
+
+    await rntlUser.press(firstButton);
+
+    const element = await screen.findByText('Details');
+    expect(element).toBeOnTheScreen();
+  });
+});

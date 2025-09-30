@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchDocumentaryDetailsApiCall fetchDocumentaryDetailsApiCall should return parsed documentary details data on success 1`] = `
+{
+  "countryOfOrigin": "Latvia",
+  "description": "Phantoms vs Shadows: A Game of Stealth and Strategy! The Phantoms’ speed meets the Shadows’ cunning.
+
+Who will outplay and outlast their opponent?
+
+Watch it live now!",
+  "director": "Packston Grelik",
+  "durationMinutes": 34,
+  "genre": "Biography",
+  "itemId": "4c562fde-5fb5-4010-ad83-d0c60c3dccb2",
+  "productionCompany": "Quimba",
+  "rating": 6.8,
+  "releaseDate": 2022-12-17T04:52:43.000Z,
+  "sportType": "darts",
+  "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/45.jpg",
+  "title": "The Greatest Comebacks in Sports",
+}
+`;
+
+exports[`fetchDocumentaryDetailsApiCall fetchDocumentaryDetailsApiCall should return parsed releaseDate 1`] = `
+{
+  "countryOfOrigin": "Latvia",
+  "description": "Steelhawks vs Ironclads: A Battle of Strength! The Steelhawks’ precision takes on the Ironclads’ unyielding defense.
+
+Who will forge their way to victory?
+
+Click to find out!",
+  "director": "Packston Grelik",
+  "durationMinutes": 34,
+  "genre": "Biography",
+  "itemId": "empty-release-date",
+  "productionCompany": "Quimba",
+  "rating": 6.8,
+  "releaseDate": undefined,
+  "sportType": "darts",
+  "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/46.jpg",
+  "title": "The Business of Sports",
+}
+`;
+
+exports[`fetchDocumentaryDetailsApiCall useDocumentaryDetails should return documentary data and no error on successful fetch 1`] = `
+{
+  "countryOfOrigin": "Latvia",
+  "description": "Phantoms vs Shadows: A Game of Stealth and Strategy! The Phantoms’ speed meets the Shadows’ cunning.
+
+Who will outplay and outlast their opponent?
+
+Watch it live now!",
+  "director": "Packston Grelik",
+  "durationMinutes": 34,
+  "genre": "Biography",
+  "itemId": "4c562fde-5fb5-4010-ad83-d0c60c3dccb2",
+  "productionCompany": "Quimba",
+  "rating": 6.8,
+  "releaseDate": 2022-12-17T04:52:43.000Z,
+  "sportType": "darts",
+  "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/45.jpg",
+  "title": "The Greatest Comebacks in Sports",
+}
+`;

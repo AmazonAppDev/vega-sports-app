@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetchSuggestedForYouDetailsApiCall fetchSuggestedForYouDetailsApiCall should return parsed airDate 1`] = `
+{
+  "airDate": undefined,
+  "description": "Marathon Star is a documentary about the life of a man who travels the world on a motorcycle. It is a story of adventure, freedom, and the pursuit of dreams. It is a story of a man who travels the world on a motorcycle.",
+  "genre": "Documentary",
+  "itemId": "empty-air-date",
+  "network": "Bluejam",
+  "rating": 2.7,
+  "sportType": "volleyball",
+  "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/6.jpg",
+  "title": "Marathon Star",
+  "videoSource": {
+    "format": "HLS",
+    "title": "Dash",
+    "type": "hls",
+    "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
+  },
+}
+`;
+
+exports[`fetchSuggestedForYouDetailsApiCall fetchSuggestedForYouDetailsApiCall should return parsed suggested for you data on success 1`] = `
+{
+  "airDate": 2020-11-14T04:52:43.000Z,
+  "description": "American Vagabond is a documentary about the life of a man who travels the world on a motorcycle. It is a story of adventure, freedom, and the pursuit of dreams. It is a story of a man who travels the world on a motorcycle.",
+  "genre": "Documentary",
+  "itemId": "e9a06a8f-9d40-41b9-a8b4-38bbc67159a2",
+  "network": "Bluejam",
+  "rating": 2.7,
+  "sportType": "volleyball",
+  "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/1.jpg",
+  "title": "American Vagabond",
+  "videoSource": {
+    "format": "HLS",
+    "title": "NASA M3U8 stream",
+    "type": "hls",
+    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+  },
+}
+`;
+
+exports[`fetchSuggestedForYouDetailsApiCall useSuggestedForYouDetails should return suggestedForYou data and no error on successful fetch 1`] = `
+{
+  "airDate": 2020-11-14T04:52:43.000Z,
+  "description": "American Vagabond is a documentary about the life of a man who travels the world on a motorcycle. It is a story of adventure, freedom, and the pursuit of dreams. It is a story of a man who travels the world on a motorcycle.",
+  "genre": "Documentary",
+  "itemId": "e9a06a8f-9d40-41b9-a8b4-38bbc67159a2",
+  "network": "Bluejam",
+  "rating": 2.7,
+  "sportType": "volleyball",
+  "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/1.jpg",
+  "title": "American Vagabond",
+  "videoSource": {
+    "format": "HLS",
+    "title": "NASA M3U8 stream",
+    "type": "hls",
+    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+  },
+}
+`;
