@@ -4,11 +4,12 @@
 import type {
   VideoSource,
   VideoPlayerConstructor,
-  VideoPlayerService,
   VideoPlayerServiceState,
+  VideoPlayerSelectionConfig,
+  IVideoPlayerService,
 } from '@AppServices/videoPlayer';
 
-export type VideoPlayerRef<TrackToken, PlayerSettings> = VideoPlayerService<
+export type VideoPlayerRef<TrackToken, PlayerSettings> = IVideoPlayerService<
   TrackToken,
   PlayerSettings
 > | null;
@@ -56,13 +57,24 @@ export type VideoPlayerProps<
    * Overrides the video player width; if not specified, uses the screen's height minus the height of VideoControls component
    */
   overrideHeight?: number;
+
+  /**
+   * Enable headless video player (runs in separate thread)
+   * @default undefined (automatic selection based on content type)
+   */
+  useHeadless?: boolean;
+
+  /**
+   * Advanced: Full selector configuration for fine-grained control
+   * If provided, overrides useHeadless prop
+   */
+  selectorConfig?: VideoPlayerSelectionConfig;
 };
 
 export type VideoControlsProps<TrackToken, PlayerSettings> = {
-  videoPlayerServiceRef: React.MutableRefObject<VideoPlayerService<
-    TrackToken,
-    PlayerSettings
-  > | null>;
+  videoPlayerServiceRef: React.MutableRefObject<
+    VideoPlayerRef<TrackToken, PlayerSettings>
+  >;
   videoPlayerServiceState: VideoPlayerServiceState;
   videoPlayerData: VideoSource;
 };

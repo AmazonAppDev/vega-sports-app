@@ -175,8 +175,7 @@ export const VideoPlayerScreen = () => {
         <VideoPlayer
           ref={videoPlayerServiceRef}
           onInitialized={() => {
-            void handleResumePlaying();
-
+            // Add event listeners first
             videoPlayerServiceRef.current?.addEventListener(
               VIDEO_EVENTS.PLAYING,
               onPlaying,
@@ -193,6 +192,11 @@ export const VideoPlayerScreen = () => {
               VIDEO_EVENTS.SEEKED,
               onSeeked,
             );
+
+            // Wait for the next tick to ensure player is fully ready before resuming
+            setTimeout(() => {
+              void handleResumePlaying();
+            }, 0);
           }}
           PlayerImpl={ShakaPlayer}
           VideoControls={VideoControls}
@@ -201,6 +205,7 @@ export const VideoPlayerScreen = () => {
             secure: false,
           }}
           videoSource={videoSource ?? EXAMPLE_VIDEO}
+          useHeadless={false}
         />
       </FocusGuideView>
     </ScreenContainer>

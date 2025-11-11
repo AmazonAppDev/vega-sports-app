@@ -88,7 +88,7 @@ export function useAudioSinkCapabilities({
       }
 
       try {
-        const variantTracks = videoPlayerRef.current?.getAvailableQualities();
+        const variantTracks = videoPlayerRef.current?.getAvailableQualities?.();
         if (!variantTracks || variantTracks.length === 0) {
           logDebug('[AudioSink] No variant tracks available');
           return null;
@@ -166,7 +166,7 @@ export function useAudioSinkCapabilities({
             !activeTrack ||
             activeTrack.trackToken.id !== selectedTrack.trackToken.id
           ) {
-            videoPlayerRef.current?.setQuality(
+            videoPlayerRef.current?.setQuality?.(
               selectedTrack.trackToken as shaka.extern.Track,
             );
           }

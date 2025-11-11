@@ -12,10 +12,11 @@ exports[`fetchSuggestedForYouDetailsApiCall fetchSuggestedForYouDetailsApiCall s
   "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/6.jpg",
   "title": "Marathon Star",
   "videoSource": {
-    "format": "HLS",
-    "title": "Dash",
-    "type": "hls",
-    "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
+    "format": "DASH",
+    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/",
+    "title": "DASH",
+    "type": "dash",
+    "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/cosmos-laundromat/manifest.mpd",
   },
 }
 `;
@@ -33,9 +34,10 @@ exports[`fetchSuggestedForYouDetailsApiCall fetchSuggestedForYouDetailsApiCall s
   "title": "American Vagabond",
   "videoSource": {
     "format": "HLS",
-    "title": "NASA M3U8 stream",
+    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/",
+    "title": "HLS",
     "type": "hls",
-    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/cosmos-laundromat/master.m3u8",
   },
 }
 `;
@@ -53,9 +55,10 @@ exports[`fetchSuggestedForYouDetailsApiCall useSuggestedForYouDetails should ret
   "title": "American Vagabond",
   "videoSource": {
     "format": "HLS",
-    "title": "NASA M3U8 stream",
+    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/",
+    "title": "HLS",
     "type": "hls",
-    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/cosmos-laundromat/master.m3u8",
   },
 }
 `;

@@ -25,7 +25,6 @@ export const UnauthenticatedNavigator = () => {
             '(development mode only) Automatically signing the user in with credentials:',
             {
               email: credentials.email,
-              password: '*'.repeat(credentials.password.length),
             },
           );
 

@@ -12,11 +12,11 @@
       "viewer_count": 594680,
       "stream_duration": 734.00,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "Sample Stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/cosmos-laundromat/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/30.jpg",
       "description": "Watch the action live! From breathtaking plays to game-changing moments, this stream has it all. Feel the intensity as the players give it their all, leaving everything on the field. Every pass and every goal could change the outcome of this thrilling match.\n\nStay tuned for every second of the excitement. The game is on, and the stakes couldn’t be higher. Whether it’s a last-minute goal or a stunning save, this is football at its finest. Don’t just watch—experience the passion, the drama, and the glory of the game.\n\nWatch to join the live stream now and be part of the action! Amazing moments are waiting for you to grasp them!",
@@ -35,11 +35,11 @@
       "viewer_count": 85851,
       "stream_duration": 734.00,
       "video_source": {
-        "title": "Dash",
-        "type": "hls",
-       "format": "HLS",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/sintel-the-movie/720p/sintel-the-movie.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/4.jpg",
       "description": "Relive the highlights in stunning detail! From jaw-dropping jumps to heart-stopping landings, this footage captures the raw energy of motocross like never before. Feel the adrenaline as riders push their limits, defying gravity and conquering impossible tracks. The roar of the engines and the thrill of the stunts will leave you breathless.\n\nDon't miss the best stunts and most daring moments. It’s not just a race—it’s a showcase of determination and talent. Watch as the riders take on the toughest challenges and deliver unforgettable performances. This is motocross at its most electrifying.\n\nWatch to play now and experience the thrill!",
@@ -58,11 +58,10 @@
       "viewer_count": 961095,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "format": "HLS",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny"
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/glass-half/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/31.jpg",
       "description": "Catch the best moments of the race in this quick recap! Witness the grit, determination, and endurance of the world's top athletes as they swim, bike, and run their way to glory. Every second is packed with action and emotion, showcasing the incredible effort it takes to compete at this level. From the starting line to the final sprint, this is a journey of pure athleticism.\n\nFast, thrilling, and action-packed, this footage is perfect for when you need your sports fix on the go. Relive the triumphs and challenges of this incredible event. Feel the tension as competitors push through exhaustion and give everything they’ve got.\n\nWatch now and feel the inspiration!",
@@ -81,15 +80,15 @@
       "viewer_count": 606287,
       "stream_duration": 72.71,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/elephants-dream/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/32.jpg",
       "description": "Stream the game live and never miss a moment! The energy, the passion, the thrill—it's all happening now as the players step up to the plate. Feel the tension rise with every pitch and the excitement explode with every home run. The crack of the bat, the roar of the crowd, and the race to the bases will keep you on the edge of your seat.\n\nGet ready for edge-of-your-seat action as the teams battle it out for victory. This is baseball at its finest, and you won't want to miss a single inning. From clutch plays to game-changing moments, this is the sport you love, live and unfiltered. Grab your snacks, settle in, and enjoy the ultimate baseball experience.\n\nWatch to stream live and join the excitement!",
-      "title": "Basketball: Sharks | Tigers", 
+      "title": "Basketball: Sharks | Tigers",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/33.jpg"
     },
     {
@@ -104,11 +103,11 @@
       "viewer_count": 40427,
       "stream_duration": 634.584,
       "video_source": {
-        "title": "Dash",
-        "type": "hls",
-       "format": "HLS",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/tears-of-steel/720p/tears-of-steel.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/tears-of-steel/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/33.jpg",
       "description": "Experience the game like never before! This video brings you closer to the action with every play, every goal, and every breathtaking moment. Feel the intensity as the players push themselves to the limit, delivering performances that will leave you in awe. The precision, the skill, and the passion are all captured in stunning detail.\n\nFrom epic goals to jaw-dropping saves, it's all here in one place. Relive the match in stunning detail. Whether you missed the game or want to relive the best moments, this video has you covered. It’s not just a highlight reel—it’s a front-row seat to the action.\n\nWatch the highlights now to be part of the action!",
@@ -127,11 +126,11 @@
       "viewer_count": 884950,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/cosmos-laundromat/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/34.jpg",
       "description": "Quick, sharp, and full of action—this video delivers the best plays in seconds! Feel the roar of the engines and the thrill of the race as drivers tackle rugged terrain and impossible obstacles. The dust flies, the tires spin, and the adrenaline surges as competitors push their vehicles to the limit. This is offroad racing at its most intense.\n\nPerfect for catching up on the game's top moments anytime, anywhere. Watch as drivers navigate treacherous tracks, defy gravity, and deliver jaw-dropping performances. Every turn, every jump, and every finish line is packed with excitement. If you love speed, power, and adventure, this is the video for you.\n\nWatch to watch and experience the rush!",
@@ -150,12 +149,12 @@
       "viewer_count": 307003,
       "stream_duration": 475.77,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"
-      },     
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/sintel-the-movie/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/35.jpg",
       "description": "Basketball Hall of Fame\nLive sports, live energy, live excitement! Celebrate the legends of basketball and relive the moments that made history. From iconic plays to unforgettable highlights, this is a tribute to the greats of the game. Feel the passion, the skill, and the determination that define basketball at its highest level.\n\nStream the game now and feel the adrenaline rush as you witness the passion and skill that define basketball. This is more than a game—it's a legacy. Watch as the legends of the court are honored and their greatest moments are relived.",
       "title": "Basketball: Hawks | Cougars",
@@ -173,11 +172,11 @@
       "viewer_count": 361318,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/glass-half/720p/glass-half.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/36.jpg",
       "title": "Football: Dragons | Falcons",
@@ -195,11 +194,11 @@
       "viewer_count": 48363,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/elephants-dream/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/37.jpg",
       "title": "Football: Dragons | Panthers",
@@ -217,12 +216,12 @@
       "viewer_count": 905426,
       "stream_duration": 1.48,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/tears-of-steel/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/tears-of-steel/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/38.jpg",
       "title": "Basketball: Gongfang | Lions",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/39.jpg"
@@ -239,11 +238,11 @@
       "viewer_count": 905426,
       "stream_duration": 1.48,
       "video_source": {
-        "title": "Dash",
-       "type": "hls",
-       "format": "HLS",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/cosmos-laundromat/720p/cosmos-laundromat.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/39.jpg",
       "title": "Soccer: Amber Lions vs Orange Tigers",
@@ -261,11 +260,11 @@
       "viewer_count": 905426,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/sintel-the-movie/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/40.jpg",
       "title": "Football: Amber Lions vs Orange Tigers",
@@ -282,12 +281,12 @@
       "viewer_count": 905426,
       "stream_duration": 1.48,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/glass-half/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/41.jpg",
       "title": "Basketball: Amber Lions vs Orange Tigers",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/42.jpg"
@@ -303,11 +302,11 @@
       "viewer_count": 905426,
       "stream_duration": 634.584,
       "video_source": {
-        "title": "Dash",
-        "type": "hls",
-       "format": "HLS",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dash-hd"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/elephants-dream/720p/elephants-dream.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/42.jpg",
       "title": "Soccer: Amber Lions vs Orange Tigers",
@@ -325,11 +324,11 @@
       "viewer_count": 905426,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/tears-of-steel/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/tears-of-steel/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/45.jpg",
       "title": "Football: Amber Lions vs Orange Tigers",
@@ -347,12 +346,12 @@
       "viewer_count": 905426,
       "stream_duration": 1.48,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/cosmos-laundromat/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/47.jpg",
       "title": "Basketball: Amber Lions vs Orange Tigers",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/45.jpg"
@@ -369,11 +368,11 @@
       "viewer_count": 905426,
       "stream_duration": null,
       "video_source": {
-        "title": "Dash",
-        "type": "hls",
-       "format": "HLS",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/sintel-the-movie/720p/sintel-the-movie.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/48.jpg",
       "title": "Soccer: Amber Lions vs Orange Tigers",
@@ -391,11 +390,11 @@
       "viewer_count": 905426,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/glass-half/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/49.jpg",
       "title": "Football: Amber Lions vs Orange Tigers",
@@ -413,12 +412,12 @@
       "viewer_count": 905426,
       "stream_duration": 0,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/elephants-dream/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/50.jpg",
       "title": "Basketball: Amber Lions vs Orange Tigers",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/48.jpg"
@@ -435,12 +434,12 @@
       "viewer_count": 905426,
       "stream_duration": 1.48,
       "video_source": {
-        "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/tears-of-steel/720p/tears-of-steel.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/tears-of-steel/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/38.jpg",
       "title": "Basketball: Gongfang | Lions",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/49.jpg"
@@ -455,14 +454,14 @@
       "team2": "Cougars",
       "team2_thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/thumbnails/thumbnail-02.jpg",
       "viewer_count": 594680,
-      "stream_duration": 734.00,
+      "stream_duration": 734,
       "video_source": {
-        "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/cosmos-laundromat/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/30.jpg",
       "description": "Watch the action live! From breathtaking plays to game-changing moments, this stream has it all. Feel the intensity as the players give it their all, leaving everything on the field. Every pass and every goal could change the outcome of this thrilling match.\n\nStay tuned for every second of the excitement. The game is on, and the stakes couldn’t be higher. Whether it’s a last-minute goal or a stunning save, this is football at its finest. Don’t just watch—experience the passion, the drama, and the glory of the game.\n\nWatch to join the live stream now and be part of the action! Amazing moments are waiting for you to grasp them!",
       "title": "Basketball: Dragons | Cougars",
@@ -480,11 +479,11 @@
       "viewer_count": 85851,
       "stream_duration": 634.584,
       "video_source": {
-        "title": "Dash",
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dash-hd"
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/sintel-the-movie/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/4.jpg",
       "description": "Relive the highlights in stunning detail! From jaw-dropping jumps to heart-stopping landings, this footage captures the raw energy of motocross like never before. Feel the adrenaline as riders push their limits, defying gravity and conquering impossible tracks. The roar of the engines and the thrill of the stunts will leave you breathless.\n\nDon't miss the best stunts and most daring moments. It’s not just a race—it’s a showcase of determination and talent. Watch as the riders take on the toughest challenges and deliver unforgettable performances. This is motocross at its most electrifying.\n\nWatch to play now and experience the thrill!",
@@ -503,11 +502,11 @@
       "viewer_count": 961095,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/glass-half/720p/glass-half.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/31.jpg",
       "description": "Catch the best moments of the race in this quick recap! Witness the grit, determination, and endurance of the world's top athletes as they swim, bike, and run their way to glory. Every second is packed with action and emotion, showcasing the incredible effort it takes to compete at this level. From the starting line to the final sprint, this is a journey of pure athleticism.\n\nFast, thrilling, and action-packed, this footage is perfect for when you need your sports fix on the go. Relive the triumphs and challenges of this incredible event. Feel the tension as competitors push through exhaustion and give everything they’ve got.\n\nWatch now and feel the inspiration!",
@@ -526,12 +525,12 @@
       "viewer_count": 606287,
       "stream_duration": 72.71,
       "video_source": {
-        "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/elephants-dream/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/32.jpg",
       "description": "Stream the game live and never miss a moment! The energy, the passion, the thrill—it's all happening now as the players step up to the plate. Feel the tension rise with every pitch and the excitement explode with every home run. The crack of the bat, the roar of the crowd, and the race to the bases will keep you on the edge of your seat.\n\nGet ready for edge-of-your-seat action as the teams battle it out for victory. This is baseball at its finest, and you won't want to miss a single inning. From clutch plays to game-changing moments, this is the sport you love, live and unfiltered. Grab your snacks, settle in, and enjoy the ultimate baseball experience.\n\nWatch to stream live and join the excitement!",
       "title": "Basketball: Sharks | Tigers",
@@ -549,11 +548,11 @@
       "viewer_count": 40427,
       "stream_duration": 394.75,
       "video_source": {
-        "title": "Dash",
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/tears-of-steel/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/tears-of-steel/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/33.jpg",
       "description": "Experience the game like never before! This video brings you closer to the action with every play, every goal, and every breathtaking moment. Feel the intensity as the players push themselves to the limit, delivering performances that will leave you in awe. The precision, the skill, and the passion are all captured in stunning detail.\n\nFrom epic goals to jaw-dropping saves, it's all here in one place. Relive the match in stunning detail. Whether you missed the game or want to relive the best moments, this video has you covered. It’s not just a highlight reel—it’s a front-row seat to the action.\n\nWatch the highlights now to be part of the action!",
@@ -572,11 +571,11 @@
       "viewer_count": 884950,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/cosmos-laundromat/720p/cosmos-laundromat.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/34.jpg",
       "description": "Quick, sharp, and full of action—this video delivers the best plays in seconds! Feel the roar of the engines and the thrill of the race as drivers tackle rugged terrain and impossible obstacles. The dust flies, the tires spin, and the adrenaline surges as competitors push their vehicles to the limit. This is offroad racing at its most intense.\n\nPerfect for catching up on the game's top moments anytime, anywhere. Watch as drivers navigate treacherous tracks, defy gravity, and deliver jaw-dropping performances. Every turn, every jump, and every finish line is packed with excitement. If you love speed, power, and adventure, this is the video for you.\n\nWatch to watch and experience the rush!",
@@ -595,12 +594,12 @@
       "viewer_count": 307003,
       "stream_duration": 475.77,
       "video_source": {
-        "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/sintel-the-movie/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/35.jpg",
       "description": "Basketball Hall of Fame\nLive sports, live energy, live excitement! Celebrate the legends of basketball and relive the moments that made history. From iconic plays to unforgettable highlights, this is a tribute to the greats of the game. Feel the passion, the skill, and the determination that define basketball at its highest level.\n\nStream the game now and feel the adrenaline rush as you witness the passion and skill that define basketball. This is more than a game—it's a legacy. Watch as the legends of the court are honored and their greatest moments are relived.",
       "title": "Basketball: Hawks | Cougars",
@@ -618,11 +617,11 @@
       "viewer_count": 361318,
       "stream_duration": 634.584,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/glass-half/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/36.jpg",
       "title": "Football: Dragons | Falcons",
@@ -640,11 +639,11 @@
       "viewer_count": 48363,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/elephants-dream/720p/elephants-dream.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/37.jpg",
       "title": "Football: Dragons | Panthers",
@@ -662,12 +661,12 @@
       "viewer_count": 905426,
       "stream_duration": 1.48,
       "video_source": {
-        "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/tears-of-steel/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/tears-of-steel/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/38.jpg",
       "title": "Basketball: Gongfang | Lions",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/59.jpg"
@@ -682,14 +681,14 @@
       "team2": "Cougars",
       "team2_thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/thumbnails/thumbnail-02.jpg",
       "viewer_count": 594680,
-      "stream_duration": 734.00,
+      "stream_duration": 734,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/cosmos-laundromat/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/30.jpg",
       "description": "Watch the action live! From breathtaking plays to game-changing moments, this stream has it all. Feel the intensity as the players give it their all, leaving everything on the field. Every pass and every goal could change the outcome of this thrilling match.\n\nStay tuned for every second of the excitement. The game is on, and the stakes couldn’t be higher. Whether it’s a last-minute goal or a stunning save, this is football at its finest. Don’t just watch—experience the passion, the drama, and the glory of the game.\n\nWatch to join the live stream now and be part of the action! Amazing moments are waiting for you to grasp them!",
       "title": "Basketball: Dragons | Cougars",
@@ -707,11 +706,11 @@
       "viewer_count": 85851,
       "stream_duration": 634.584,
       "video_source": {
-        "title": "Dash",
-        "type": "hls",
-       "format": "HLS",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dash-hd"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/sintel-the-movie/720p/sintel-the-movie.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/4.jpg",
       "description": "Relive the highlights in stunning detail! From jaw-dropping jumps to heart-stopping landings, this footage captures the raw energy of motocross like never before. Feel the adrenaline as riders push their limits, defying gravity and conquering impossible tracks. The roar of the engines and the thrill of the stunts will leave you breathless.\n\nDon't miss the best stunts and most daring moments. It’s not just a race—it’s a showcase of determination and talent. Watch as the riders take on the toughest challenges and deliver unforgettable performances. This is motocross at its most electrifying.\n\nWatch to play now and experience the thrill!",
@@ -730,11 +729,11 @@
       "viewer_count": 961095,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/glass-half/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/31.jpg",
       "description": "Catch the best moments of the race in this quick recap! Witness the grit, determination, and endurance of the world's top athletes as they swim, bike, and run their way to glory. Every second is packed with action and emotion, showcasing the incredible effort it takes to compete at this level. From the starting line to the final sprint, this is a journey of pure athleticism.\n\nFast, thrilling, and action-packed, this footage is perfect for when you need your sports fix on the go. Relive the triumphs and challenges of this incredible event. Feel the tension as competitors push through exhaustion and give everything they’ve got.\n\nWatch now and feel the inspiration!",
@@ -753,12 +752,12 @@
       "viewer_count": 606287,
       "stream_duration": 72.71,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/elephants-dream/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/32.jpg",
       "description": "Stream the game live and never miss a moment! The energy, the passion, the thrill—it's all happening now as the players step up to the plate. Feel the tension rise with every pitch and the excitement explode with every home run. The crack of the bat, the roar of the crowd, and the race to the bases will keep you on the edge of your seat.\n\nGet ready for edge-of-your-seat action as the teams battle it out for victory. This is baseball at its finest, and you won't want to miss a single inning. From clutch plays to game-changing moments, this is the sport you love, live and unfiltered. Grab your snacks, settle in, and enjoy the ultimate baseball experience.\n\nWatch to stream live and join the excitement!",
       "title": "Basketball: Sharks | Tigers",
@@ -776,11 +775,11 @@
       "viewer_count": 40427,
       "stream_duration": 634.584,
       "video_source": {
-        "title": "Dash",
-        "type": "hls",
-       "format": "HLS",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dash-hd"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/tears-of-steel/720p/tears-of-steel.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/tears-of-steel/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/33.jpg",
       "description": "Experience the game like never before! This video brings you closer to the action with every play, every goal, and every breathtaking moment. Feel the intensity as the players push themselves to the limit, delivering performances that will leave you in awe. The precision, the skill, and the passion are all captured in stunning detail.\n\nFrom epic goals to jaw-dropping saves, it's all here in one place. Relive the match in stunning detail. Whether you missed the game or want to relive the best moments, this video has you covered. It’s not just a highlight reel—it’s a front-row seat to the action.\n\nWatch the highlights now to be part of the action!",
@@ -799,11 +798,11 @@
       "viewer_count": 884950,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/cosmos-laundromat/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/34.jpg",
       "description": "Quick, sharp, and full of action—this video delivers the best plays in seconds! Feel the roar of the engines and the thrill of the race as drivers tackle rugged terrain and impossible obstacles. The dust flies, the tires spin, and the adrenaline surges as competitors push their vehicles to the limit. This is offroad racing at its most intense.\n\nPerfect for catching up on the game's top moments anytime, anywhere. Watch as drivers navigate treacherous tracks, defy gravity, and deliver jaw-dropping performances. Every turn, every jump, and every finish line is packed with excitement. If you love speed, power, and adventure, this is the video for you.\n\nWatch to watch and experience the rush!",
@@ -822,12 +821,12 @@
       "viewer_count": 307003,
       "stream_duration": 475.77,
       "video_source": {
+        "title": "HLS",
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/sintel-the-movie/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/35.jpg",
       "description": "Basketball Hall of Fame\nLive sports, live energy, live excitement! Celebrate the legends of basketball and relive the moments that made history. From iconic plays to unforgettable highlights, this is a tribute to the greats of the game. Feel the passion, the skill, and the determination that define basketball at its highest level.\n\nStream the game now and feel the adrenaline rush as you witness the passion and skill that define basketball. This is more than a game—it's a legacy. Watch as the legends of the court are honored and their greatest moments are relived.",
       "title": "Basketball: Hawks | Cougars",
@@ -845,11 +844,11 @@
       "viewer_count": 361318,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "MP4",
+        "type": "mp4",
+        "format": "MP4",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/mp4/glass-half/720p/glass-half.mp4",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/glass-half/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/36.jpg",
       "title": "Football: Dragons | Falcons",
@@ -867,11 +866,11 @@
       "viewer_count": 48363,
       "stream_duration": 634.584,
       "video_source": {
-        "type": "hls",
-        "uri": "https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/dark-thuths/",
-        "title": "Big Buck Bunny",
-        "format": "m3u8"
+        "title": "DASH",
+        "type": "dash",
+        "format": "DASH",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/dash/elephants-dream/manifest.mpd",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/elephants-dream/"
       },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/37.jpg",
       "title": "Football: Dragons | Panthers",
@@ -890,11 +889,11 @@
       "stream_duration": 1.48,
       "video_source": {
         "type": "hls",
-       "format": "HLS",
-        "title": "NASA M3U8 stream",
-        "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
-        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/"      
-},
+        "format": "HLS",
+        "title": "HLS",
+        "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/sintel-the-movie/master.m3u8",
+        "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/sintel-the-movie/"
+      },
       "thumbnail": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/300x450/38.jpg",
       "title": "Basketball: Gongfang | Lions",
       "imageCover": "https://d1v0fxmwkpxbrg.cloudfront.net/sports-app/images/900x700/69.jpg"

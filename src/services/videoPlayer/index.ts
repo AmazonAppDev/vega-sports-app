@@ -5,3 +5,4 @@ export * from './components';
 export * from './utils';
 export * from './hooks/useVideoPlayerService';
 export * from './enums';
+export * from './hybrid';

@@ -83,9 +83,10 @@ const SeekBarComponent = ({
   const [progress, setProgress] = useState<number>(
     videoRef.current?.getPlaybackTime() || 0,
   );
+  const totalValue = videoRef.current?.getDuration() || 0;
+
   const [isSkipping, setIsSkipping] = useState(false);
   const isSkippingRef = useRef(false);
-  const totalValue = videoRef.current?.getDuration() || 0;
   const seekTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const thumbnailImageNotAvailable = !videoData?.thumbnailUrl;
   const emptyStyleRef = useRef<Record<string, unknown>>({});

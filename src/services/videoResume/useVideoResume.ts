@@ -39,13 +39,21 @@ export const useVideoResume = ({ videoId, videoRef }: UseVideoResumeProps) => {
   const handleResumePlaying = useCallback(async () => {
     logDebug('[useVideoResume] handleResumePlaying');
 
-    if (hasProgress && savedProgress) {
-      logDebug(
-        '[useVideoResume] Resuming video from saved progress',
-        savedProgress,
-      );
-      await videoRef?.current?.seekTo(savedProgress);
-      logDebug('[useVideoResume] Seeking to saved progress', savedProgress);
+    if (hasProgress && savedProgress && videoRef?.current) {
+      try {
+        logDebug(
+          '[useVideoResume] Resuming video from saved progress',
+          savedProgress,
+        );
+        await videoRef.current.seekTo(savedProgress);
+        logDebug(
+          '[useVideoResume] Successfully seeked to saved progress',
+          savedProgress,
+        );
+      } catch (error) {
+        logDebug('[useVideoResume] Error seeking to saved progress:', error);
+        // Don't throw the error, just log it and continue
+      }
     }
   }, [hasProgress, savedProgress, videoRef]);
 

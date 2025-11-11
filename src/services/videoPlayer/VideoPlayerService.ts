@@ -15,6 +15,7 @@ import type {
   QualityVariant,
   VideoEvent,
   VideoPlayerInterface,
+  IVideoPlayerService,
 } from './types';
 import { constrainTime } from './utils';
 
@@ -24,7 +25,9 @@ class FixedVideoPlayer extends VideoPlayer {
   removeAttribute() {}
 }
 
-export class VideoPlayerService<TrackToken, PlayerSettings> {
+export class VideoPlayerService<TrackToken, PlayerSettings>
+  implements IVideoPlayerService<TrackToken, PlayerSettings>
+{
   protected player: VideoPlayerInterface<TrackToken> | null = null;
   protected video: VideoPlayer | null = null;
 

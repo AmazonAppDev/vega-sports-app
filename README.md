@@ -810,9 +810,99 @@ You can read more about those commands in the Expo documentation [here](https://
 Release notes
 -------------
 
+---
+
+### v0.22
+
+#### Video Asset Infrastructure Migration
+
+* **Infrastructure Migration** - Migrated all video assets from external demo URLs to unified CloudFront CDN (`d1v0fxmwkpxbrg.cloudfront.net`).
+  - Replaced external demo assets with new videos infrastructure.
+  - Improved reliability and performance for video streaming across all content types.
+
+* **Format Standardization** - Standardized video source formats across the application
+  - **HLS Streams**: Consistent `.m3u8` video content with proper HLS labeling.
+  - **DASH Streams**: Unified `.mpd` manifest format with DASH type identification.
+  - **MP4 Videos**: Direct `.mp4` file access for progressive download content.
+
+* **Thumbnail Support** - Added `thumbnailUrl` properties to all video sources:
+  - Integrated trickplay thumbnail support for video scrubbing and preview functionality.
+  - Consistent thumbnail URL structure across all video formats.
+
+#### Headless Video Player Implementation
+
+* **NEW: Headless Video Player Architecture** - Introduced a complete headless video player system that runs on a separate JavaScript thread for improved performance and UI responsiveness.
+  - `HeadlessVideoPlayerService`: Core service managing video playback in headless mode.
+  - `HeadlessVideoPlayerClient`: Client-side wrapper providing VideoPlayerService-compatible interface.
+  - `useHeadlessVideoPlayer` and `useHeadlessVideoPlayerWithSettings` hooks for React integration.
+
+* **NEW: Smart Video Player Selection** - Added intelligent player selection system via `VideoPlayerSelector`
+  - Automatically chooses between regular and headless video players based on:
+    - Device capabilities (TV platform support, memory requirements).
+    - Content type (live streams vs VOD content).  
+    - User configuration preferences.
+  - Configurable thresholds for memory requirements (default: 2GB for headless).
+  - Content-specific enablement (headless enabled for live streams by default, disabled for VOD).
+
+* **NEW: Hybrid Video Player Hook** - Introduced `useSmartVideoPlayer` that seamlessly switches between player implementations.
+  - Automatic fallback to regular player if headless initialization fails.
+  - Maintains consistent API across both player types.
+  - Real-time availability checking and recommendations.
+
+#### Enhanced Video Player Integration
+
+* **Performance Improvements** - Headless implementation provides:
+  - Improved Time to First Video Frame (TTFVF).
+  - Better UI responsiveness during video operations.
+  - Reduced main thread blocking during video processing.
+
+* **Advanced Features** - Headless player supports:
+  - Full HLS/DASH streaming via Shaka Player integration.
+  - Audio, video, and text track management.
+  - Buffered ranges and status reporting.
+  - Surface handle management for video rendering.
+  - Caption view handling for subtitles.
+  - Playback rate control and seeking operations.
+  - Volume and mute state management.
+
+#### Technical Infrastructure
+
+* **Thread Separation** - Video processing moved to dedicated JavaScript thread.
+* **IPlayerServer/IPlayerClient Communication** - Standardized message passing between UI and headless service.
+* **W3C Media API Integration** - Full compatibility with existing W3C Media standards.
+* **Type Safety** - Complete TypeScript definitions for all headless components.
+* **Comprehensive Testing** - Full test coverage for headless player components and selectors.
+
+#### Developer Experience
+
+* **Backward Compatibility** - Existing VideoPlayerService implementations remain unchanged.
+* **Configuration Options** - Extensive configuration for fine-tuning headless behavior:
+  ```typescript
+  {
+    enableHeadless: true,
+    minMemoryForHeadless: 2048,
+    enableHeadlessForLiveStreams: true,
+    enableHeadlessForVOD: false,
+    forcePlayerType?: VideoPlayerType
+  }
+  ```
+* **Debug Support** - Comprehensive logging for troubleshooting player selection and headless operations..
+
+
+
+---
+
 ### v0.21
 
 * Initial release.
+
+---
+
+#### ⚠️ Known Issues
+
+* **Debug Build Crash with Headless Player** - When `useHeadless={true}` is enabled, the debug version of the app may crash during video playback. This is a known issue that will be resolved in the upcoming SDK 0.22 release. For development purposes, use the release build when testing headless functionality or keep `useHeadless={false}` for debug builds.
+
+**Note**: Headless functionality is currently disabled by default in VideoPlayerScreen (`useHeadless={false}`) but can be enabled through the smart player selection system or direct configuration.
 
 License
 -------

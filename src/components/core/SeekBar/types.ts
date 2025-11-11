@@ -3,11 +3,14 @@
 
 import type { AccessibilityProps } from 'react-native';
 
-import type { VideoPlayerService, VideoSource } from '@AppServices/videoPlayer';
+import type {
+  IVideoPlayerService,
+  VideoSource,
+} from '@AppServices/videoPlayer';
 import type { ShakaPlayerSettings } from '@AppSrc/w3cmedia/shakaplayer/ShakaPlayer';
 
 export interface SeekBarProps extends AccessibilityProps {
-  videoRef: React.MutableRefObject<VideoPlayerService<
+  videoRef: React.MutableRefObject<IVideoPlayerService<
     shaka.extern.Track,
     ShakaPlayerSettings
   > | null>;

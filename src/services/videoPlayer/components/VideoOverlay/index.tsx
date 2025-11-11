@@ -18,13 +18,24 @@ export const VideoOverlay = React.memo(
     const { typography, colors } = useAppTheme();
     const styles = useThemedStyles(getVideoOverlayStyles);
 
-    const { isVideoError, isVideoBecomingReady } = useMemo(() => {
+    const { isVideoError, isVideoBecomingReady, isBuffering } = useMemo(() => {
       const isVideoPlayable = isPlayerInPlayableState(videoPlayerServiceState),
         isVideoError =
           videoPlayerServiceState === VideoPlayerServiceState.ERROR,
-        isVideoBecomingReady = !isVideoPlayable && !isVideoError;
+        // Show buffering spinner during SEEKING and WAITING states
+        isBuffering =
+          videoPlayerServiceState === VideoPlayerServiceState.SEEKING ||
+          videoPlayerServiceState === VideoPlayerServiceState.WAITING,
+        // Show loading spinner during initial loading (but not during buffering/seeking)
+        isVideoBecomingReady =
+          !isVideoPlayable && !isVideoError && !isBuffering;
 
-      return { isVideoPlayable, isVideoError, isVideoBecomingReady };
+      return {
+        isVideoPlayable,
+        isVideoError,
+        isVideoBecomingReady,
+        isBuffering,
+      };
     }, [videoPlayerServiceState]);
 
     if (isVideoError) {
@@ -62,7 +73,16 @@ export const VideoOverlay = React.memo(
     if (isVideoBecomingReady) {
       return (
         <View style={styles.videoOverlay}>
-          <ActivityIndicator />
+          <ActivityIndicator size="large" color={colors.primary} />
+        </View>
+      );
+    }
+
+    if (isBuffering) {
+      // Show spinner during seeking or buffering
+      return (
+        <View style={styles.videoOverlay}>
+          <ActivityIndicator size="large" color={colors.primary} />
         </View>
       );
     }

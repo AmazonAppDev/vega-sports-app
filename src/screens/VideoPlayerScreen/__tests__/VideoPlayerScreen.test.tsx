@@ -7,10 +7,12 @@ import { VideoPlayerScreen } from '../VideoPlayerScreen';
 
 jest.useFakeTimers();
 
-jest.mock('@AppServices/videoPlayer/hooks/useVideoPlayerService', () => ({
-  useVideoPlayerService: jest.fn(() => ({
+// Mock the hybrid layer to avoid importing kepler-player-client
+jest.mock('@AppServices/videoPlayer/hybrid/useSmartVideoPlayer', () => ({
+  useSmartVideoPlayer: jest.fn(() => ({
     state: MockLazyVideoPlayerServiceState.INSTANTIATING,
-    videoPlayerServiceRef: jest.fn(),
+    videoPlayerServiceRef: { current: null },
+    key: 'test-key',
   })),
 }));
 

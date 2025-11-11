@@ -17,4 +17,4 @@ echo "Cleaning up obsolete files"
 rm -f ../src/w3cmedia/PlayerInterface.ts # obsolete file
 rm -f ../src/w3cmedia/shakaplayer/dist/wrapper.js # obsolete file carrying an interpolation literal {% ... %} causing a syntax error
 
-echo "Shaka Player integration completed successfully."
+echo "Shaka Player integration successful."

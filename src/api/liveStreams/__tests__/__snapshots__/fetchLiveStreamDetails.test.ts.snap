@@ -24,10 +24,10 @@ Watch to join the live stream now and be part of the action! Amazing moments are
   "title": "Basketball: Dragons | Cougars",
   "videoSource": {
     "format": "HLS",
-    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/",
-    "title": "Sample Stream",
+    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/",
+    "title": "HLS",
     "type": "hls",
-    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/cosmos-laundromat/master.m3u8",
   },
 }
 `;
@@ -56,10 +56,10 @@ Watch to join the live stream now and be part of the action! Amazing moments are
   "title": "Basketball: Dragons | Cougars",
   "videoSource": {
     "format": "HLS",
-    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/tears-of-steel/",
-    "title": "Sample Stream",
+    "thumbnailUrl": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/trickplays/cosmos-laundromat/",
+    "title": "HLS",
     "type": "hls",
-    "uri": "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8",
+    "uri": "https://d1v0fxmwkpxbrg.cloudfront.net/videos/hls/cosmos-laundromat/master.m3u8",
   },
 }
 `;

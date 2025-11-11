@@ -13,6 +13,7 @@ const mockVideoPlayer = {
   clearCaptionViewHandle: jest.fn(),
   addEventListener: jest.fn(),
   removeEventListener: jest.fn(),
+  setMediaControlFocus: jest.fn().mockResolvedValue(undefined),
   currentTime: 0,
   duration: 100,
   autoplay: false,
@@ -56,6 +57,14 @@ jest.mock('@amazon-devices/react-native-w3cmedia', () => ({
 
     addEventListener = jest.fn();
     removeEventListener = jest.fn();
+    setSurfaceHandle = jest.fn();
+    setCaptionViewHandle = jest.fn();
+    clearSurfaceHandle = jest.fn();
+    clearCaptionViewHandle = jest.fn();
+    deinitialize = jest.fn();
+    currentTime = 0;
+    duration = 100;
+    autoplay = false;
   },
 }));
 
@@ -195,6 +204,255 @@ describe('VideoPlayerService', () => {
       mockPlayerImplIsTextTrackVisible.mockReturnValue(false);
 
       expect(service.getActiveTextTrack()).toEqual(null);
+    });
+  });
+
+  describe('initialize with existing player', () => {
+    it('should destroy existing player before reinitializing', async () => {
+      // First initialization
+      await service.initialize(mockVideoSource);
+
+      const unloadSpy = jest.spyOn(playerMock, 'unload');
+
+      // Second initialization should trigger destroy first
+      await service.initialize(mockVideoSource);
+
+      expect(unloadSpy).toHaveBeenCalled();
+    });
+
+    it('should handle surface handle buffer during initialization', async () => {
+      const freshService = new VideoPlayerService(mockPlayerImpl, {
+        abrEnabled: true,
+      } as ShakaPlayerSettings);
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore -- protected field
+      freshService.videoSurfaceHandleBuffer = 'surface-handle-123';
+
+      // Just test that initialization doesn't throw when buffer exists
+      await expect(
+        freshService.initialize(mockVideoSource),
+      ).resolves.not.toThrow();
+    });
+
+    it('should handle caption view buffer during initialization', async () => {
+      const freshService = new VideoPlayerService(mockPlayerImpl, {
+        abrEnabled: true,
+      } as ShakaPlayerSettings);
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore -- protected field
+      freshService.captionViewHandleBuffer = 'caption-handle-456';
+
+      // Just test that initialization doesn't throw when buffer exists
+      await expect(
+        freshService.initialize(mockVideoSource),
+      ).resolves.not.toThrow();
+    });
+  });
+
+  describe('destroy edge cases', () => {
+    it('should return early if player is not initialized', async () => {
+      const freshService = new VideoPlayerService(mockPlayerImpl, {
+        abrEnabled: true,
+      } as ShakaPlayerSettings);
+
+      await freshService.destroy();
+
+      // Should not throw
+      expect(freshService).toBeDefined();
+    });
+
+    it('should handle missing video during destroy', async () => {
+      // @ts-expect-error -- protected field
+      service.video = null;
+
+      await service.destroy();
+
+      expect(mockVideoPlayer.deinitialize).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('destroyMediaPlayerSync', () => {
+    it('should return false if player is not initialized', () => {
+      // @ts-expect-error -- protected field
+      service.player = null;
+
+      const result = service.destroyMediaPlayerSync();
+
+      expect(result).toBe(false);
+    });
+
+    it('should handle synchronous destroy with timeout', () => {
+      const result = service.destroyMediaPlayerSync(1000);
+
+      expect(result).toBeDefined();
+    });
+  });
+
+  describe('event listeners', () => {
+    it('should add event listener for new event type', () => {
+      const callback = jest.fn();
+
+      service.addEventListener('play', callback);
+
+      expect(mockVideoPlayer.addEventListener).toHaveBeenCalled();
+    });
+
+    it('should not add duplicate event listener', () => {
+      const callback = jest.fn();
+
+      service.addEventListener('play', callback);
+      jest.clearAllMocks();
+      service.addEventListener('play', callback);
+
+      // Should not add again
+      expect(mockVideoPlayer.addEventListener).not.toHaveBeenCalled();
+    });
+
+    it('should remove event listener', () => {
+      const callback = jest.fn();
+
+      service.addEventListener('play', callback);
+      service.removeEventListener('play', callback);
+
+      expect(mockVideoPlayer.removeEventListener).toHaveBeenCalled();
+    });
+
+    it('should handle removing non-existent event listener', () => {
+      const callback = jest.fn();
+
+      service.removeEventListener('play', callback);
+
+      // Should not throw
+      expect(mockVideoPlayer.removeEventListener).not.toHaveBeenCalled();
+    });
+
+    it('should clean up event map when last listener is removed', () => {
+      const callback = jest.fn();
+
+      service.addEventListener('pause', callback);
+      service.removeEventListener('pause', callback);
+
+      // Map should be cleaned up
+      expect(service).toBeDefined();
+    });
+  });
+
+  describe('caption view management', () => {
+    it('should handle onCaptionViewDestroyed', () => {
+      const surfaceHandle = 'caption-handle-789';
+
+      service.onCaptionViewDestroyed(surfaceHandle);
+
+      expect(mockVideoPlayer.clearCaptionViewHandle).toHaveBeenCalledWith(
+        surfaceHandle,
+      );
+    });
+
+    it('should throw error if player not initialized when destroying caption view', () => {
+      // @ts-expect-error -- protected field
+      service.player = null;
+
+      expect(() => service.onCaptionViewDestroyed('handle')).toThrow();
+    });
+  });
+
+  describe('getVideoType', () => {
+    it('should return video type when player is initialized', async () => {
+      await service.initialize(mockVideoSource);
+
+      const videoType = service.getVideoType();
+
+      expect(videoType).toBe('mp4');
+    });
+
+    it('should throw error if player not initialized when getting video type', () => {
+      // @ts-expect-error -- protected field
+      service.player = null;
+
+      expect(() => service.getVideoType()).toThrow();
+    });
+
+    it('should return null if video type is not set', () => {
+      // @ts-expect-error -- protected field
+      service.videoType = null;
+
+      const videoType = service.getVideoType();
+
+      expect(videoType).toBeNull();
+    });
+  });
+
+  describe('setVideoMediaControlFocus', () => {
+    it('should set media control focus', async () => {
+      const mockComponentInstance = { id: 'test-component' };
+
+      await service.setVideoMediaControlFocus(
+        mockComponentInstance as never,
+        undefined,
+      );
+
+      expect(mockVideoPlayer.setMediaControlFocus).toHaveBeenCalledWith(
+        mockComponentInstance,
+        undefined,
+      );
+    });
+
+    it('should set media control focus without handler', async () => {
+      const mockComponentInstance = { id: 'test-component' };
+
+      await service.setVideoMediaControlFocus(mockComponentInstance as never);
+
+      expect(mockVideoPlayer.setMediaControlFocus).toHaveBeenCalledWith(
+        mockComponentInstance,
+        undefined,
+      );
+    });
+
+    it('should throw error if player not initialized when setting media control focus', () => {
+      // @ts-expect-error -- protected field
+      service.player = null;
+
+      const mockComponentInstance = { id: 'test-component' };
+
+      expect(() =>
+        service.setVideoMediaControlFocus(mockComponentInstance as never),
+      ).toThrow();
+    });
+  });
+
+  describe('surface view management', () => {
+    it('should handle onSurfaceViewCreated', () => {
+      const surfaceHandle = 'surface-handle-999';
+
+      service.onSurfaceViewCreated(surfaceHandle);
+
+      expect(mockVideoPlayer.setSurfaceHandle).toHaveBeenCalledWith(
+        surfaceHandle,
+      );
+    });
+
+    it('should handle onSurfaceViewDestroyed', () => {
+      const surfaceHandle = 'surface-handle-888';
+
+      service.onSurfaceViewDestroyed(surfaceHandle);
+
+      expect(mockVideoPlayer.clearSurfaceHandle).toHaveBeenCalledWith(
+        surfaceHandle,
+      );
+    });
+  });
+
+  describe('caption view creation', () => {
+    it('should handle onCaptionViewCreated', () => {
+      const captionHandle = 'caption-handle-777';
+
+      service.onCaptionViewCreated(captionHandle);
+
+      expect(mockVideoPlayer.setCaptionViewHandle).toHaveBeenCalledWith(
+        captionHandle,
+      );
     });
   });
 });

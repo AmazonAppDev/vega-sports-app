@@ -82,7 +82,10 @@ jest.mock(
   () => IconMock,
 );
 
-jest.mock('@amazon-devices/react-native-vector-icons/MaterialIcons', () => IconMock);
+jest.mock(
+  '@amazon-devices/react-native-vector-icons/MaterialIcons',
+  () => IconMock,
+);
 
 // @ts-expect-error
 global.navigator = {};
@@ -289,4 +292,25 @@ jest.mock('@amazon-devices/keplerscript-audio-lib', () => ({
     FORMAT_PCM_24_BIT: 'FORMAT_PCM_24_BIT',
     FORMAT_PCM_32_BIT: 'FORMAT_PCM_32_BIT',
   },
+}));
+
+// Mock kepler-player-client to prevent ES module import errors
+jest.mock('@amazon-devices/kepler-player-client', () => ({
+  PlayerClientFactory: {
+    createPlayerClient: jest.fn(),
+  },
+}));
+
+// Mock the hybrid video player layer globally
+jest.mock('src/services/videoPlayer/hybrid/useSmartVideoPlayer', () => ({
+  useSmartVideoPlayer: jest.fn(() => ({
+    state: 'INSTANTIATING',
+    videoPlayerServiceRef: { current: null },
+    key: 'test-key',
+  })),
+  useVideoPlayerTypeRecommendation: jest.fn(() => ({
+    playerType: 'REGULAR',
+    reason: 'Test environment',
+    isHeadlessAvailable: false,
+  })),
 }));
