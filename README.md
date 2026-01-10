@@ -32,7 +32,7 @@ Build and run the app
 
 Before you launch the sample app, make sure that you have:
 
-1. [Installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/0.21/install-vega-sdk.html)
+1. [Installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
 2. **Java Runtime Environment (JRE) or Java Development Kit (JDK)** - Required by Shaka Player's build system for JavaScript compilation and optimization
 3. **Python** - Required by Shaka Player's build scripts
 
@@ -43,7 +43,7 @@ Before you launch the sample app, make sure that you have:
 
 After you download the source code from GitHub, you can build the Vega Sports Sample App from the command line to generate VPKG files. The VPKG files run on the Vega Virtual Device and Vega OS Fire TV Stick.
 
-You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup-extension.html#learn-the-basic-features) with Visual Studio Code to build the app.
+You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/setup-extension.html#learn-the-basic-features) with Visual Studio Code to build the app.
 
 1. At the command prompt, navigate to the Vega Sports Sample App source code directory. 
 
@@ -72,7 +72,7 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup
 1. To start the Vega Virtual Device, at the command prompt, run the following command.
 
    ```
-   kepler virtual-device start
+   vega virtual-device start
    ```
 
 2. Go to the directory where you placed the VPKG files. 
@@ -82,13 +82,13 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup
    - On Mac M-series based devices. 
       
       ```
-      kepler run-kepler build/aarch64-release/keplersportapp_aarch64.vpkg
+      vega run-app build/aarch64-release/keplersportapp_aarch64.vpkg
       ```
 
    - On x86_64 based devices.
       
      ```
-     kepler run-kepler build/x86_64-release/keplersportapp_x86_64.vpkg
+     vega run-app build/x86_64-release/keplersportapp_x86_64.vpkg
      ```  
 
 #### Vega OS Fire TV Stick
@@ -98,7 +98,7 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/0.21/setup
 2. To install and launch the app on your Vega OS Fire TV Stick, run the following command.
 
    ```
-   kepler run-kepler build/armv7-release/keplersportapp_armv7.vpkg
+   vega run-app build/armv7-release/keplersportapp_armv7.vpkg
    ```
 
 
@@ -765,19 +765,6 @@ npm run test:watch
 For more detailed information about our testing set up, best practices, and custom utilities, please refer to the [testing documentation](./src/test-utils/README.md) in the test-utils directory.
 
 
-Performance testing
--------------------
-
-### Set up testing
-
-For performance testing, the example test scenarios have been set up in `kpi-test-scenarios` folder.
-
-### Assessment
-
-Before running tests, run `npm run build:e2e` to make sure the app is built properly in the `test` babel environment so that the `.env.e2e` file is used instead of `.env`. This is needed, for example, to force the login screen to appear and make sure the initial state of the app is what the tests would expect.
-
-Afterwards, install and run the `Release` variant using `npm run kepler:run:aarch64:release`. Please keep in mind that _only_ the `Release` variant is suitable to obtain valid performance metrics.
-
 Troubleshooting the app
 -----------------------
 
@@ -804,7 +791,7 @@ You can read more about those commands in the Expo documentation [here](https://
 
 4. Restart the Vega Virtual Device -> we have observed the VVD crashing randomly if it's used without restarting for extended periods of time.
 
-5. Run `kepler clean` -> removes the artifacts generated in the top level `/.build` folder (documentation [here](https://developer.amazon.com/docs/vega/0.21/cli-tools.html)).
+5. Run `vega clean` -> removes the artifacts generated in the top level `/.build` folder (documentation [here](https://developer.amazon.com/docs/vega/latest/cli-tools.html)).
 
 
 Release notes
