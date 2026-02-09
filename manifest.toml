@@ -6,7 +6,7 @@ schema-version = 1
 
 [package]
 title = "Vega Sports Sample App"
-version = "0.22.0"
+version = "0.22.1"
 id = "com.amazondeveloper.keplersportapp"
 icon = "@image/SportsApp.png"
 
