@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT-0
 
 import React, { useState } from 'react';
+import type { NativeSyntheticEvent, TargetedEvent } from 'react-native';
 import { TouchableOpacity as RNTouchableOpacity } from 'react-native';
 
 import type {
@@ -41,13 +42,16 @@ export const FocusStyleTouchableOpacity = ({
         focused && !props.disabled && (focusedStyleOverride ?? styles.focused),
         style,
       ]}
-      onFocus={(event) => {
+      onFocus={(event: NativeSyntheticEvent<TargetedEvent>) => {
         setFocused(true);
-        onFocus?.(event);
+        // RN and Kepler event types diverge (kepler adds requestTVFocus)
+        onFocus?.(
+          event as unknown as Parameters<NonNullable<typeof onFocus>>[0],
+        );
       }}
-      onBlur={(event) => {
+      onBlur={(event: NativeSyntheticEvent<TargetedEvent>) => {
         setFocused(false);
-        onBlur?.(event);
+        onBlur?.(event as unknown as Parameters<NonNullable<typeof onBlur>>[0]);
       }}
       {...props}>
       {children}

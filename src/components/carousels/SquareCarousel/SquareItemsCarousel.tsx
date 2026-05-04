@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { useNavigation } from '@amazon-devices/react-navigation__core';
 
@@ -17,19 +17,6 @@ import type {
 } from '../types';
 import { SquareItem } from './SquareItem';
 import { getSquareCarouselContainerStyles } from './styles';
-
-const keyProvider = (item: ParsedResponseContentData) =>
-  `square-carousel-item-${item.itemId}`;
-
-const itemDimensions = [
-  {
-    view: SquareItem,
-    dimension: {
-      width: 250,
-      height: 250,
-    },
-  },
-];
 
 export const SquareItemsCarousel = ({
   data,
@@ -49,6 +36,28 @@ export const SquareItemsCarousel = ({
     });
   };
 
+  const getItem = useCallback(
+    (index: number) => {
+      if (data && index >= 0 && index < data.length) {
+        return data[index];
+      }
+      return undefined;
+    },
+    [data],
+  );
+
+  const getItemCount = useCallback(() => {
+    return data?.length ?? 0;
+  }, [data]);
+
+  const getItemKey = useCallback(
+    (info: { item: ParsedResponseContentData; index: number }) =>
+      `square-carousel-item-${info.item.itemId}`,
+    [],
+  );
+
+  const notifyDataError = useCallback(() => false, []);
+
   if (!data) {
     // TO DO: Add empty component
     return null;
@@ -56,8 +65,12 @@ export const SquareItemsCarousel = ({
 
   return (
     <Carousel
-      data={data}
-      itemDimensions={itemDimensions}
+      dataAdapter={{
+        getItem,
+        getItemCount,
+        getItemKey,
+        notifyDataError,
+      }}
       renderItem={({
         item,
         index,
@@ -93,9 +106,16 @@ export const SquareItemsCarousel = ({
             .asString(' ')}
         />
       )}
-      getItemForIndex={() => SquareItem}
-      keyProvider={keyProvider}
-      itemPadding={150}
+      uniqueId="square-items-carousel"
+      renderedItemsCount={8}
+      itemStyle={{
+        itemPadding: 20,
+        selectedItemScaleFactor: 1.1,
+      }}
+      animationDuration={{
+        itemScrollDuration: 0.2,
+        containerSelectionChangeDuration: 0.25,
+      }}
       containerStyle={styles.containerStyles}
     />
   );

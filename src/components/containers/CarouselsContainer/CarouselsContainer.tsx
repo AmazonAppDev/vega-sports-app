@@ -95,6 +95,9 @@ export const CarouselsContainer = ({
     <View testID={testID} style={[styles.container, style]}>
       {/* Vertical FlatList containing multiple horizontal carousels */}
       <Animated.FlatList
+        initialNumToRender={3}
+        maxToRenderPerBatch={1}
+        windowSize={16}
         contentContainerStyle={
           // Apply special styling when first carousel is hero type
           carouselLayout[0]?.carouselType === 'hero' &&

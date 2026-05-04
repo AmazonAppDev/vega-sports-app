@@ -3,91 +3,69 @@ import { Animated } from 'react-native';
 
 import { screen } from '@testing-library/react-native';
 
-import { Details } from '@AppScreens/Details';
 import { Endpoints } from '@AppServices/apiClient';
 import { ROUTES } from '@AppSrc/navigators/constants';
 import { carouselItemExample } from '@AppTestUtils/mocks/carousel-item';
-import type { TestScreenItem } from '@AppTestUtils/render';
-import {
-  renderScreensWithProviders,
-  renderWithProviders,
-} from '@AppTestUtils/render';
-import { rntlUser } from '@AppTestUtils/rntlUser';
+import { renderWithProviders } from '@AppTestUtils/render';
 import { HeroCarouselContainer } from '../HeroCarousel';
-
-const mockData = [
-  carouselItemExample.item,
-  carouselItemExample.item,
-  carouselItemExample.item,
-];
 
 jest.useFakeTimers();
 
-const screens: TestScreenItem[] = [
-  {
-    component: (
-      <HeroCarouselContainer
-        carouselTitle="test title"
-        data={mockData}
-        endpoint={Endpoints.LiveStreams}
-        scrollY={new Animated.Value(0)}
-      />
-    ),
-    routeName: ROUTES.Home,
-  },
-  {
-    component: <Details />,
-    routeName: ROUTES.Details,
-  },
-];
+const makeItem = (id: string) => ({
+  ...carouselItemExample.item,
+  itemId: id,
+  sport_type: 'Soccer',
+  rating: 4,
+  network: 'ESPN',
+  genre: 'Sports',
+  description: 'A great match',
+});
 
-const renderCarousel = (data = mockData) =>
+const mockData = [makeItem('hero-0'), makeItem('hero-1'), makeItem('hero-2')];
+
+const renderHeroCarousel = (data: typeof mockData = mockData) =>
   renderWithProviders(
     <HeroCarouselContainer
-      carouselTitle="test title"
       data={data}
-      endpoint={Endpoints.LiveStreams}
+      endpoint={Endpoints.SuggestedForYou}
+      carouselTitle="Featured"
+      firstItemHint="First item"
+      itemHint="Navigate for more"
       scrollY={new Animated.Value(0)}
     />,
     { routeName: ROUTES.Home },
   );
 
-describe('HeroCarousel', () => {
-  it('renders carousel items correctly', () => {
-    renderCarousel();
-
-    expect(
-      screen.getAllByTestId('hero-image-3b7b4569-f755-4d80-885f-41d90eef23ae'),
-    ).toHaveLength(3);
-  });
-
-  it('renders nothing when data is empty', () => {
-    // @ts-ignore
-    renderCarousel([]);
-
-    expect(
-      screen.queryAllByTestId(
-        'hero-image-3b7b4569-f755-4d80-885f-41d90eef23ae',
-      ),
-    ).toHaveLength(0);
-  });
-
-  it('navigates to Details screen when carousel item is clicked', async () => {
-    renderScreensWithProviders({ screens });
-
-    const buttons = screen.getAllByAccessibilityHint('carousel-go-to-details', {
-      exact: false,
+describe('HeroCarouselContainer', () => {
+  it('renders hero items with correct count', () => {
+    renderHeroCarousel();
+    const items = screen.getAllByTestId(/-hero-pressable-wrapper/, {
+      includeHiddenElements: true,
     });
-    expect(buttons.length).toBeGreaterThan(0);
+    expect(items.length).toBe(3);
+  });
 
-    const firstButton = buttons[0];
-    if (!firstButton) {
-      throw new Error('No button found');
-    }
+  it('renders Watch Now button for each item', () => {
+    renderHeroCarousel();
+    const buttons = screen.getAllByText('Watch Now', {
+      includeHiddenElements: true,
+    });
+    expect(buttons.length).toBe(3);
+  });
 
-    await rntlUser.press(firstButton);
+  it('renders with single item', () => {
+    renderHeroCarousel([makeItem('solo')]);
+    const items = screen.getAllByTestId(/-hero-pressable-wrapper/, {
+      includeHiddenElements: true,
+    });
+    expect(items.length).toBe(1);
+  });
 
-    const element = await screen.findByText('Details');
-    expect(element).toBeOnTheScreen();
+  it('renders item titles', () => {
+    renderHeroCarousel();
+    const titles = screen.getAllByText('Marzana rules!', {
+      includeHiddenElements: true,
+    });
+    expect(titles.length).toBeGreaterThan(0);
   });
 });

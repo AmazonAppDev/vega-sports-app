@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { BackHandler } from 'react-native';
 
 import {
@@ -49,12 +49,21 @@ export const VideoPlayerScreen = () => {
   const addKeplerAppStateListenerCallback =
     useAddKeplerAppStateListenerCallback();
 
-  const videoSource = params?.source
-    ? { ...params.source, autoplay: params.source.autoplay ?? true }
-    : undefined;
+  const videoSource = useMemo(
+    () =>
+      params?.source
+        ? { ...params.source, autoplay: params.source.autoplay ?? true }
+        : undefined,
+    [params?.source],
+  );
 
   const videoPlayerServiceRef =
     useRef<VideoPlayerRef<shaka.extern.Track, ShakaPlayerSettings>>(null);
+
+  const playerSettings = useMemo<ShakaPlayerSettings>(
+    () => ({ abrEnabled: true, secure: false }),
+    [],
+  );
 
   const videoId = params?.detailsParams.itemId ?? '';
   const { saveProgress, clearSavedProgress, handleResumePlaying } =
@@ -92,6 +101,30 @@ export const VideoPlayerScreen = () => {
     saveProgress();
   }, [saveProgress]);
 
+  const onInitialized = useCallback(() => {
+    videoPlayerServiceRef.current?.addEventListener(
+      VIDEO_EVENTS.PLAYING,
+      onPlaying,
+    );
+    videoPlayerServiceRef.current?.addEventListener(
+      VIDEO_EVENTS.PAUSE,
+      onPause,
+    );
+    videoPlayerServiceRef.current?.addEventListener(
+      VIDEO_EVENTS.ENDED,
+      onEnded,
+    );
+    videoPlayerServiceRef.current?.addEventListener(
+      VIDEO_EVENTS.SEEKED,
+      onSeeked,
+    );
+
+    // Wait for the next tick to ensure player is fully ready before resuming
+    setTimeout(() => {
+      void handleResumePlaying();
+    }, 0);
+  }, [onPlaying, onPause, onEnded, onSeeked, handleResumePlaying]);
+
   const onBackPress = useCallback(() => {
     saveProgress();
     navigation.goBack();
@@ -107,7 +140,10 @@ export const VideoPlayerScreen = () => {
       );
 
       // Save progress when user goes back to the detail screen
-      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+      const backSubscription = BackHandler.addEventListener(
+        'hardwareBackPress',
+        onBackPress,
+      );
 
       return () => {
         videoPlayerServiceRef.current?.removeEventListener(
@@ -132,7 +168,7 @@ export const VideoPlayerScreen = () => {
           onSeeked,
         );
 
-        BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+        backSubscription.remove();
 
         changeSubscription.remove();
       };
@@ -174,36 +210,10 @@ export const VideoPlayerScreen = () => {
       <FocusGuideView trapFocusLeft trapFocusUp>
         <VideoPlayer
           ref={videoPlayerServiceRef}
-          onInitialized={() => {
-            // Add event listeners first
-            videoPlayerServiceRef.current?.addEventListener(
-              VIDEO_EVENTS.PLAYING,
-              onPlaying,
-            );
-            videoPlayerServiceRef.current?.addEventListener(
-              VIDEO_EVENTS.PAUSE,
-              onPause,
-            );
-            videoPlayerServiceRef.current?.addEventListener(
-              VIDEO_EVENTS.ENDED,
-              onEnded,
-            );
-            videoPlayerServiceRef.current?.addEventListener(
-              VIDEO_EVENTS.SEEKED,
-              onSeeked,
-            );
-
-            // Wait for the next tick to ensure player is fully ready before resuming
-            setTimeout(() => {
-              void handleResumePlaying();
-            }, 0);
-          }}
+          onInitialized={onInitialized}
           PlayerImpl={ShakaPlayer}
           VideoControls={VideoControls}
-          playerSettings={{
-            abrEnabled: true,
-            secure: false,
-          }}
+          playerSettings={playerSettings}
           videoSource={videoSource ?? EXAMPLE_VIDEO}
           useHeadless={false}
         />

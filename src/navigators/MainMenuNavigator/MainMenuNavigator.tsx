@@ -54,7 +54,7 @@ function DrawerContent(props: DrawerContentComponentProps) {
   if (focused === ROUTES.DetailsVideoPlayerScreen) {
     return null;
   }
-  return <MenuWrapper />;
+  return <MenuWrapper navigation={props.navigation} />;
 }
 
 function getDrawerConfig(
@@ -89,7 +89,7 @@ export function MainMenuNavigator() {
       <Drawer.Screen
         name={ROUTES.Details}
         component={DetailsStack}
-        options={{ unmountOnBlur: true }}
+        options={{ lazy: true }}
       />
       <Drawer.Screen name={ROUTES.Settings} component={SettingsStack} />
     </Drawer.Navigator>

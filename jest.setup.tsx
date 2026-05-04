@@ -7,7 +7,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import fetchMock from 'jest-fetch-mock';
 import React from 'react';
-import { type ScaledSize, View } from 'react-native';
+import { View } from 'react-native';
 import 'react-native/jest/setup';
 import 'react-native-gesture-handler/jestSetup';
 
@@ -16,20 +16,64 @@ import '@amazon-devices/react-native-kepler/jest/setup';
 import type Icon from '@amazon-devices/react-native-vector-icons/MaterialCommunityIcons';
 import '@testing-library/jest-native/extend-expect';
 
-// Mock NativeModules before any imports
-jest.mock('react-native/Libraries/BatchedBridge/NativeModules', () => ({
-  UIManager: {
-    RCTView: () => {},
-  },
-  PlatformConstants: {
-    getConstants: () => ({
-      isTesting: true,
-    }),
-  },
-  NativeModules: {},
+// ---------------------------------------------------------------------------
+// React Native internals — RN 0.83 compatibility
+// ---------------------------------------------------------------------------
+
+jest.mock('react-native/src/private/animated/NativeAnimatedHelper', () => ({
+  API: { flushQueue: jest.fn() },
+  shouldUseNativeDriver: jest.fn(() => false),
+  generateNewNodeTag: jest.fn(() => 1),
+  generateNewAnimationId: jest.fn(() => 1),
+  assertNativeAnimatedModule: jest.fn(),
+  default: { shouldUseNativeDriver: jest.fn(() => false) },
 }));
 
-// Mock W3C Media components
+jest.mock('react-native/Libraries/Utilities/BackHandler', () => {
+  const mock = {
+    exitApp: jest.fn(),
+    addEventListener: jest.fn(() => ({ remove: jest.fn() })),
+    removeEventListener: jest.fn(),
+  };
+  return { __esModule: true, default: mock, ...mock };
+});
+
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter', () => {
+  class Mock {
+    addListener = jest.fn(() => ({ remove: jest.fn() }));
+  }
+  return { __esModule: true, default: Mock };
+});
+
+// TV dimensions
+jest.mock('react-native/Libraries/Utilities/Dimensions', () => ({
+  default: {
+    get: () => ({ width: 1920, height: 1080, scale: 1, fontScale: 1 }),
+  },
+}));
+
+jest.mock('react-native/Libraries/Utilities/PixelRatio', () => ({
+  default: {
+    get: jest.fn().mockReturnValue(1),
+    roundToNearestPixel: jest.fn((s: number) => s),
+  },
+}));
+
+jest.mock('react-native/Libraries/Utilities/useWindowDimensions', () => ({
+  default: jest.fn(() => ({
+    width: 1920,
+    height: 1080,
+    scale: 1,
+    fontScale: 1,
+  })),
+}));
+
+// ---------------------------------------------------------------------------
+// Amazon library mocks
+// ---------------------------------------------------------------------------
+
+fetchMock.enableMocks();
+
 jest.mock('@amazon-devices/react-native-w3cmedia', () => {
   class KeplerMediaControlHandler {
     async handlePlay() {}
@@ -56,7 +100,15 @@ jest.mock('@amazon-devices/react-native-w3cmedia', () => {
   };
 });
 
-fetchMock.enableMocks();
+jest.mock('@amazon-devices/react-native-w3cmedia/dist/headless', () => ({
+  WebCrypto: jest.fn(),
+  WebCryptoKey: jest.fn(),
+  WebCryptoKeyPair: jest.fn(),
+  WebCryptoKeyUsage: jest.fn(),
+  WebCryptoKeyType: jest.fn(),
+  WebCryptoKeyAlgorithm: jest.fn(),
+  WebCryptoKeyOperation: jest.fn(),
+}));
 
 jest.mock('@amazon-devices/react-native-screens', () => ({
   ...jest.requireActual('@amazon-devices/react-native-screens'),
@@ -70,18 +122,14 @@ jest.mock('@react-native-async-storage/async-storage', () =>
 jest.mock('@amazon-devices/react-native-device-info', () => ({
   ...require('@amazon-devices/react-native-device-info/jest/react-native-device-info-mock'),
   getDeviceType: jest.fn(() => 'TV'),
-  default: {
-    getDeviceType: jest.fn(() => 'TV'),
-  },
+  default: { getDeviceType: jest.fn(() => 'TV') },
 }));
 
 const IconMock: typeof Icon = ({ ...props }) => <View {...props} />;
-
 jest.mock(
   '@amazon-devices/react-native-vector-icons/MaterialCommunityIcons',
   () => IconMock,
 );
-
 jest.mock(
   '@amazon-devices/react-native-vector-icons/MaterialIcons',
   () => IconMock,
@@ -93,199 +141,80 @@ global.navigator = {};
 jest.mock('@amazon-devices/keplerscript-netmgr-lib', () =>
   require('src/test-utils/mocks/keplerscript-netmgr-lib'),
 );
-
 jest.mock('@amazon-devices/asset-resolver-lib', () =>
   require('src/test-utils/mocks/asset-resolver-lib'),
 );
-
 jest.mock('@amazon-devices/keplerscript-kepleri18n-lib', () =>
   require('src/test-utils/mocks/keplerscript-kepleri18n-lib'),
 );
-
 jest.mock(
   '@amazon-devices/react-native-kepler/Libraries/Utilities/registerGeneratedViewConfig',
   () => () => {},
 );
 
-jest.mock('@amazon-devices/react-native-kepler', () => {
-  return {
-    __esModule: true,
-    HWEvent: jest.fn(),
-    KeplerAppStateChange: jest.fn(),
-    useCallback: jest.fn(),
-    useTVEventHandler: jest.fn((evt) => evt),
-    TVFocusGuideView: jest.fn(({ children }) => children),
-    default: jest.fn(),
-    InteractionManager: jest.requireActual(
-      '@amazon-devices/react-native-kepler/Libraries/Interaction/InteractionManager',
-    ),
-    useHideSplashScreenCallback: jest.fn(() => () => {}),
-    usePreventHideSplashScreen: jest.fn(),
-    Switch: jest.fn(),
-    useGetCurrentKeplerAppStateCallback: jest.fn(),
-    useAddKeplerAppStateListenerCallback: jest.fn().mockReturnValue(
-      jest.fn(() => ({
-        remove: () => {},
-      })),
-    ),
-    useComponentInstance: jest.fn(() => ({})),
-  };
-});
+jest.mock('@amazon-devices/react-native-kepler', () => ({
+  __esModule: true,
+  HWEvent: jest.fn(),
+  KeplerAppStateChange: jest.fn(),
+  useCallback: jest.fn(),
+  useTVEventHandler: jest.fn((evt) => evt),
+  TVFocusGuideView: jest.fn(({ children }) => children),
+  default: jest.fn(),
+  InteractionManager: jest.requireActual('react-native').InteractionManager,
+  useHideSplashScreenCallback: jest.fn(() => () => {}),
+  usePreventHideSplashScreen: jest.fn(),
+  Switch: jest.fn(),
+  useGetCurrentKeplerAppStateCallback: jest.fn(),
+  useAddKeplerAppStateListenerCallback: jest
+    .fn()
+    .mockReturnValue(jest.fn(() => ({ remove: () => {} }))),
+  useComponentInstance: jest.fn(() => ({})),
+  Platform: {
+    OS: 'kepler',
+    select: jest.fn((obj: Record<string, unknown>) => obj['kepler']),
+  },
+}));
 
 // @ts-expect-error
 global.performance.reportFullyDrawn = () => {};
 
-// Mock Platform
-jest.mock('react-native/Libraries/Utilities/Platform', () => ({
-  OS: 'ios',
-  select: jest.fn((obj) => obj.ios),
-}));
-
-// Mock StyleSheet
-jest.mock('react-native/Libraries/StyleSheet/StyleSheet', () => ({
-  create: jest.fn((styles) => ({ ...styles })),
-  compose: (style1: Object, style2: Object) => ({ ...style1, ...style2 }),
-  flatten: (style: Object) => {
-    const flattenStyle = require('react-native/Libraries/StyleSheet/flattenStyle');
-    return flattenStyle(style);
-  },
-  hairlineWidth: 1,
-}));
-
-// Mock NativeEventEmitter
-jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter', () => {
-  class MockNativeEventEmitter {
-    addListener = jest.fn();
-    removeListener = jest.fn();
-    emit = jest.fn();
-  }
-  return MockNativeEventEmitter;
-});
-
-const mockedDimensionsValue: ScaledSize = {
-  width: 375,
-  height: 667,
-  scale: 2,
-  fontScale: 2,
-};
-
-jest.mock('react-native/Libraries/Utilities/Dimensions', () => {
+// Vega Carousel mock
+jest.mock('@amazon-devices/vega-carousel', () => {
+  const R = jest.requireActual('react');
+  const RN = jest.requireActual('react-native');
   return {
-    default: {
-      get: () => mockedDimensionsValue,
-    },
-  };
-});
-
-const mockUseWindowDimensions = jest.fn(() => mockedDimensionsValue);
-
-jest.mock('react-native/Libraries/Utilities/useWindowDimensions', () => ({
-  default: mockUseWindowDimensions,
-}));
-
-jest.mock('react-native/Libraries/TurboModule/TurboModuleRegistry', () => {
-  return {
-    getEnforcing: jest.fn((name) => {
-      switch (name) {
-        case 'ImageLoader':
-          return {
-            getSize: jest.fn((_url) => Promise.resolve([320, 240])),
-            prefetchImage: jest.fn(),
-          };
-
-        default:
-          return {};
+    Carousel: jest.fn((props: any) => {
+      const { dataAdapter: da, renderItem } = props;
+      const children: unknown[] = [];
+      if (da?.getItem && da?.getItemCount && renderItem) {
+        for (let i = 0; i < da.getItemCount(); i++) {
+          children.push(renderItem({ item: da.getItem(i), index: i }));
+        }
       }
+      return R.createElement(RN.View, { testID: props.testID }, ...children);
     }),
-    get: jest.fn(),
   };
 });
 
-jest.mock('@amazon-devices/kepler-channel', () => ({
-  ChannelServerComponent2: {
-    getOrMakeServer: jest.fn().mockReturnValue({
-      setHandlerForComponent: jest.fn(),
-    }),
-    makeChannelResponseBuilder: jest.fn().mockReturnValue({
-      channelStatus: jest.fn().mockReturnValue({
-        build: jest.fn().mockReturnValue({}),
-      }),
-    }),
-  },
-  ChannelServerComponent: {
-    channelServer: {
-      handler: jest.fn(),
-    },
-  },
-}));
-
-jest.mock('@amazon-devices/kepler-epg-provider', () => ({
-  __esModule: true,
-  ChannelDescriptorBuilder: jest.fn(),
-  IChannelDescriptor: jest.fn(),
-}));
-
-jest.mock('@amazon-devices/keplerscript-audio-lib', () => ({
-  AudioManager: jest.fn(),
-  AudioEvent: jest.fn(),
-  AudioContentType: jest.fn(),
-  AudioUsageType: jest.fn(),
-  AudioFlags: jest.fn(),
-  AudioDevice: jest.fn(),
-  AudioSampleFormat: jest.fn(),
-}));
-
-jest.mock('@amazon-devices/react-native-w3cmedia/dist/headless', () => ({
-  WebCrypto: jest.fn(),
-  WebCryptoKey: jest.fn(),
-  WebCryptoKeyPair: jest.fn(),
-  WebCryptoKeyUsage: jest.fn(),
-  WebCryptoKeyType: jest.fn(),
-  WebCryptoKeyAlgorithm: jest.fn(),
-  WebCryptoKeyOperation: jest.fn(),
-}));
-
-// Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
-jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
-
-// Mock the specific useComponentState hook that's causing the issue
 jest.mock(
   '@amazon-devices/kepler-ui-components/dist/src/common/state/useComponentState',
   () => {
-    const mockUseComponentState = jest.fn(() => ({
-      isTV: true,
-      deviceType: 'TV',
-    }));
-    return {
-      __esModule: true,
-      default: mockUseComponentState,
-      useComponentState: mockUseComponentState,
-    };
+    const mock = jest.fn(() => ({ isTV: true, deviceType: 'TV' }));
+    return { __esModule: true, default: mock, useComponentState: mock };
   },
 );
 
-// Mock Kepler Audio Library
 jest.mock('@amazon-devices/keplerscript-audio-lib', () => ({
   AudioManager: {
     getSupportedPlaybackConfigurationsAsync: jest.fn().mockResolvedValue([]),
     registerAudioEventObserverAsync: jest.fn().mockResolvedValue(undefined),
     unregisterAudioEventObserverAsync: jest.fn().mockResolvedValue(undefined),
   },
-  AudioEvent: {
-    DEVICE_STATE_UPDATE: 'DEVICE_STATE_UPDATE',
-  },
-  AudioContentType: {
-    CONTENT_TYPE_MUSIC: 'CONTENT_TYPE_MUSIC',
-  },
-  AudioUsageType: {
-    USAGE_MEDIA: 'USAGE_MEDIA',
-  },
-  AudioFlags: {
-    FLAG_NONE: 'FLAG_NONE',
-  },
-  AudioDevice: {
-    DEVICE_DEFAULT: 'DEVICE_DEFAULT',
-  },
+  AudioEvent: { DEVICE_STATE_UPDATE: 'DEVICE_STATE_UPDATE' },
+  AudioContentType: { CONTENT_TYPE_MUSIC: 'CONTENT_TYPE_MUSIC' },
+  AudioUsageType: { USAGE_MEDIA: 'USAGE_MEDIA' },
+  AudioFlags: { FLAG_NONE: 'FLAG_NONE' },
+  AudioDevice: { DEVICE_DEFAULT: 'DEVICE_DEFAULT' },
   AudioSampleFormat: {
     FORMAT_PCM_16_BIT: 'FORMAT_PCM_16_BIT',
     FORMAT_PCM_8_BIT: 'FORMAT_PCM_8_BIT',
@@ -294,14 +223,30 @@ jest.mock('@amazon-devices/keplerscript-audio-lib', () => ({
   },
 }));
 
-// Mock kepler-player-client to prevent ES module import errors
-jest.mock('@amazon-devices/kepler-player-client', () => ({
-  PlayerClientFactory: {
-    createPlayerClient: jest.fn(),
+jest.mock('@amazon-devices/kepler-channel', () => ({
+  ChannelServerComponent2: {
+    getOrMakeServer: jest
+      .fn()
+      .mockReturnValue({ setHandlerForComponent: jest.fn() }),
+    makeChannelResponseBuilder: jest.fn().mockReturnValue({
+      channelStatus: jest
+        .fn()
+        .mockReturnValue({ build: jest.fn().mockReturnValue({}) }),
+    }),
   },
+  ChannelServerComponent: { channelServer: { handler: jest.fn() } },
 }));
 
-// Mock the hybrid video player layer globally
+jest.mock('@amazon-devices/kepler-epg-provider', () => ({
+  __esModule: true,
+  ChannelDescriptorBuilder: jest.fn(),
+  IChannelDescriptor: jest.fn(),
+}));
+
+jest.mock('@amazon-devices/kepler-player-client', () => ({
+  PlayerClientFactory: { createPlayerClient: jest.fn() },
+}));
+
 jest.mock('src/services/videoPlayer/hybrid/useSmartVideoPlayer', () => ({
   useSmartVideoPlayer: jest.fn(() => ({
     state: 'INSTANTIATING',
@@ -314,3 +259,15 @@ jest.mock('src/services/videoPlayer/hybrid/useSmartVideoPlayer', () => ({
     isHeadlessAvailable: false,
   })),
 }));
+
+const _origSetTimeout = global.setTimeout;
+const _pendingIds: ReturnType<typeof setTimeout>[] = [];
+global.setTimeout = ((...a: Parameters<typeof setTimeout>) => {
+  const id = _origSetTimeout(...a);
+  _pendingIds.push(id);
+  return id;
+}) as typeof setTimeout;
+afterEach(() => {
+  _pendingIds.forEach(clearTimeout);
+  _pendingIds.length = 0;
+});

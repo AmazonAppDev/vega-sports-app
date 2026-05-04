@@ -83,9 +83,10 @@ const DEFAULT_CONFIG: Required<
  * @template PlayerSettings - Type for player settings (for API compatibility with VideoPlayerService)
  */
 
-export class HeadlessVideoPlayerClient<TrackToken, PlayerSettings>
-  implements IVideoPlayerService<TrackToken, PlayerSettings>
-{
+export class HeadlessVideoPlayerClient<
+  TrackToken,
+  PlayerSettings,
+> implements IVideoPlayerService<TrackToken, PlayerSettings> {
   private playerClientFactory: IPlayerClientFactory | undefined;
   private playerClient: IPlayerClient | undefined;
   private sessionId: IPlayerSessionId | undefined;

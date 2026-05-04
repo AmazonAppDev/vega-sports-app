@@ -22,12 +22,13 @@ import { constrainTime } from './utils';
 // TODO: when this is resolved, get back to using "just" the VideoPlayer;
 class FixedVideoPlayer extends VideoPlayer {
   // fixes TypeError: c.g.removeAttribute is not a function (it is undefined) coming from shaka's lib/player.js:1250 (unload())
-  removeAttribute() {}
+  override removeAttribute() {}
 }
 
-export class VideoPlayerService<TrackToken, PlayerSettings>
-  implements IVideoPlayerService<TrackToken, PlayerSettings>
-{
+export class VideoPlayerService<
+  TrackToken,
+  PlayerSettings,
+> implements IVideoPlayerService<TrackToken, PlayerSettings> {
   protected player: VideoPlayerInterface<TrackToken> | null = null;
   protected video: VideoPlayer | null = null;
 

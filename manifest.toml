@@ -13,33 +13,33 @@ icon = "@image/SportsApp.png"
 [components]
 [[components.interactive]]
 id = "com.amazondeveloper.keplersportapp.main"
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 categories = ["com.amazon.category.main", "com.amazon.category.kepler.media"]
 launch-type = "singleton"
 
 [[components.interactive]]
 id = "com.amazondeveloper.keplersportapp.sync_source"
 launch-type = "singleton"
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 
 [[components.service]]
 id = "com.amazondeveloper.keplersportapp.interface.provider"
 categories = ["com.amazon.category.kepler.media"]
 launch-type = "singleton"
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 
 [[components.service]]
 id = "com.amazondeveloper.keplersportapp.service"
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 launch-type = "singleton"
 
 [[components.task]]
 id = "com.amazondeveloper.keplersportapp.onInstallOrUpdateTask"
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 
 [[components.task]]
 id = "com.amazondeveloper.keplersportapp.epgSyncTask"
-runtime-module = "/com.amazon.kepler.headless.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 
 [processes]
 [[processes.group]]

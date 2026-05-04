@@ -59,7 +59,7 @@ module.exports = (api) => {
     plugins.push('transform-remove-console');
   }
 
-  const presets = ['module:metro-react-native-babel-preset'];
+  const presets = ['module:@react-native/babel-preset'];
 
   return {
     presets,

@@ -5,7 +5,6 @@ import type { AppTheme } from '@AppTheme';
 export const getSquareCarouselContainerStyles = () =>
   StyleSheet.create({
     containerStyles: {
-      marginLeft: 250,
       height: 280,
     },
   });
