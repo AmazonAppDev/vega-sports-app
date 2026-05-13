@@ -10,8 +10,7 @@ const Stack = createStackNavigator();
 
 export const SettingsStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false, animationEnabled: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false, animation: 'none' }}>
       <Stack.Screen name={ROUTES.SettingsMain} component={SettingsMain} />
       <Stack.Screen
         name={ROUTES.SettingsLanguage}

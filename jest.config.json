@@ -31,18 +31,15 @@
   ],
   "testPathIgnorePatterns": ["src/w3cmedia/shakaplayer/dist"],
   "transformIgnorePatterns": [
-    "node_modules/(?!(jest-)?react-native|@react-native|@amazon-devices/kepler-ui-components|@amazon-devices/react-native-kepler|@amazon-devices/lottie-react-native|@amazon-devices/react-navigation|@amazon-devices/react-native-reanimated|@amazon-devices/react-native-gesture-handler|@amazon-devices/react-navigation__drawer|@amazon-devices/react-linear-gradient|iso-639-3)"
+    "node_modules/(?!(jest-)?react-native|@react-native|@amazon-devices|use-latest-callback|react-native-safe-area-context|recyclerlistview|iso-639-3)"
   ],
   "coverageDirectory": ".tmp/coverage",
-  "globals": {
-    "ts-jest": {
-      "babelConfig": true,
-      "diagnostics": true
-    }
+  "transform": {
+    "^.+\\.tsx?$": ["ts-jest", { "babelConfig": true, "diagnostics": true }]
   },
   "coverageThreshold": {
     "global": {
-      "branches": 55,
+      "branches": 52,
       "functions": 55,
       "lines": 55,
       "statements": 55

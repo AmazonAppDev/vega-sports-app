@@ -5,7 +5,6 @@ import type { AppTheme } from '@AppTheme';
 export const getCardCarouselContainerStyles = () =>
   StyleSheet.create({
     containerStyles: {
-      marginLeft: 150,
       width: Dimensions.get('window').width,
       height: 450,
     },
@@ -49,16 +48,17 @@ export const getCardCarouselItemStyles = ({
     },
 
     badgeContainer: {
-      position: 'absolute',
-      top: 0,
-      right: 0,
-      zIndex: 9999,
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+    },
+    badgeInner: {
+      backgroundColor: isDarkTheme ? colors.onPrimary : colors.focusPrimary,
+      paddingHorizontal: 12,
+      paddingVertical: 6,
     },
     badgeText: {
-      backgroundColor: isDarkTheme ? colors.onPrimary : colors.focusPrimary,
-      color: isDarkTheme ? colors.focusPrimary : colors.onPrimary,
+      color: isDarkTheme ? colors.focusActive : colors.onPrimary,
       fontSize: typography.size?.fontSize?.title?.sm,
-      textAlign: 'center',
-      padding: 10,
+      fontWeight: 'bold',
     },
   });

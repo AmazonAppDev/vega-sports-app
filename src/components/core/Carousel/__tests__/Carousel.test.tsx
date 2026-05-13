@@ -8,28 +8,20 @@ import { Carousel } from '../Carousel';
 describe('Carousel', () => {
   const mockData = ['item1', 'item2', 'item3'];
   const mockProps = {
-    data: mockData,
-    itemDimensions: [
-      {
-        view: () => <Text>test text</Text>,
-        dimension: { width: 200, height: 100 },
-      },
-    ],
+    dataAdapter: {
+      getItem: (index: number) => mockData[index],
+      getItemCount: () => mockData.length,
+      getItemKey: ({ index }: { index: number }) => `item-${index}`,
+      notifyDataError: () => false,
+    },
     renderItem: (info: { item: string }) => <Text>{info.item}</Text>,
-    getItemForIndex: (index: number) => () => <Text>{mockData[index]}</Text>,
-    keyProvider: (item: string) => item,
   };
 
-  it('applies custom styles correctly', () => {
-    const customStyles = {
-      backgroundColor: 'red',
-      padding: 20,
-    };
+  it('renders carousel items correctly', () => {
+    render(<Carousel {...mockProps} />);
 
-    render(<Carousel {...mockProps} customStyles={customStyles} />);
-
-    const carouselWrapper = screen.getByTestId('carousel-wrapper');
-
-    expect(carouselWrapper.props['style']).toContainEqual(customStyles);
+    expect(screen.getByText('item1')).toBeTruthy();
+    expect(screen.getByText('item2')).toBeTruthy();
+    expect(screen.getByText('item3')).toBeTruthy();
   });
 });

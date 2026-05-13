@@ -200,7 +200,7 @@ export function useVideoPlayerService<
         instance.removeEventListener(VIDEO_EVENTS.ENDED, onEnded);
         instance.removeEventListener(VIDEO_EVENTS.ERROR, onError);
 
-        instance?.destroyMediaPlayerSync();
+        instance.destroyMediaPlayerSync();
 
         setSurfacesKey((prev) => prev + 1);
       }
@@ -216,7 +216,13 @@ export function useVideoPlayerService<
 
   // initialization effect
   const componentInstance: IComponentInstance = useComponentInstance();
-  const initializeKMC = async (componentInstance: IComponentInstance) => {
+  const componentInstanceRef = useRef(componentInstance);
+  componentInstanceRef.current = componentInstance;
+
+  const onInitializedRef = useRef(onInitialized);
+  onInitializedRef.current = onInitialized;
+
+  const initializeKMC = async (instance: IComponentInstance) => {
     if (videoPlayerServiceRef.current) {
       logDebug(
         '[VideoHandler.ts] - preBufferVideo - KMC :  set Media Control Focus',
@@ -224,7 +230,7 @@ export function useVideoPlayerService<
       );
 
       await videoPlayerServiceRef.current?.setVideoMediaControlFocus(
-        componentInstance,
+        instance,
         new AppOverrideMediaControlHandler(
           videoPlayerServiceRef.current,
           false,
@@ -245,8 +251,8 @@ export function useVideoPlayerService<
         ?.initialize(videoSource)
         // eslint-disable-next-line promise/prefer-await-to-then
         .then(() => {
-          void initializeKMC(componentInstance);
-          void onInitialized?.();
+          void initializeKMC(componentInstanceRef.current);
+          void onInitializedRef.current?.();
           return true;
         })
         // eslint-disable-next-line promise/prefer-await-to-then
@@ -260,7 +266,7 @@ export function useVideoPlayerService<
           setState(VideoPlayerServiceState.ERROR);
         });
     }
-  }, [state, videoSource, onInitialized, componentInstance]);
+  }, [state, videoSource]);
 
   return { state, videoPlayerServiceRef, key: surfacesKey };
 }

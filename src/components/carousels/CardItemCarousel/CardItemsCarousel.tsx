@@ -1,7 +1,7 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: MIT-0
 
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { useNavigation } from '@amazon-devices/react-navigation__native';
 
@@ -17,19 +17,6 @@ import type {
 } from '../types';
 import { CardItem } from './CardItem';
 import { getCardCarouselContainerStyles } from './styles';
-
-const keyProvider = (item: ParsedResponseContentData) =>
-  `card-carousel-item-${item.itemId}`;
-
-const itemDimensions = [
-  {
-    view: CardItem,
-    dimension: {
-      width: 300,
-      height: 450,
-    },
-  },
-];
 
 export const CardItemsCarousel = ({
   data,
@@ -49,6 +36,28 @@ export const CardItemsCarousel = ({
     });
   };
 
+  const getItem = useCallback(
+    (index: number) => {
+      if (data && index >= 0 && index < data.length) {
+        return data[index];
+      }
+      return undefined;
+    },
+    [data],
+  );
+
+  const getItemCount = useCallback(() => {
+    return data?.length ?? 0;
+  }, [data]);
+
+  const getItemKey = useCallback(
+    (info: { item: ParsedResponseContentData; index: number }) =>
+      `card-carousel-item-${info.item.itemId}`,
+    [],
+  );
+
+  const notifyDataError = useCallback(() => false, []);
+
   if (!data) {
     // TO DO: Add empty component
     return null;
@@ -56,8 +65,12 @@ export const CardItemsCarousel = ({
 
   return (
     <Carousel
-      data={data}
-      itemDimensions={itemDimensions}
+      dataAdapter={{
+        getItem,
+        getItemCount,
+        getItemKey,
+        notifyDataError,
+      }}
       renderItem={({
         item,
         index,
@@ -91,12 +104,19 @@ export const CardItemsCarousel = ({
             .appendHint(itemHint)
             .appendHint(firstItemHint, { type: 'first-item', index })
             .asString(' ')}
-          badge={index % 2 === 0 ? 'New' : ''}
+          badge={index % 2 === 0 ? 'New' : undefined}
         />
       )}
-      getItemForIndex={() => CardItem}
-      keyProvider={keyProvider}
-      itemPadding={50}
+      uniqueId="card-items-carousel"
+      renderedItemsCount={8}
+      itemStyle={{
+        itemPadding: 20,
+        selectedItemScaleFactor: 1.1,
+      }}
+      animationDuration={{
+        itemScrollDuration: 0.2,
+        containerSelectionChangeDuration: 0.25,
+      }}
       containerStyle={styles.containerStyles}
     />
   );

@@ -135,9 +135,11 @@ export const Settings = () => {
           <ScrollView style={styles.scrollView}>
             <Group>
               <Text style={styles.sectionTitle}>{t('settings-language')}</Text>
-              <Text style={styles.subHeaderText}>
-                {t('settings-current-locale')}: {language}
-              </Text>
+              <View style={styles.localeRow}>
+                <Text style={styles.subHeaderText}>
+                  {t('settings-current-locale')}: {language}
+                </Text>
+              </View>
               <Button
                 style={styles.button}
                 onPress={() => navigate(ROUTES.SettingsLanguage)}

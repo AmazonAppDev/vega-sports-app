@@ -3,7 +3,7 @@
 
 import React from 'react';
 import type { ImageStyle } from 'react-native';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, ImageBackground, Text, StyleSheet } from 'react-native';
 
 import LinearGradient from '@amazon-devices/react-linear-gradient';
 
@@ -24,24 +24,24 @@ export const CardItem = ({
 
   const renderFunction = () => {
     return (
-      <View
+      <ImageBackground
         aria-hidden
         style={styles.cardOuter}
+        imageStyle={styles.bgImage as ImageStyle}
+        source={
+          item.thumbnail
+            ? { uri: item.thumbnail }
+            : require('@AppAssets/placeholder.jpg')
+        }
+        accessibilityIgnoresInvertColors
         testID={item.thumbnail ? `card-image` : `card-placeholder`}>
-        {badge && (
+        {badge && badge.length > 0 && (
           <View style={styles.badgeContainer}>
-            <Text style={styles.badgeText}>{badge}</Text>
+            <View style={styles.badgeInner}>
+              <Text style={styles.badgeText}>{badge}</Text>
+            </View>
           </View>
         )}
-        <Image
-          source={
-            item.thumbnail
-              ? { uri: item.thumbnail }
-              : require('@AppAssets/placeholder.jpg')
-          }
-          style={styles.bgImage as ImageStyle}
-          accessibilityIgnoresInvertColors
-        />
         {item.title && (
           <View style={styles.titleContainer}>
             <Text style={styles.title}>{item.title}</Text>
@@ -58,7 +58,7 @@ export const CardItem = ({
             locations={[0, 0.85, 1]}
           />
         </View>
-      </View>
+      </ImageBackground>
     );
   };
 

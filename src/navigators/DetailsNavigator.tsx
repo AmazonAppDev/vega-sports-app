@@ -15,11 +15,11 @@ export const DetailsStack = () => {
         name="DetailsMain"
         component={Details}
         options={{
-          animationEnabled: false,
+          animation: 'none',
         }}
       />
       <Stack.Screen
-        options={{ animationEnabled: false }}
+        options={{ animation: 'none' }}
         name={ROUTES.DetailsVideoPlayerScreen}
         component={VideoPlayerScreen}
       />

@@ -10,8 +10,8 @@ const HERO_CAROUSEL_HEIGHT = height * 0.88;
 export const getHeroCarouselContainerStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
     listContainer: {
-      flexGrow: 1,
-      flexDirection: 'row',
+      flex: 1,
+      width: ITEM_WIDTH,
       height: HERO_CAROUSEL_HEIGHT,
     },
     unFocused: {
@@ -52,7 +52,7 @@ export const getHeroCarouselItemStyles = ({
       backgroundColor: colors.transparent,
       width: ITEM_WIDTH,
       height: HERO_CAROUSEL_HEIGHT,
-      overflow: 'visible',
+      overflow: 'hidden',
       position: 'relative',
     },
     background: {
@@ -71,13 +71,13 @@ export const getHeroCarouselItemStyles = ({
     },
     pressableTitle: {
       width: '100%',
-      height: 1,
+      height: '100%',
+      justifyContent: 'center',
     },
     titleContainer: {
-      position: 'absolute',
-      top: HERO_CAROUSEL_HEIGHT * 0.55,
-      left: 100,
-      right: 0,
+      position: 'relative',
+      marginTop: HERO_CAROUSEL_HEIGHT * 0.55,
+      marginLeft: 100,
       width: '45%',
       padding: 15,
       borderColor: colors.transparent,

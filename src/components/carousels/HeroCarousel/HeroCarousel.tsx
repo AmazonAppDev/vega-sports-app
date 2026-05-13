@@ -43,7 +43,7 @@
  */
 
 import React from 'react';
-import { View, Animated, useAnimatedValue } from 'react-native';
+import { View, Animated } from 'react-native';
 
 import MaterialCommunityIcon from '@amazon-devices/react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@amazon-devices/react-navigation__core';
@@ -100,9 +100,27 @@ export const HeroCarouselContainer = ({
 
   // Animation setup for horizontal scrolling and backdrop effects
   // scrollX tracks horizontal scroll position for backdrop and arrow animations
-  const scrollX = useAnimatedValue(0);
+  const scrollX = React.useRef(new Animated.Value(0)).current;
   // animatedIndex converts scroll position to item index for backdrop transitions
   const animatedIndex = Animated.divide(scrollX, ITEM_WIDTH);
+
+  const currentIndexRef = React.useRef(0);
+
+  const handleItemFocus = React.useCallback(
+    (index: number) => {
+      if (currentIndexRef.current === index) {
+        return;
+      }
+      currentIndexRef.current = index;
+
+      Animated.timing(scrollX, {
+        toValue: index * ITEM_WIDTH,
+        duration: 200,
+        useNativeDriver: true,
+      }).start();
+    },
+    [scrollX],
+  );
 
   /**
    * Handles navigation to detail screens with support for linked content.
@@ -156,6 +174,7 @@ export const HeroCarouselContainer = ({
             index={index}
             animatedIndex={animatedIndex}
             carouselTitle={carouselTitle}
+            onItemFocus={handleItemFocus}
             // Build contextual accessibility hints: "Item X of Y, navigate left/right for more"
             // Provides directional navigation hints based on current item position
             accessibilityHint={new HintBuilder()
@@ -184,21 +203,17 @@ export const HeroCarouselContainer = ({
         )}
         horizontal={true}
         keyExtractor={keyExtractor}
-        // Sync scroll position with animations (backdrop changes, arrow fades)
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-          { useNativeDriver: false }, // Required for layout-affecting animations
-        )}
-        scrollEventThrottle={16} // 60fps animation updates for smooth transitions
-        initialNumToRender={1} // Render only first item initially for performance
-        // Enable smooth scrolling with pre-calculated item dimensions
+        windowSize={21}
+        maxToRenderPerBatch={10}
+        initialNumToRender={3}
+        removeClippedSubviews={false}
         getItemLayout={(_, index) => ({
           length: ITEM_WIDTH, // Each item is exactly ITEM_WIDTH pixels wide
           offset: ITEM_WIDTH * index, // Calculate position without measuring
           index,
         })}
-        snapToInterval={ITEM_WIDTH} // Snap to each item for precise positioning
-        decelerationRate={0.3} // Smooth, controlled deceleration
+        pagingEnabled={true}
+        decelerationRate="fast"
       />
       {/* Navigation arrows with scroll-based fade animations */}
       <View style={styles.arrowContainer}>

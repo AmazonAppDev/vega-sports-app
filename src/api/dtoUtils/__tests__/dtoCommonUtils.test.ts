@@ -60,22 +60,17 @@ describe('dtoCommonUtils', () => {
       {
         dtos: [1, 2, 3],
         returnValue: null,
-        mockParseItem() {
-          return this.returnValue;
-        },
         expected: [],
       },
       {
         dtos: [1, 2, 3],
         returnValue: undefined,
-        mockParseItem() {
-          return this.returnValue;
-        },
         expected: [],
       },
     ])(
       'should return empty array when parser function return nullable value ($returnValue)',
-      ({ dtos, expected, mockParseItem }) => {
+      ({ dtos, expected, returnValue }) => {
+        const mockParseItem = () => returnValue;
         const result = parseDtoArray(mockParseItem, dtos);
 
         expect(result).toEqual(expected);
@@ -130,22 +125,17 @@ describe('dtoCommonUtils', () => {
       {
         dto: { a: 1, b: 2, c: 3 },
         returnValue: undefined,
-        mockParseItem() {
-          return this.returnValue;
-        },
         expected: {},
       },
       {
         dto: { a: 1, b: 2, c: 3 },
         returnValue: null,
-        mockParseItem() {
-          return this.returnValue;
-        },
         expected: {},
       },
     ])(
       'should return empty object when parser function return nullable value ($returnValue)',
-      ({ dto, expected, mockParseItem }) => {
+      ({ dto, expected, returnValue }) => {
+        const mockParseItem = () => returnValue;
         const result = parseDtoRecord(mockParseItem, dto);
 
         expect(result).toEqual(expected);

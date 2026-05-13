@@ -41,7 +41,7 @@ const screens: TestScreenItem[] = [
   },
 ];
 
-const renderCarousel = (data = mockData) =>
+const renderCarousel = (data: typeof mockData = mockData) =>
   renderWithProviders(
     <SquareItemsCarousel
       carouselTitle="test title"
@@ -62,8 +62,7 @@ describe('HeroCarousel', () => {
   });
 
   it('renders nothing when data is empty', () => {
-    // @ts-ignore
-    renderCarousel(null);
+    renderCarousel(null as unknown as typeof mockData);
 
     expect(
       screen.queryByTestId('square-image', { includeHiddenElements: true }),

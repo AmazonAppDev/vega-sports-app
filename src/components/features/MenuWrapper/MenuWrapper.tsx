@@ -4,9 +4,7 @@
 import React, { useMemo, useState } from 'react';
 import { View } from 'react-native';
 
-import { useNavigation } from '@amazon-devices/react-navigation__core';
 import { useDrawerStatus } from '@amazon-devices/react-navigation__drawer';
-import { DrawerActions } from '@amazon-devices/react-navigation__routers';
 
 import { useThemedStyles } from '@AppTheme';
 import { Avatar } from '@AppComponents/core';
@@ -28,10 +26,17 @@ import { MenuItem } from './MenuItem';
 import { MENU_WIDTHS } from './constants';
 import { getMenuWRapperStyles } from './styles';
 
-export const MenuWrapper = () => {
+type MenuWrapperProps = {
+  navigation: {
+    navigate: (route: string, params?: Record<string, unknown>) => void;
+    openDrawer: () => void;
+    closeDrawer: () => void;
+  };
+};
+
+export const MenuWrapper = ({ navigation }: MenuWrapperProps) => {
   const [activeMenuItemIndex, setActiveMenuItemIndex] = useState(0);
   const isOpen = useDrawerStatus() === 'open';
-  const { navigate, dispatch } = useNavigation();
   const styles = useThemedStyles(getMenuWRapperStyles);
   const { user } = useAuth();
   const { t } = useTranslation();
@@ -43,16 +48,22 @@ export const MenuWrapper = () => {
     () => [
       {
         label: t('menu-wrapper-item-home-label'),
-        onPress: () => navigate(ROUTES.Home),
+        onPress: () => {
+          navigation.navigate(ROUTES.Home);
+          navigation.closeDrawer();
+        },
         icon: 'home',
       },
       {
         label: t('menu-wrapper-item-settings-label'),
-        onPress: () => navigate(ROUTES.Settings),
+        onPress: () => {
+          navigation.navigate(ROUTES.Settings);
+          navigation.closeDrawer();
+        },
         icon: 'cog',
       },
     ],
-    [navigate, t],
+    [navigation, t],
   );
 
   const menuItemsToRender = useMemo(
@@ -88,10 +99,10 @@ export const MenuWrapper = () => {
   );
 
   const openDrawer = () => {
-    dispatch(DrawerActions.openDrawer());
+    navigation.openDrawer();
   };
   const closeDrawer = () => {
-    dispatch(DrawerActions.closeDrawer());
+    navigation.closeDrawer();
   };
 
   const onMenuItemFocus = () => {
@@ -100,7 +111,7 @@ export const MenuWrapper = () => {
     }
   };
 
-  const handleAvatarPress = () => navigate(ROUTES.SelectUserProfile);
+  const handleAvatarPress = () => navigation.navigate(ROUTES.SelectUserProfile);
 
   useFocusGuideEventHandler((event) => {
     if (isOpen && event.eventType === 'right') {

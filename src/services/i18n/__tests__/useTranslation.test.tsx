@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import React, { Text } from 'react-native';
+import React from 'react';
+import { Text } from 'react-native';
 
 import { AssetResolver } from '@amazon-devices/asset-resolver-lib';
 import {

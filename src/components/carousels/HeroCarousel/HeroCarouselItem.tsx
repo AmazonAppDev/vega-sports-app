@@ -70,11 +70,14 @@ export const HeroCarouselItem = ({
   navigateToDetails,
   index,
   animatedIndex,
+  onItemFocus,
 }: CarouselItemProps & {
   /** Position index of this item in the carousel */
   index: number;
-  /** Animated value representing current carousel position for transitions */
+  /** Animated value for scroll-based animations */
   animatedIndex: Animated.AnimatedDivision<string | number>;
+  /** Callback to notify parent when item receives focus */
+  onItemFocus?: (index: number) => void;
 }) => {
   const styles = useThemedStyles(getHeroCarouselItemStyles);
   const {
@@ -117,9 +120,13 @@ export const HeroCarouselItem = ({
         ref={pressableRef}
         testID={`${item.itemId}-hero-pressable-wrapper`}
         role="button"
+        style={{ flex: 1 }}
         accessibilityHint={t('carousel-go-to-details')}
         onPress={handleNavigateToDetails}
-        onFocus={handleFocus}
+        onFocus={() => {
+          handleFocus();
+          onItemFocus?.(index);
+        }}
         onBlur={handleBlur}
         hasTVPreferredFocus={
           isScreenFocused && lastFocusedRef === pressableRef

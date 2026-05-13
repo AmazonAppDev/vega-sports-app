@@ -19,11 +19,11 @@ function hashFileContent(filePath, hashName = 'sha256') {
 const cacheVersion = hashFileContent('.env');
 
 /**
-+ * Metro configuration
-+ * https://facebook.github.io/metro/docs/configuration
-  *
-+ * @type {import('metro-config').MetroConfig}
-  */
+ * Metro configuration
+ * https://reactnative.dev/docs/metro
+ *
+ * @type {import('@react-native/metro-config').MetroConfig}
+ */
 const config = { cacheVersion };
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);

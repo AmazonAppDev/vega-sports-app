@@ -1,7 +1,5 @@
 import React from 'react';
 
-// rename the import for jest to accept it in mocks
-import { VideoPlayerServiceState as MockLazyVideoPlayerServiceState } from '@AppServices/videoPlayer';
 import { renderWithProviders } from '@AppTestUtils/render';
 import { VideoPlayerScreen } from '../VideoPlayerScreen';
 
@@ -10,7 +8,7 @@ jest.useFakeTimers();
 // Mock the hybrid layer to avoid importing kepler-player-client
 jest.mock('@AppServices/videoPlayer/hybrid/useSmartVideoPlayer', () => ({
   useSmartVideoPlayer: jest.fn(() => ({
-    state: MockLazyVideoPlayerServiceState.INSTANTIATING,
+    state: 'INSTANTIATING',
     videoPlayerServiceRef: { current: null },
     key: 'test-key',
   })),

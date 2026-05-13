@@ -29,5 +29,5 @@ const { width, height } = Dimensions.get('window');
 /** Height of the animated backdrop - 88% of screen height leaves room for navigation */
 export const BACKDROP_HEIGHT = height * 0.88;
 
-/** Width of each carousel item - full width minus 50px padding on each side */
-export const ITEM_WIDTH = width - 100;
+/** Width of each carousel item - full screen width for proper snapping */
+export const ITEM_WIDTH = width;

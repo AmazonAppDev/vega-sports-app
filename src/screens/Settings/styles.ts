@@ -48,6 +48,9 @@ export const getSettingsStyles = ({ colors, typography }: AppTheme) =>
       fontSize: typography.size?.fontSize?.title?.md,
       color: colors.onBackground,
     },
+    localeRow: {
+      flexDirection: 'row',
+    },
     button: {
       width: 300,
       borderWidth: 1,
