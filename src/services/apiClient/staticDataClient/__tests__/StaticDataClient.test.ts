@@ -10,6 +10,7 @@ describe('StaticDataClient', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.spyOn(performance, 'now').mockReturnValue(0);
   });
 
   it('should return mocked data object', async () => {

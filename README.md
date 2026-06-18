@@ -1,7 +1,7 @@
 Vega Sports Sample App
 ========================
 
-The Vega Sports Sample App demonstrates how to build a sports streaming application with TV-optimized interfaces and video playback functionality.
+The Vega Sports Sample App demonstrates how to build a sports streaming app with TV-optimized interfaces and video playback functionality.
 
 ![App Preview](./docs/images/home-screen.png)
 
@@ -20,7 +20,7 @@ Introduction
 - Practical examples of video controls and playback resume functionality.
 - Language selection and internationalization.
 
-**Note**: While this app contains recommendations, there are always different approaches to building components, screens, or using libraries. This guide serves as a starting point for what needs to be done, but we encourage you to explore and adopt best practices that suit your specific project requirements.
+**Note**: Although this app contains recommendations, there are always different approaches to building components, screens, or using libraries. This guide serves as a starting point for what needs to be done, but we encourage you to explore and adopt best practices that suit your specific project requirements.
 
 
 
@@ -32,9 +32,12 @@ Build and run the app
 
 Before you launch the sample app, make sure that you have:
 
-1. [Installed the Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
-2. **Java Runtime Environment (JRE) or Java Development Kit (JDK)** - Required by Shaka Player's build system for JavaScript compilation and optimization
-3. **Python** - Required by Shaka Player's build scripts
+* [Vega Developer Tools](https://developer.amazon.com/docs/vega/latest/install-vega-sdk.html)
+* [Git v1.9 or later](https://git-scm.com/install/)
+* [Python v3.x](https://www.python.org/downloads/)
+* [Java Runtime Environment v21 or later](https://learn.microsoft.com/en-us/java/openjdk/download)
+* [NodeJS v18-v20](https://nodejs.org/en/download/)
+* A local web server, such as Apache. A local web server is required because browsers place restrictions on apps from file:/// URLs.
 
 **Note**: The Shaka Player integration runs automatically during `npm install` and requires these dependencies. If you encounter build errors related to Java or Python, install the missing prerequisites and run `npm install` again. For any other prerequisite Shaka issue please visit: https://shaka-project.github.io/shaka-player/docs/api/tutorial-welcome.html.
 
@@ -47,7 +50,7 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/set
 
 1. At the command prompt, navigate to the Vega Sports Sample App source code directory. 
 
-2. To install the app dependencies, run the following command. 
+2. To install the app dependencies, run the following command. The installation can take several minutes to complete.
 
    ```
    npm install
@@ -75,9 +78,7 @@ You can also use [Vega Studio](https://developer.amazon.com/docs/vega/latest/set
    vega virtual-device start
    ```
 
-2. Go to the directory where you placed the VPKG files. 
-
-3. To install and launch the app on the Vega Virtual Device, run the following command, depending on your device architecture.
+2. To install and launch the app on the Vega Virtual Device, run the following command, depending on your device architecture.
 
    - On Mac M-series based devices. 
       
@@ -112,7 +113,7 @@ Refer to the [API README](./src/api/README.md) for full implementation details, 
 Services
 --------
 
-The Sports app is structured to delegate specific tasks to encapsulated units of logic known as services. Each service is designed to handle a particular functionality, allowing for clean separation of concerns and ensuring that the logic is reusable and maintainable. This approach makes services to be potentially extracted for use in other applications with ease.
+The Sports app is structured to delegate specific tasks to encapsulated units of logic known as services. Each service is designed to handle a particular functionality, providing clean separation of concerns and keeping the logic reusable and maintainable. This approach makes it easy to extract services for use in other apps.
 
 - [**AppConfig Service**](./src/services/appConfig/README.md): Manages environment variables defined in the `.env` file, enabling the app to read and apply configuration settings.
 
@@ -142,7 +143,7 @@ This app integrates a customized version of Shaka Player for video streaming fun
 
 When you run `npm install`, the following automated process occurs:
 
-1. **Patch Application**: `npx patch-package` applies any local patches to dependencies
+1. **Patch application**: `npx patch-package` applies any local patches to dependencies
 2. **Shaka Player Setup**: The `shaka-setup/build.sh` script executes:
    - Clones the official [Shaka Player repository](https://github.com/shaka-project/shaka-player.git) from GitHub
    - Checks out the specified version and creates a corresponding branch
@@ -167,7 +168,7 @@ The tarball includes custom patches that provide:
 - **Bug Fixes** for HLS/DASH playback on TV devices.
 - **Custom Event Handling** for TV-specific interactions.
 
-The Shaka Player integration is essential for video playback functionality. The custom patches ensure optimal performance and compatibility with Vega TV platform requirements.
+The Shaka Player integration is essential for video playback functionality. The custom patches provide optimal performance and compatibility with Vega TV platform requirements.
 
 
 Customize the Sports app
@@ -519,7 +520,7 @@ The app fetches the layout JSON file from the backend, and then combines it with
 
    **Example: Dynamic image source**
 
-      The `DCImage` component allows for displaying images from dynamic URL sources using the `targetUrl` property. `DCImage` must specify the path to the **parsed** item property that includes the URL to the image value. The path might be nested, such as `team1.thumbnail`.
+      With the `DCImage` component, you can display images from dynamic URL sources using the `targetUrl` property. `DCImage` must specify the path to the **parsed** item property that includes the URL to the image value. The path might be nested, such as `team1.thumbnail`.
 
       An example can be found in the [**detailsLayout.json**](./src/api/detailsLayout/staticData/detailsLayout.json) file for `"layout_type": "livestreams"` that references the `team1.thumbnail` property of a `livestreams` endpoint item:
 
@@ -552,7 +553,7 @@ The app fetches the layout JSON file from the backend, and then combines it with
 
    **Example: Dynamic image title**
 
-      The `DCImage` component allows for dynamic image titles from dynamic URL sources using the `titleTarget` property. `DCImage` must specify the path to the **parsed** item property that includes the URL to the image title. The path might be nested, such as `team1.teamName`.
+      With the `DCImage` component, you can use dynamic image titles from dynamic URL sources using the `titleTarget` property. `DCImage` must specify the path to the **parsed** item property that includes the URL to the image title. The path might be nested, such as `team1.teamName`.
 
       An example can be found in the [**detailsLayout.json**](./src/api/detailsLayout/staticData/detailsLayout.json) file for `"layout_type": "livestreams"` that references the `team1.name` property of a `livestreams` endpoint item:
 
@@ -659,7 +660,7 @@ If you prefer, you can skip using the above script and update every .puff.json  
 
 ## Accessibility
 
-The VegaSportsApp implements comprehensive accessibility features to ensure the app is usable by everyone, including users with disabilities. The app follows TV accessibility best practices and provides screen reader support.
+The VegaSportsApp implements comprehensive accessibility features to make sure the app is usable by everyone, including users with disabilities. The app follows TV accessibility best practices and provides screen reader support.
 
 For more information about the specifics of Accessibility for Vega, check the [A11Y API](https://developer.amazon.com/docs/react-native-vega/0.72/accessibility.html) documentation.
 
@@ -695,7 +696,7 @@ import { injectListNavigationHints } from '@AppServices/a11y';
 ```
 
 #### Conditional Hints
-The `HintBuilder` class allows building complex, conditional accessibility hints:
+With the `HintBuilder` class, you can build complex, conditional accessibility hints:
 ```typescript
 import { HintBuilder } from '@AppServices/a11y';
 
@@ -742,11 +743,11 @@ The `SplashScreenImages.zip` contains images from the `SplashScreenImages` folde
 Testing the app
 ---------------
 
-We use [React Native Testing Library (RNTL)](https://callstack.github.io/react-native-testing-library/) for component and integration testing in this project. RNTL provides a robust set of tools for testing React Native applications with a focus on user interactions and accessibility.
+We use [React Native Testing Library (RNTL)](https://callstack.github.io/react-native-testing-library/) for component and integration testing in this project. RNTL provides a robust set of tools for testing React Native apps with a focus on user interactions and accessibility.
 
 ### React Native Testing Library (RNTL)
 
-RNTL allows us to write tests that closely resemble how users interact with our app. It provides utilities for rendering components, finding elements, and simulating user actions.
+With RNTL, you can write tests that closely resemble how users interact with the app. It provides utilities for rendering components, finding elements, and simulating user actions.
 
 ### Test commands
 
@@ -768,13 +769,13 @@ For more detailed information about our testing set up, best practices, and cust
 Troubleshooting the app
 -----------------------
 
-If you're facing unexpected issues while trying to build and run the app (the build is failing randomly, the app is not starting, the app is crashing randomly, etc.), try the following solutions:
+If you're facing unexpected issues when trying to build and run the app (the build is failing randomly, the app is not starting, the app is crashing randomly, etc.), try the following solutions:
 
 1. Run `npm run clean` -> this command removes `node_modules` folder and other files related to your previous builds.
 
-2. When working in debug mode you may need to use `npm run start -- --reset-cache` to clear the cache.
+2. When working in debug mode you might need to use `npm run start -- --reset-cache` to clear the cache.
 
-3. In some cases (changes done to patches, changes in package.json, etc.) you may need to make sure there is no cache present in the project, in order to build successfully. Cleaning ALL cache files in the project can be done by running the following commands:
+3. In some cases (for example, changes done to patches and changes in package.json) you might need to make sure there is no cache present in the project, in order to build successfully. Cleaning ALL cache files in the project can be done by running the following commands:
 
    ```
    npm run clean
@@ -807,7 +808,7 @@ Release notes
   - Replaced external demo assets with new videos infrastructure.
   - Improved reliability and performance for video streaming across all content types.
 
-* **Format Standardization** - Standardized video source formats across the application
+* **Format Standardization** - Standardized video source formats across the app
   - **HLS Streams**: Consistent `.m3u8` video content with proper HLS labeling.
   - **DASH Streams**: Unified `.mpd` manifest format with DASH type identification.
   - **MP4 Videos**: Direct `.mp4` file access for progressive download content.
@@ -887,7 +888,7 @@ Release notes
 
 #### ⚠️ Known Issues
 
-* **Debug Build Crash with Headless Player** - When `useHeadless={true}` is enabled, the debug version of the app may crash during video playback. This is a known issue that will be resolved in the upcoming SDK 0.22 release. For development purposes, use the release build when testing headless functionality or keep `useHeadless={false}` for debug builds.
+* **Debug Build Crash with Headless Player** - When `useHeadless={true}` is enabled, the debug version of the app might crash during video playback. This is a known issue that will be resolved in the upcoming SDK 0.22 release. For development purposes, use the release build when testing headless functionality or keep `useHeadless={false}` for debug builds.
 
 **Note**: Headless functionality is currently disabled by default in VideoPlayerScreen (`useHeadless={false}`) but can be enabled through the smart player selection system or direct configuration.
 
