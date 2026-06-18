@@ -129,6 +129,10 @@ jest.mock('@amazon-devices/react-native-kepler', () => {
       })),
     ),
     useComponentInstance: jest.fn(() => ({})),
+    Platform: {
+      OS: 'kepler',
+      select: jest.fn((obj: Record<string, unknown>) => obj['kepler']),
+    },
   };
 });
 
