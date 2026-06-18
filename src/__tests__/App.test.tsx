@@ -24,6 +24,10 @@ jest.mock('@amazon-devices/react-native-kepler', () => ({
   useAddKeplerAppStateListenerCallback: jest.fn(() =>
     jest.fn(() => ({ remove: jest.fn() })),
   ),
+  Platform: {
+    OS: 'kepler',
+    select: jest.fn((obj: Record<string, unknown>) => obj['kepler']),
+  },
 }));
 
 describe('App', () => {

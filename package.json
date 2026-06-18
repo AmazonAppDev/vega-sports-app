@@ -53,7 +53,7 @@
     "@amazon-devices/react-linear-gradient": "~2.0.0",
     "@amazon-devices/react-native-device-info": "~2.0.0",
     "@amazon-devices/react-native-screens": "~2.0.0",
-    "@amazon-devices/react-native-vector-icons": "~2.0.0",
+    "@amazon-devices/react-native-vector-icons": "~2.1.0",
     "@amazon-devices/react-navigation__core": "~7.0.0",
     "@amazon-devices/react-navigation__devtools": "~7.0.0",
     "@amazon-devices/react-navigation__drawer": "~7.0.0",
