@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getMenuWRapperStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
@@ -9,37 +10,37 @@ export const getMenuWRapperStyles = ({ colors }: AppTheme) =>
       flex: 1,
       justifyContent: 'space-between',
       borderRightColor: colors.surfaceBright,
-      borderRightWidth: 2,
-      paddingHorizontal: 25,
-      paddingVertical: 50,
+      borderRightWidth: scaleUxToDp(2),
+      paddingHorizontal: scaleUxToDp(25),
+      paddingVertical: scaleUxToDp(50),
     },
     closeButtonWrapper: {
-      height: 50,
+      height: scaleUxToDp(50),
       justifyContent: 'center',
     },
     avatar: {
       borderColor: colors.surfaceTint,
     },
     avatarWrapper: {
-      width: 50,
+      width: scaleUxToDp(50),
     },
   });
 
 export const getMenuItemStyles = ({ colors, typography }: AppTheme) =>
   StyleSheet.create({
     icon: {
-      width: 50,
-      height: 50,
+      width: scaleUxToDp(50),
+      height: scaleUxToDp(50),
       justifyContent: 'center',
       alignItems: 'center',
     },
     iconText: {
-      fontSize: 30,
-      lineHeight: 30,
+      fontSize: scaleUxToDp(30),
+      lineHeight: scaleUxToDp(30),
     },
     item: {
-      marginVertical: 8,
-      height: 50,
+      marginVertical: scaleUxToDp(8),
+      height: scaleUxToDp(50),
       justifyContent: 'center',
       borderColor: colors.transparent,
     },
@@ -54,7 +55,7 @@ export const getMenuItemStyles = ({ colors, typography }: AppTheme) =>
       backgroundColor: colors.focusActive,
     },
     label: {
-      marginLeft: 8,
+      marginLeft: scaleUxToDp(8),
       lineHeight: typography?.size?.fontSize?.body?.md,
     },
   });
@@ -62,10 +63,10 @@ export const getMenuItemStyles = ({ colors, typography }: AppTheme) =>
 export const getCloseMenuButtonStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
     closeButton: {
-      borderWidth: 2,
+      borderWidth: scaleUxToDp(2),
       borderColor: colors.transparent,
-      paddingHorizontal: 16,
-      paddingVertical: 8,
+      paddingHorizontal: scaleUxToDp(16),
+      paddingVertical: scaleUxToDp(8),
     },
     closeButtonFocused: {
       borderColor: colors.focusPrimary,

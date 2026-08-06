@@ -7,6 +7,7 @@ import {
 } from '@amazon-devices/react-navigation__core';
 
 import { useThemedStyles } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { ScreenContainer } from '@AppComponents/containers';
 import { Avatar, Text } from '@AppComponents/core';
 import type { User } from '@AppModels/auth';
@@ -95,7 +96,7 @@ export const SelectUserProfile = () => {
               placeholder={profile.name}
               label={profile.name}
               image={profile.avatar}
-              size={200}
+              size={scaleUxToDp(200)}
               isCircle
               onPress={() => handleChooseProfile(profile)}
               labelStyles={styles.avatarLabel}
@@ -111,7 +112,7 @@ export const SelectUserProfile = () => {
               placeholder="+"
               aria-label={t('profile-add-new')}
               label={t('profile-add-new')}
-              size={200}
+              size={scaleUxToDp(200)}
               isCircle
               onPress={handleAddNewProfile}
               labelStyles={styles.avatarLabel}

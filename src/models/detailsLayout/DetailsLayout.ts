@@ -21,9 +21,7 @@ export type DetailsContentData =
   | SuggestedForYouContentDetails;
 
 export type DetailsScreenLayoutElements =
-  | DCContentContainerApiProps
-  | DCTextApiProps
-  | DCImageTileApiProps;
+  DCContentContainerApiProps | DCTextApiProps | DCImageTileApiProps;
 
 export interface DCContentContainerApiProps {
   layoutElements?: DetailsScreenLayoutElements[] | null;

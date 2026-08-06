@@ -6,7 +6,7 @@ import { StyleSheet } from 'react-native';
 import type { AppTheme } from '@AppTheme';
 import { scaleUxToDp } from '@AppUtils';
 
-const DURATION_BAR_HEIGHT = 15;
+const DURATION_BAR_HEIGHT = scaleUxToDp(15);
 
 export const getVideoControlsStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({

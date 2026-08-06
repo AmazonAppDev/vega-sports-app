@@ -1,4 +1,6 @@
+import { scaleUxToDp } from '@AppUtils';
+
 export const MENU_WIDTHS = {
-  open: 300,
-  closed: 100,
+  open: scaleUxToDp(300),
+  closed: scaleUxToDp(100),
 };

@@ -1,25 +1,26 @@
 import type { TextInputTokens } from '@amazon-devices/kepler-ui-components';
 
 import type { ThemeColors } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { darkPalette, lightPalette } from '@AppTheme/palette';
 
 const inputtedTextSize = {
-  fontSize: 22,
+  fontSize: scaleUxToDp(22),
   letterSpacing: 0,
-  lineHeight: 28,
+  lineHeight: scaleUxToDp(28),
 };
 const containerSize = {
   borderRadius: {
-    enabled: 8,
+    enabled: scaleUxToDp(8),
   },
   borderWidth: {
-    enabled: 2,
-    focused: 2,
+    enabled: scaleUxToDp(2),
+    focused: scaleUxToDp(2),
   },
 };
 
 const labelSize = {
-  fontSize: 18,
+  fontSize: scaleUxToDp(18),
   letterSpacing: 0,
   lineHeight: 0,
 };
@@ -42,7 +43,7 @@ const makeInputTokens = (palette: ThemeColors): Partial<TextInputTokens> => ({
       backgroundColor: palette.surfaceDim,
     },
     size: {
-      borderRadius: 8,
+      borderRadius: scaleUxToDp(8),
     },
   },
   inputtedText: {

@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getHomeStyles = ({ colors, typography }: AppTheme) =>
   StyleSheet.create({
@@ -15,40 +16,40 @@ export const getHomeStyles = ({ colors, typography }: AppTheme) =>
       alignItems: 'center',
     },
     headerContainer: {
-      marginLeft: 200,
+      marginLeft: scaleUxToDp(200),
     },
     headerText: {
       color: colors.primaryFixed,
-      marginBottom: 10,
+      marginBottom: scaleUxToDp(10),
     },
     subHeaderText: {
       color: colors.primaryFixed,
-      marginBottom: 20,
+      marginBottom: scaleUxToDp(20),
     },
     links: {
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'space-around',
-      height: 600,
+      height: scaleUxToDp(600),
     },
     image: {
       flex: 1,
-      paddingLeft: 150,
+      paddingLeft: scaleUxToDp(150),
     },
     textContainer: {
       justifyContent: 'center',
       flex: 1,
-      marginLeft: 190,
+      marginLeft: scaleUxToDp(190),
     },
     text: {
       color: colors.primaryFixed,
     },
     logOutButton: {
-      marginTop: 50,
-      padding: 50,
+      marginTop: scaleUxToDp(50),
+      padding: scaleUxToDp(50),
       fontSize: typography.size?.fontSize?.headline?.md,
       borderColor: colors.primaryFixed,
-      borderWidth: 1,
+      borderWidth: scaleUxToDp(1),
       width: '50%',
     },
     preassableText: {

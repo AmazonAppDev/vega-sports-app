@@ -1,36 +1,37 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getSelectUserProfileStyles = ({ colors, typography }: AppTheme) =>
   StyleSheet.create({
     container: {
       flex: 6,
       justifyContent: 'center',
-      paddingHorizontal: 120,
+      paddingHorizontal: scaleUxToDp(120),
       backgroundColor: colors.background,
     },
     headerText: {
       color: colors.onBackground,
     },
     profiles: {
-      marginTop: 200,
+      marginTop: scaleUxToDp(200),
       flexDirection: 'row',
       flexWrap: 'wrap',
       alignItems: 'center',
-      marginLeft: -40,
-      marginRight: -40,
+      marginLeft: scaleUxToDp(-40),
+      marginRight: scaleUxToDp(-40),
       width: '100%',
     },
     avatar: {
-      marginHorizontal: 40,
+      marginHorizontal: scaleUxToDp(40),
     },
     avatarLabel: {
       fontSize: typography.size?.fontSize?.body?.lg,
       color: colors.onBackground,
-      paddingTop: 35,
+      paddingTop: scaleUxToDp(35),
     },
     avatarImage: {
-      borderWidth: 4,
+      borderWidth: scaleUxToDp(4),
     },
   });

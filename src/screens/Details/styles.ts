@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 const { width, height } = Dimensions.get('window');
 
@@ -15,7 +16,7 @@ export const getDetailsStyles = ({ colors }: AppTheme) =>
     },
     detailsHeaderContainer: {
       width,
-      minHeight: 600,
+      minHeight: scaleUxToDp(600),
       height: height * 0.9,
       backgroundColor: colors.background,
       justifyContent: 'flex-end',
@@ -39,27 +40,27 @@ export const getDetailsStyles = ({ colors }: AppTheme) =>
       position: 'absolute',
       bottom: 0,
       width: width * 0.6,
-      paddingTop: 50,
-      paddingLeft: 50,
-      paddingBottom: 40,
+      paddingTop: scaleUxToDp(50),
+      paddingLeft: scaleUxToDp(50),
+      paddingBottom: scaleUxToDp(40),
       zIndex: 1,
       backgroundColor: colors.textBackground,
     },
     headerText: {
-      marginBottom: 10,
+      marginBottom: scaleUxToDp(10),
     },
     button: {
-      width: 150,
+      width: scaleUxToDp(150),
     },
     actionWrapper: {
       flexDirection: 'row',
       alignItems: 'center',
-      gap: 32,
+      gap: scaleUxToDp(32),
     },
     warning: {
       flexDirection: 'row',
       alignItems: 'center',
-      gap: 8,
+      gap: scaleUxToDp(8),
     },
     buttonDisabled: {
       opacity: 0.6,
@@ -73,13 +74,13 @@ export const getDetailsStyles = ({ colors }: AppTheme) =>
 export const getDetailsContentStyles = (_: AppTheme) =>
   StyleSheet.create({
     container: {
-      marginBottom: -50,
+      marginBottom: scaleUxToDp(-50),
     },
   });
 
 export const getDetailsContentContainerStyles = (_: AppTheme) =>
   StyleSheet.create({
     container: {
-      marginBottom: -50,
+      marginBottom: scaleUxToDp(-50),
     },
   });

@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getDCContentContainerStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
@@ -11,9 +12,9 @@ export const getDCContentContainerStyles = ({ colors }: AppTheme) =>
       alignContent: 'center',
     },
     descriptionText: {
-      marginBottom: 24,
+      marginBottom: scaleUxToDp(24),
       textAlign: 'center',
-      marginHorizontal: 16,
+      marginHorizontal: scaleUxToDp(16),
     },
     overlay: {
       backgroundColor: colors.onBackground,
@@ -25,6 +26,6 @@ export const getDCContentContainerStyles = ({ colors }: AppTheme) =>
     },
     containerText: {
       alignSelf: 'center',
-      marginTop: 24,
+      marginTop: scaleUxToDp(24),
     },
   });

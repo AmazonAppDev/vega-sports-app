@@ -1,14 +1,15 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getGroupStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
     group: {
       alignItems: 'flex-start',
-      marginBottom: 20,
+      marginBottom: scaleUxToDp(20),
       color: colors.onBackground,
-      gap: 10,
+      gap: scaleUxToDp(10),
     },
   });
 
@@ -16,23 +17,23 @@ export const getSettingsStyles = ({ colors, typography }: AppTheme) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      padding: 40,
+      padding: scaleUxToDp(40),
     },
     avatar: {
       borderColor: colors.surfaceTint,
     },
     avatarWrapper: {
-      width: 100,
-      height: 100,
+      width: scaleUxToDp(100),
+      height: scaleUxToDp(100),
     },
     userName: {
       fontSize: typography.size?.fontSize?.title?.md,
     },
-    scrollView: { marginLeft: 20 },
+    scrollView: { marginLeft: scaleUxToDp(20) },
     headerContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      marginBottom: 20,
+      marginBottom: scaleUxToDp(20),
     },
     headerText: {
       fontSize: typography.size?.fontSize?.headline?.md,
@@ -42,7 +43,7 @@ export const getSettingsStyles = ({ colors, typography }: AppTheme) =>
       fontSize: typography.size?.fontSize?.title?.md,
       color: colors.onBackground,
       fontWeight: '600',
-      marginBottom: 10,
+      marginBottom: scaleUxToDp(10),
     },
     subHeaderText: {
       fontSize: typography.size?.fontSize?.title?.md,
@@ -52,8 +53,8 @@ export const getSettingsStyles = ({ colors, typography }: AppTheme) =>
       flexDirection: 'row',
     },
     button: {
-      width: 300,
-      borderWidth: 1,
+      width: scaleUxToDp(300),
+      borderWidth: scaleUxToDp(1),
     },
     isFocused: {
       backgroundColor: colors.tertiary,
@@ -63,10 +64,10 @@ export const getSettingsStyles = ({ colors, typography }: AppTheme) =>
       alignItems: 'flex-start',
       flexDirection: 'row',
     },
-    themeContainer: { flexDirection: 'row', gap: 4 },
+    themeContainer: { flexDirection: 'row', gap: scaleUxToDp(4) },
     userProfileContainer: {
       flexDirection: 'row',
-      gap: 20,
+      gap: scaleUxToDp(20),
       justifyContent: 'center',
       alignItems: 'center',
     },
@@ -76,26 +77,26 @@ export const getSettingLanguageStyles = ({ colors, typography }: AppTheme) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      padding: 40,
+      padding: scaleUxToDp(40),
     },
     headerContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      marginBottom: 20,
+      marginBottom: scaleUxToDp(20),
     },
     header: {
       flexDirection: 'row',
-      gap: 30,
-      marginBottom: 40,
+      gap: scaleUxToDp(30),
+      marginBottom: scaleUxToDp(40),
     },
     title: {
       fontSize: typography.size?.fontSize?.headline?.md,
       color: colors.onBackground,
     },
     listItem: {
-      padding: 20,
-      borderWidth: 4,
-      marginVertical: 20,
+      padding: scaleUxToDp(20),
+      borderWidth: scaleUxToDp(4),
+      marginVertical: scaleUxToDp(20),
     },
     listItemActive: {
       backgroundColor: colors.secondary,

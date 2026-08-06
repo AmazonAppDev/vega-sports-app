@@ -32,7 +32,7 @@ export const getSeekBarStyles = ({ colors }: AppTheme) =>
     time: {
       color: colors.onPrimary,
       fontSize: scaleUxToDp(25),
-      marginHorizontal: 30,
+      marginHorizontal: scaleUxToDp(30),
     },
     hiddenBar: {
       backgroundColor: colors.transparent,
@@ -50,19 +50,19 @@ export const getSeekBarStyles = ({ colors }: AppTheme) =>
 export const getSeekBarThumbIconStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
     focused: {
-      height: 32,
-      width: 32,
-      borderRadius: 18,
+      height: scaleUxToDp(32),
+      width: scaleUxToDp(32),
+      borderRadius: scaleUxToDp(18),
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: colors.onPrimary,
     },
     unfocused: {
-      height: 35,
-      width: 10,
+      height: scaleUxToDp(35),
+      width: scaleUxToDp(10),
       backgroundColor: colors.background,
-      borderWidth: 2,
-      borderRadius: 5,
+      borderWidth: scaleUxToDp(2),
+      borderRadius: scaleUxToDp(5),
     },
   });
 
@@ -74,31 +74,31 @@ export const getForwardBackwardIconStyles = ({ colors }: AppTheme) =>
       alignSelf: 'center',
       alignContent: 'center',
       flexDirection: 'row',
-      height: 70,
-      width: 150,
-      marginBottom: 10,
+      height: scaleUxToDp(70),
+      width: scaleUxToDp(150),
+      marginBottom: scaleUxToDp(10),
     },
     multiplierText: {
-      fontSize: 20,
+      fontSize: scaleUxToDp(20),
       color: colors.onSecondary,
     },
     aboveThumb: {
       alignItems: 'center',
       justifyContent: 'center',
-      height: 80,
-      width: 120,
+      height: scaleUxToDp(80),
+      width: scaleUxToDp(120),
       display: 'flex',
       flexDirection: 'row',
     },
     fastForwardRewindLabel: {
-      fontSize: 20,
+      fontSize: scaleUxToDp(20),
       fontWeight: '700',
-      lineHeight: 24,
+      lineHeight: scaleUxToDp(24),
       letterSpacing: 0.8,
       color: colors.onSecondary,
     },
     fastForwardRewindImage: {
-      height: 24,
-      width: 24,
+      height: scaleUxToDp(24),
+      width: scaleUxToDp(24),
     },
   });

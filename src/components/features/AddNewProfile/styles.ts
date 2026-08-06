@@ -1,14 +1,16 @@
 import { StyleSheet } from 'react-native';
 
+import { scaleUxToDp } from '@AppUtils';
+
 export const getProfileAvatarSelectorStyles = () =>
   StyleSheet.create({
     wrapper: {
       width: '100%',
-      marginLeft: -20,
-      marginRight: -20,
+      marginLeft: scaleUxToDp(-20),
+      marginRight: scaleUxToDp(-20),
     },
     avatarWrapper: {
-      margin: 20,
+      margin: scaleUxToDp(20),
       opacity: 0.7,
     },
     avatarWrapperFocused: {
@@ -20,16 +22,16 @@ export const getProfileAvatarSelectorStyles = () =>
 export const getAddProfileFormStyles = () =>
   StyleSheet.create({
     wrapper: {
-      width: 400,
+      width: scaleUxToDp(400),
       flexDirection: 'row',
-      gap: 24,
+      gap: scaleUxToDp(24),
     },
     submitButton: {
-      height: 50,
+      height: scaleUxToDp(50),
     },
   });
 
 export const getStepWrapperStyles = () =>
   StyleSheet.create({
-    wrapper: { marginBottom: 40 },
+    wrapper: { marginBottom: scaleUxToDp(40) },
   });

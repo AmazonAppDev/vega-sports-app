@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { scaleUxToDp } from '@AppUtils';
+
 export const getVideoOverlayStyles = () =>
   StyleSheet.create({
     videoOverlay: {
@@ -13,11 +15,11 @@ export const getVideoOverlayStyles = () =>
     errorContainer: {
       flexDirection: 'column',
       alignItems: 'center',
-      gap: 30,
+      gap: scaleUxToDp(30),
     },
     errorHeadlineWrapper: {
       flexDirection: 'row',
-      gap: 30,
+      gap: scaleUxToDp(30),
       alignItems: 'center',
     },
   });

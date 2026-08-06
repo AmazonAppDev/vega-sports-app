@@ -10,7 +10,7 @@ import {
   useSetAppTheme,
   useThemedStyles,
 } from '@AppTheme';
-import { capitalize, useRerenderOnFocus } from '@AppUtils';
+import { capitalize, scaleUxToDp, useRerenderOnFocus } from '@AppUtils';
 import { ScreenContainer } from '@AppComponents/containers';
 import { Button, Text } from '@AppComponents/core';
 import { AvatarImage } from '@AppComponents/core/Avatar/AvatarImage';
@@ -196,7 +196,7 @@ export const Settings = () => {
                   <AvatarImage
                     placeholder={user?.name ?? ''}
                     image={user?.avatar ?? ''}
-                    borderRadius={50}
+                    borderRadius={scaleUxToDp(50)}
                   />
                 </View>
                 <Text style={styles.userName}>{user?.name || ''}</Text>

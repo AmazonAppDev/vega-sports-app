@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getLoginStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
@@ -10,11 +11,15 @@ export const getLoginStyles = ({ colors }: AppTheme) =>
     },
     wrapper: {
       width: '50%',
-      padding: 32,
-      borderRadius: 16,
+      padding: scaleUxToDp(32),
+      borderRadius: scaleUxToDp(16),
       borderWidth: 0,
       backgroundColor: colors.outlineVariant,
-      gap: 44,
+      gap: scaleUxToDp(44),
     },
-    button: { width: 200, alignSelf: 'center', borderWidth: 1 },
+    button: {
+      width: scaleUxToDp(200),
+      alignSelf: 'center',
+      borderWidth: scaleUxToDp(1),
+    },
   });

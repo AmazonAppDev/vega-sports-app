@@ -48,7 +48,7 @@ const EpgSyncSource = () => {
           <Text style={styles.text}>
             This may take a few minutes, please do not leave this screen{' '}
           </Text>
-          <ActivityIndicator style={styles.activityIndicator} />
+          <ActivityIndicator style={styles.activityIndicator} size={'small'} />
           <View style={styles.progressBar}>
             <View style={[styles.progressBarFill, { width: `${progress}%` }]} />
           </View>

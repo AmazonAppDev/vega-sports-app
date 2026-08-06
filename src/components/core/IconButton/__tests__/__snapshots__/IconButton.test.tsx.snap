@@ -36,8 +36,8 @@ exports[`IconButton applies disabled styles when the button is disabled 1`] = `
       "alignItems": "center",
       "backgroundColor": "#ECEFF1",
       "borderColor": "transparent",
-      "borderRadius": 8,
-      "borderWidth": 4,
+      "borderRadius": 4,
+      "borderWidth": 2,
       "flexDirection": "row",
       "justifyContent": "center",
       "opacity": 1,
@@ -49,7 +49,7 @@ exports[`IconButton applies disabled styles when the button is disabled 1`] = `
     aria-hidden={true}
     color="#121212"
     name="pause"
-    size={37.5}
+    size={18.75}
     style={
       [
         {
@@ -98,8 +98,8 @@ exports[`IconButton renders children when provided 1`] = `
       "alignItems": "center",
       "backgroundColor": "#FFFFFF",
       "borderColor": "transparent",
-      "borderRadius": 8,
-      "borderWidth": 4,
+      "borderRadius": 4,
+      "borderWidth": 2,
       "flexDirection": "row",
       "justifyContent": "center",
       "opacity": 1,
@@ -111,7 +111,7 @@ exports[`IconButton renders children when provided 1`] = `
     aria-hidden={true}
     color="#121212"
     name="stop"
-    size={37.5}
+    size={18.75}
     style={
       [
         false,
@@ -126,7 +126,7 @@ exports[`IconButton renders children when provided 1`] = `
       {
         "color": "#121212",
         "fontFamily": "Amazon Ember",
-        "fontSize": 20,
+        "fontSize": 10,
         "fontStyle": undefined,
         "fontWeight": "400",
         "letterSpacing": undefined,
@@ -175,8 +175,8 @@ exports[`IconButton renders style prop with priority over internal styles 1`] = 
       "alignItems": "center",
       "backgroundColor": "red",
       "borderColor": "transparent",
-      "borderRadius": 8,
-      "borderWidth": 4,
+      "borderRadius": 4,
+      "borderWidth": 2,
       "flexDirection": "row",
       "justifyContent": "center",
       "opacity": 1,
@@ -189,7 +189,7 @@ exports[`IconButton renders style prop with priority over internal styles 1`] = 
     aria-hidden={true}
     color="#121212"
     name="stop"
-    size={37.5}
+    size={18.75}
     style={
       [
         {
@@ -238,8 +238,8 @@ exports[`IconButton renders the button with the correct icon and styles 1`] = `
       "alignItems": "center",
       "backgroundColor": "#FFFFFF",
       "borderColor": "transparent",
-      "borderRadius": 8,
-      "borderWidth": 4,
+      "borderRadius": 4,
+      "borderWidth": 2,
       "flexDirection": "row",
       "justifyContent": "center",
       "opacity": 1,
@@ -251,7 +251,7 @@ exports[`IconButton renders the button with the correct icon and styles 1`] = `
     aria-hidden={true}
     color="#121212"
     name="play"
-    size={37.5}
+    size={18.75}
     style={
       [
         false,

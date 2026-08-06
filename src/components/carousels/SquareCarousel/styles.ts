@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getSquareCarouselContainerStyles = () =>
   StyleSheet.create({
     containerStyles: {
-      height: 280,
+      height: scaleUxToDp(280),
     },
   });
 
@@ -20,10 +21,10 @@ export const getSquareItemStyles = ({
     },
     cardOuter: {
       backgroundColor: colors.transparent,
-      width: 350,
-      height: 250,
+      width: scaleUxToDp(350),
+      height: scaleUxToDp(250),
       position: 'relative',
-      borderRadius: 10,
+      borderRadius: scaleUxToDp(10),
       overflow: 'hidden',
     },
     cardOuterFocused: {
@@ -38,12 +39,12 @@ export const getSquareItemStyles = ({
     title: {
       color: isDarkTheme ? colors.onPrimary : colors.focusPrimary,
       fontSize: typography.size?.fontSize?.title?.sm,
-      padding: 10,
+      padding: scaleUxToDp(10),
       textTransform: 'capitalize',
       fontWeight: 'bold',
     },
     bgImage: {
-      height: 250,
-      width: 350,
+      height: scaleUxToDp(250),
+      width: scaleUxToDp(350),
     },
   });

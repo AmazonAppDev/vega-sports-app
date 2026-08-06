@@ -33,6 +33,7 @@ import type {
 import { Pressable, View } from 'react-native';
 
 import { useThemedStyles } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { useFocusState } from '@AppServices/focusGuide';
 import { useTranslation } from '@AppServices/i18n';
 import { PROFILE_NAME_PARAMETER } from '@AppServices/i18n/constants';
@@ -83,7 +84,7 @@ export type AvatarProps = {
 export const Avatar = forwardRef<AvatarRef, AvatarProps>(
   (
     {
-      size = 50,
+      size = scaleUxToDp(50),
       image,
       placeholder,
       onPress,
