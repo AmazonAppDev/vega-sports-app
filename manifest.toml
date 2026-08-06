@@ -6,7 +6,7 @@ schema-version = 1
 
 [package]
 title = "Vega Sports Sample App"
-version = "0.23.0"
+version = "0.24.0"
 id = "com.amazondeveloper.keplersportapp"
 icon = "@image/SportsApp.png"
 
@@ -119,6 +119,9 @@ id = "com.amazon.kepler.tv.privilege.data_provider"
 [[needs.privilege]]
 id = "com.amazon.audio.privilege.microphone.access"
 
+[[needs.module]]
+id = "/com.amazon.vega.os@IVega_1_2"
+
 [tasks]
 [[tasks.work]]
 component-id = "com.amazondeveloper.keplersportapp.onInstallOrUpdateTask"
@@ -184,3 +187,7 @@ ChannelList = []
 [application]
 relaunch_policy = "none"
 preserve_state = true
+
+[os.version]
+target = "1.2"
+min = "1.2"
