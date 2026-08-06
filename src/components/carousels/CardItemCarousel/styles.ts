@@ -1,12 +1,13 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getCardCarouselContainerStyles = () =>
   StyleSheet.create({
     containerStyles: {
       width: Dimensions.get('window').width,
-      height: 450,
+      height: scaleUxToDp(450),
     },
   });
 
@@ -21,15 +22,15 @@ export const getCardCarouselItemStyles = ({
     },
     cardOuter: {
       backgroundColor: colors.transparent,
-      width: 300,
-      height: 450,
+      width: scaleUxToDp(300),
+      height: scaleUxToDp(450),
       position: 'relative',
-      borderRadius: 10,
+      borderRadius: scaleUxToDp(10),
       overflow: 'hidden',
     },
     bgImage: {
-      height: 450,
-      width: 300,
+      height: scaleUxToDp(450),
+      width: scaleUxToDp(300),
     },
     titleContainer: {
       position: 'absolute',
@@ -43,8 +44,8 @@ export const getCardCarouselItemStyles = ({
       fontSize: typography.size?.fontSize?.title?.sm,
       fontWeight: 'bold',
       textAlign: 'center',
-      padding: 10,
-      borderRadius: 10,
+      padding: scaleUxToDp(10),
+      borderRadius: scaleUxToDp(10),
     },
 
     badgeContainer: {
@@ -53,8 +54,8 @@ export const getCardCarouselItemStyles = ({
     },
     badgeInner: {
       backgroundColor: isDarkTheme ? colors.onPrimary : colors.focusPrimary,
-      paddingHorizontal: 12,
-      paddingVertical: 6,
+      paddingHorizontal: scaleUxToDp(12),
+      paddingVertical: scaleUxToDp(6),
     },
     badgeText: {
       color: isDarkTheme ? colors.focusActive : colors.onPrimary,

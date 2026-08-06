@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useThemedStyles } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { ImageTile } from '@AppComponents/core';
 import type {
   DCImageTileApiProps,
@@ -119,8 +120,8 @@ export const DCImageTile = ({
   return (
     <ImageTile
       hasLoader
-      width={imageDimensions.width}
-      height={imageDimensions.height}
+      width={scaleUxToDp(imageDimensions.width)}
+      height={scaleUxToDp(imageDimensions.height)}
       onPress={handlePress}
       title={titleValue}
       style={styles.imageTile}

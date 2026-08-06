@@ -7,6 +7,7 @@ import { View } from 'react-native';
 import { useDrawerStatus } from '@amazon-devices/react-navigation__drawer';
 
 import { useThemedStyles } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { Avatar } from '@AppComponents/core';
 import { HintBuilder, injectListNavigationHints } from '@AppServices/a11y';
 import { useAuth } from '@AppServices/auth';
@@ -145,7 +146,7 @@ export const MenuWrapper = ({ navigation }: MenuWrapperProps) => {
           .asString(' ')}
         placeholder={user?.name || ''}
         image={user?.avatar}
-        size={50}
+        size={scaleUxToDp(50)}
         onFocus={onMenuItemFocus}
         onPress={handleAvatarPress}
         imageWrapperStyles={styles.avatar}

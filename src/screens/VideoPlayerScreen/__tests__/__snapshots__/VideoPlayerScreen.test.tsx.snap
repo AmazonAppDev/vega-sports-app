@@ -379,7 +379,7 @@ exports[`VideoPlayerScreen renders the video player initially without caption bu
                           >
                             <ActivityIndicator
                               color="#0F79AF"
-                              size="large"
+                              size="small"
                             />
                           </View>
                           <View

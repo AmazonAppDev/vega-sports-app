@@ -1,6 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { BACKDROP_HEIGHT, ITEM_WIDTH } from '../constants';
 
 const { width, height } = Dimensions.get('window');
@@ -34,10 +35,10 @@ export const getHeroCarouselContainerStyles = ({ colors }: AppTheme) =>
       width: '20%',
     },
     arrowRight: {
-      left: width - 200,
+      left: width - scaleUxToDp(200),
     },
     arrowLeft: {
-      left: 10,
+      left: scaleUxToDp(10),
     },
   });
 
@@ -65,7 +66,7 @@ export const getHeroCarouselItemStyles = ({
       flex: 1,
       justifyContent: 'flex-end',
       alignItems: 'flex-start',
-      padding: 20,
+      padding: scaleUxToDp(20),
       width: ITEM_WIDTH,
       height: '100%',
     },
@@ -77,48 +78,48 @@ export const getHeroCarouselItemStyles = ({
     titleContainer: {
       position: 'relative',
       marginTop: HERO_CAROUSEL_HEIGHT * 0.55,
-      marginLeft: 100,
+      marginLeft: scaleUxToDp(100),
       width: '45%',
-      padding: 15,
+      padding: scaleUxToDp(15),
       borderColor: colors.transparent,
-      borderWidth: 5,
-      borderRadius: 10,
+      borderWidth: scaleUxToDp(5),
+      borderRadius: scaleUxToDp(10),
     },
     titleContainerFocused: {},
     infoContainer: {
       flexDirection: 'row',
-      gap: 25,
-      paddingVertical: 20,
+      gap: scaleUxToDp(25),
+      paddingVertical: scaleUxToDp(20),
     },
     title: {
       fontSize: typography.size?.fontSize?.title?.lg,
       fontWeight: 'bold',
       color: isDarkTheme ? colors.onPrimary : colors.onBackground,
-      borderRadius: 5,
+      borderRadius: scaleUxToDp(5),
     },
     infoBold: {
       fontWeight: 'bold',
     },
     heroDetails: {
-      fontSize: 18,
+      fontSize: scaleUxToDp(18),
       color: isDarkTheme ? colors.onPrimary : colors.onBackground,
       textTransform: 'capitalize',
     },
     heroDescription: {
       fontSize: typography.size?.fontSize?.title?.sm,
       color: isDarkTheme ? colors.onPrimary : colors.onBackground,
-      marginBottom: 20,
+      marginBottom: scaleUxToDp(20),
     },
     infoButton: {
-      width: 200,
-      height: 80,
+      width: scaleUxToDp(200),
+      height: scaleUxToDp(80),
       backgroundColor: colors.primary,
-      borderRadius: 10,
-      padding: 10,
+      borderRadius: scaleUxToDp(10),
+      padding: scaleUxToDp(10),
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: 10,
-      borderWidth: 1,
+      marginTop: scaleUxToDp(10),
+      borderWidth: scaleUxToDp(1),
       borderColor: colors.transparent,
     },
     infoButtonFocused: {

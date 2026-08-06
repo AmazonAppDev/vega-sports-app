@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
 
+import { scaleUxToDp } from '@AppUtils';
+
 export const getButtonStyles = () =>
   StyleSheet.create({
     button: {
-      minWidth: 120,
+      minWidth: scaleUxToDp(120),
     },
   });

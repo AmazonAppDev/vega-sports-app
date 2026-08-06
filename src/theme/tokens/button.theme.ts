@@ -1,44 +1,45 @@
 import type { ButtonTokens } from '@amazon-devices/kepler-ui-components';
 
 import type { ThemeColors } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { darkPalette, lightPalette } from '@AppTheme/palette';
 
 const size = {
   height: {
-    sm: 76,
-    md: 84,
-    lg: 92,
-    xl: 120,
+    sm: scaleUxToDp(76),
+    md: scaleUxToDp(84),
+    lg: scaleUxToDp(92),
+    xl: scaleUxToDp(120),
   },
   horizontalPadding: {
-    sm: 18,
-    md: 18,
-    lg: 20,
-    xl: 24,
+    sm: scaleUxToDp(18),
+    md: scaleUxToDp(18),
+    lg: scaleUxToDp(20),
+    xl: scaleUxToDp(24),
   },
   borderWidth: {
-    sm: 4,
-    md: 4,
-    lg: 5,
-    xl: 5,
+    sm: scaleUxToDp(4),
+    md: scaleUxToDp(4),
+    lg: scaleUxToDp(5),
+    xl: scaleUxToDp(5),
   },
   borderRadius: {
-    sm: 8,
-    md: 8,
-    lg: 8,
-    xl: 8,
+    sm: scaleUxToDp(8),
+    md: scaleUxToDp(8),
+    lg: scaleUxToDp(8),
+    xl: scaleUxToDp(8),
   },
   margin: {
-    sm: 6,
-    md: 10,
-    lg: 14,
-    xl: 18,
+    sm: scaleUxToDp(6),
+    md: scaleUxToDp(10),
+    lg: scaleUxToDp(14),
+    xl: scaleUxToDp(18),
   },
   fontSize: {
-    sm: 22,
-    md: 24,
-    lg: 32,
-    xl: 32,
+    sm: scaleUxToDp(22),
+    md: scaleUxToDp(24),
+    lg: scaleUxToDp(32),
+    xl: scaleUxToDp(32),
   },
 } as const;
 

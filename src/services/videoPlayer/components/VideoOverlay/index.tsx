@@ -73,7 +73,7 @@ export const VideoOverlay = React.memo(
     if (isVideoBecomingReady) {
       return (
         <View style={styles.videoOverlay}>
-          <ActivityIndicator size="large" color={colors.primary} />
+          <ActivityIndicator size="small" color={colors.primary} />
         </View>
       );
     }
@@ -82,7 +82,7 @@ export const VideoOverlay = React.memo(
       // Show spinner during seeking or buffering
       return (
         <View style={styles.videoOverlay}>
-          <ActivityIndicator size="large" color={colors.primary} />
+          <ActivityIndicator size="small" color={colors.primary} />
         </View>
       );
     }

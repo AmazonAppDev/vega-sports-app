@@ -49,6 +49,7 @@ import MaterialCommunityIcon from '@amazon-devices/react-native-vector-icons/Mat
 import { useNavigation } from '@amazon-devices/react-navigation__core';
 
 import { useAppTheme, useThemedStyles } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import type { CommonCarouselItemProps } from '@AppModels/carouselLayout/CarouselLayout';
 import { HintBuilder } from '@AppServices/a11y';
 import { useTranslation } from '@AppServices/i18n';
@@ -233,7 +234,7 @@ export const HeroCarouselContainer = ({
           ]}>
           <MaterialCommunityIcon
             name="chevron-right"
-            size={90}
+            size={scaleUxToDp(90)}
             color={typography.text?.color?.display?.toString()}
             style={[styles.arrow, styles.arrowRight]}
             aria-hidden // Hidden from screen readers
@@ -253,7 +254,7 @@ export const HeroCarouselContainer = ({
           ]}>
           <MaterialCommunityIcon
             name="chevron-left"
-            size={90}
+            size={scaleUxToDp(90)}
             color={typography.text?.color?.display?.toString()}
             style={[styles.arrow, styles.arrowLeft]}
             aria-hidden // Hidden from screen readers (decorative only)

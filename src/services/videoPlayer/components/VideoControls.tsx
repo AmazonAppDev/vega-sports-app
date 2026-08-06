@@ -193,7 +193,7 @@ export const VideoControls: React.FC<
                   captionTrackChangeLabel
                 ) : (
                   // activity indicator for the time of syncing the state with player
-                  <ActivityIndicator />
+                  <ActivityIndicator size={'small'} />
                 )}
               </Text>
             </IconButton>

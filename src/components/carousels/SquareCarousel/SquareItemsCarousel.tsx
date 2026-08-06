@@ -6,6 +6,7 @@ import React, { useCallback } from 'react';
 import { useNavigation } from '@amazon-devices/react-navigation__core';
 
 import { useThemedStyles } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 import { Carousel } from '@AppComponents/core/Carousel';
 import { HintBuilder } from '@AppServices/a11y';
 import { useTranslation } from '@AppServices/i18n';
@@ -109,7 +110,7 @@ export const SquareItemsCarousel = ({
       uniqueId="square-items-carousel"
       renderedItemsCount={8}
       itemStyle={{
-        itemPadding: 20,
+        itemPadding: scaleUxToDp(20),
         selectedItemScaleFactor: 1.1,
       }}
       animationDuration={{

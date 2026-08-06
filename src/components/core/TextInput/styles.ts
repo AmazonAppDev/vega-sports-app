@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import type { AppTheme } from '@AppTheme';
+import { scaleUxToDp } from '@AppUtils';
 
 export const getTextInputStyles = ({ colors }: AppTheme) =>
   StyleSheet.create({
@@ -8,20 +9,20 @@ export const getTextInputStyles = ({ colors }: AppTheme) =>
       width: '100%',
     },
     container: {
-      borderRadius: 8,
-      borderWidth: 2,
+      borderRadius: scaleUxToDp(8),
+      borderWidth: scaleUxToDp(2),
       borderColor: colors.outlineVariant,
       padding: 0,
       width: '100%',
     },
     textContainer: {
-      paddingVertical: 12,
-      paddingHorizontal: 24,
+      paddingVertical: scaleUxToDp(12),
+      paddingHorizontal: scaleUxToDp(24),
       backgroundColor: colors.surfaceDim,
-      borderRadius: 4,
+      borderRadius: scaleUxToDp(4),
       width: '100%',
-      fontSize: 22,
-      lineHeight: 28,
+      fontSize: scaleUxToDp(22),
+      lineHeight: scaleUxToDp(28),
       color: colors.onSurface,
       borderWidth: 0,
       padding: 0,
@@ -32,9 +33,9 @@ export const getTextInputStyles = ({ colors }: AppTheme) =>
     label: {
       fontFamily: 'Amazon Ember',
       fontWeight: '700',
-      paddingHorizontal: 24,
-      paddingTop: 16,
-      paddingBottom: 8,
+      paddingHorizontal: scaleUxToDp(24),
+      paddingTop: scaleUxToDp(16),
+      paddingBottom: scaleUxToDp(8),
     },
     errorText: {
       color: colors.error,

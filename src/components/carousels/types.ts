@@ -23,10 +23,7 @@ import type { Endpoints } from '@AppServices/apiClient';
  * Each type corresponds to a different API endpoint and content category.
  */
 export type ParsedResponseContentData =
-  | SuggestedForYou
-  | LiveStream
-  | Documentaries
-  | Teams;
+  SuggestedForYou | LiveStream | Documentaries | Teams;
 
 /**
  * Base props for rendering individual carousel items.
