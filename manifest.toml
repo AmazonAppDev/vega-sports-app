@@ -11,8 +11,8 @@ id = "com.amazondeveloper.keplersportapp"
 icon = "@image/SportsApp.png"
 
 [os.version]
-min = "1.2"
-target = "1.2"
+min = "2.0"
+target = "2.0"
 
 [components]
 [[components.interactive]]
@@ -122,9 +122,6 @@ id = "com.amazon.kepler.tv.privilege.data_provider"
 
 [[needs.privilege]]
 id = "com.amazon.audio.privilege.microphone.access"
-
-[[needs.module]]
-id = "/com.amazon.vega.os@IVega_1_2"
 
 [tasks]
 [[tasks.work]]

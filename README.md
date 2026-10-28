@@ -25,6 +25,18 @@ Introduction
 
 
 
+Branches
+--------
+
+> [!NOTE]
+> The `main` branch targets Vega OS 2.0 (Vega SDK 2.0). To build for an earlier Vega OS version, use one of the release branches in the following table.
+
+| Branch | React Native version | Vega OS version | When to use it |
+| --- | --- | --- | --- |
+| `main` | 0.83.0 | 2.0 | Use for new development and for devices that run Vega OS 2.0. |
+| `release-rn-72-24` | 0.72.0 | 1.2 | Use for devices that run Vega OS 1.2 and apps that must stay on React Native 0.72. |
+
+
 Build and run the app
 --------------------
 
